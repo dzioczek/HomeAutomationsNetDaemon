@@ -13,9 +13,9 @@ namespace HomeAutomationsNetDaemon.apps
     {
         public static async Task<List<HassState>> GetHumidityHistory(this IHomeAssistantApiManager apiManager, CancellationToken cancellationToken)
         {
-            var apiUrl = $"history/period?filter_entity_id=sensor.aqara_temp_bathroom_upstairs_humidity";
+            const string apiUrl = $"history/period?filter_entity_id=sensor.aqara_temp_bathroom_upstairs_humidity";
 
-            var resp = await apiManager.GetApiCallAsync<List<List<HassState>>>(apiUrl, cancellationToken);
+            List<List<HassState>>? resp = await apiManager.GetApiCallAsync<List<List<HassState>>>(apiUrl, cancellationToken);
             return resp.FirstOrDefault(); 
         }
     }

@@ -20,22 +20,26 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             //        TurnOnOutsideLamps();
             //    });
 
-            scheduler.RunEvery(TimeSpan.FromHours(24), SwitchOffTime(), () => TurnOffOutsideLamps(ha));
+            // scheduler.RunEvery(TimeSpan.FromHours(24), SwitchOffTime(), () => TurnOffOutsideLamps(ha));
+            scheduler.ScheduleCron("0 0 * * *", () => TurnOffOutsideLamps(ha)); 
             scheduler.ScheduleCron("0 2 * * *", () => TurnOffGateLamp(ha));
 
             // SunEntity sun = new Entities(ha).Sun.Sun;
             // sun.StateChanges()
             //     .Where(e => e.Old?.State == "above_horizon" && e.New?.State == "below_horizon") 
             //     .Subscribe(_ => TurnOnOutsideLamps(ha));
-
-            _logger.LogInformation($"{DateTime.Now.Hour}");
+            
 
             NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorIlluminanceLux;
-            _logger.LogInformation($"{lightSensor.State}");
+            _logger.LogInformation("{LightSensorState}", lightSensor.State);
 
-            lightSensor.StateAllChanges()
-                .WhenStateIsFor(s => s?.State <= 20.0, TimeSpan.FromMinutes(2))
+            lightSensor.StateChanges()
+                .WhenStateIsFor(e => e?.State <= 20.0, TimeSpan.FromSeconds(30))
                 .Where(s => DateTime.Now.Hour is > 16 and < 24)
+                .Subscribe(_ => _logger.LogInformation("works! {Test}", lightSensor.State));
+            
+            lightSensor.StateAllChanges()
+                .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
                 .Subscribe(_ => TurnOnOutsideLamps(ha));
         }
 

@@ -18,8 +18,7 @@ public class ShadesControl
         NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorIlluminanceLux;
 
         lightSensor.StateChanges()
-            .WhenStateIsFor(s => s?.State <= 20.0, TimeSpan.FromMinutes(2))
-            .Where(s => DateTime.Now.Hour is > 16 and < 24)
+            .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
             .Subscribe(_ => CloseCovers());
 
         scheduler.ScheduleCron("0 7 * * *", () => OpenCovers());
