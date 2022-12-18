@@ -25,7 +25,7 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
             _haContext = ha;
             _scheduler = scheduler;
             _apiManager = apiManager;
-
+    
             ha.RegisterServiceCallBack<ServiceData>("upstairs_fan_service", FanService);
 
             NumericSensorEntity hum = new Entities(_haContext).Sensor.AqaraTempBathroomUpstairsHumidity;
