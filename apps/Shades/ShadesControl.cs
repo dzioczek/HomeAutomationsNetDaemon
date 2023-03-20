@@ -15,8 +15,8 @@ public class ShadesControl
         _logger = logger;
         _ha = ha;
 
-        NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorIlluminanceLux;
-
+        NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorOutsideIlluminanceLux;
+        
         lightSensor.StateChanges()
             .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
             .Subscribe(_ => CloseCovers());
@@ -27,14 +27,14 @@ public class ShadesControl
     private void CloseCovers()
     {
         Services services = new Services(_ha);
-        services.Cover.CloseCover(ServiceTarget.FromEntity("cover.blind_theoffice"));
+        services.Cover.CloseCover(ServiceTarget.FromEntity("cover.blind_office"));
         _logger.LogInformation("Closing covers");
     }
 
     private void OpenCovers()
     {
         Services services = new Services(_ha);
-        services.Cover.OpenCover(ServiceTarget.FromEntity("cover.blind_theoffice"));
-        _logger.LogInformation("Openning covers");
+        services.Cover.OpenCover(ServiceTarget.FromEntity("cover.blind_office"));
+        _logger.LogInformation("Opening covers");
     }
 }

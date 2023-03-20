@@ -28,7 +28,7 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
     
             ha.RegisterServiceCallBack<ServiceData>("upstairs_fan_service", FanService);
 
-            NumericSensorEntity hum = new Entities(_haContext).Sensor.AqaraTempBathroomUpstairsHumidity;
+            NumericSensorEntity hum = new Entities(_haContext).Sensor.TempUpstairsBathroomHumidity;
 
             hum.StateChanges()
                .Where(e => e.New?.State >= 60.0 && e.Old?.State < e.New?.State)
@@ -42,7 +42,7 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
 
         private async void FanService(ServiceData data)
         {
-            SwitchEntity fan = new Entities(_haContext).Switch.TradfriPlugAttic;
+            SwitchEntity fan = new Entities(_haContext).Switch.PlugUpstairsBathroomFan;
 
             _logger.LogInformation("upstairs_fan_service called action: {Action} value: {Value}", data.Action, data.Value);
             if (data.Action == "on")
@@ -62,10 +62,10 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
 
         private async void CheckChangeAndRunFan()
         {
-            if (await GetChangeDynamicPercet() > 3.0) FanService(new ServiceData("on", 20));
+            if (await GetChangeDynamicPercent() > 3.0) FanService(new ServiceData("on", 20));
         } 
 
-        private async Task<double> GetChangeDynamicPercet()
+        private async Task<double> GetChangeDynamicPercent()
         {
             List<HassState> states = await _apiManager.GetHumidityHistory(_cancellationToken);
 
@@ -73,7 +73,7 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
 
             var arr = states.OrderBy(s => s.LastUpdated).TakeLast(numberOfLastChanges).ToArray();
 
-            double indexesMultiplication = 1; // first chain index for that is always 1 as we don't have previos value
+            double indexesMultiplication = 1; // first chain index for that is always 1 as we don't have previous value
 
             for (int i = 1; i < arr.Length; i++) // skipping first as this was set above
             {

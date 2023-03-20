@@ -22,7 +22,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
 
             // scheduler.RunEvery(TimeSpan.FromHours(24), SwitchOffTime(), () => TurnOffOutsideLamps(ha));
             scheduler.ScheduleCron("0 0 * * *", () => TurnOffOutsideLamps(ha)); 
-            scheduler.ScheduleCron("0 2 * * *", () => TurnOffGateLamp(ha));
+            // scheduler.ScheduleCron("0 2 * * *", () => TurnOffGateLamp(ha));
 
             // SunEntity sun = new Entities(ha).Sun.Sun;
             // sun.StateChanges()
@@ -30,9 +30,9 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             //     .Subscribe(_ => TurnOnOutsideLamps(ha));
             
 
-            NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorIlluminanceLux;
+            NumericSensorEntity lightSensor = new Entities(ha).Sensor.LightSensorOutsideIlluminanceLux;
             _logger.LogInformation("{LightSensorState}", lightSensor.State);
-
+            
             lightSensor.StateChanges()
                 .WhenStateIsFor(e => e?.State <= 20.0, TimeSpan.FromSeconds(30))
                 .Where(s => DateTime.Now.Hour is > 16 and < 24)
@@ -54,25 +54,25 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
         private void TurnOnOutsideLamps(IHaContext ha)
         {
             Entities entities = new Entities(ha);
-            entities.Switch.SwitchTerrace.TurnOn();
-            entities.Switch.SwitchEntranceDriveway.TurnOn();
-            entities.Switch.SwitchGate.TurnOn();
+            entities.Switch.SwitchTerraceLights.TurnOn();
+            entities.Switch.SwitchDrivewayLights.TurnOn();
+            // entities.Switch.SwitchGate.TurnOn();
             _logger.LogInformation("outside and gate lamps turned on");
         }
 
         private void TurnOffOutsideLamps(IHaContext ha)
         {
             Entities entities = new Entities(ha);
-            entities.Switch.SwitchTerrace.TurnOff();
-            entities.Switch.SwitchEntranceDriveway.TurnOff();
+            entities.Switch.SwitchTerraceLights.TurnOff();
+            entities.Switch.SwitchDrivewayLights.TurnOff();
             _logger.LogInformation("outside lamps turned off");
         }
 
-        private void TurnOffGateLamp(IHaContext ha)
-        {
-            SwitchEntity gateSwitch = new Entities(ha).Switch.SwitchGate;
-            gateSwitch.TurnOff();
-            _logger.LogInformation("gate lamps turned off");
-        }
+        // private void TurnOffGateLamp(IHaContext ha)
+        // {
+        //     SwitchEntity gateSwitch = new Entities(ha).Switch.SwitchGate;
+        //     gateSwitch.TurnOff();
+        //     _logger.LogInformation("gate lamps turned off");
+        // }
     }
 }

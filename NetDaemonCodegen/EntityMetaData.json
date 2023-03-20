@@ -1,0 +1,1383 @@
+{
+  "domains": [
+    {
+      "domain": "binary_sensor",
+      "entities": [
+        {
+          "id": "binary_sensor.blind_office_charging_status",
+          "friendlyName": "blind_office_charging_status",
+          "cSharpName": "BlindOfficeChargingStatus"
+        },
+        {
+          "id": "binary_sensor.blind_office_running",
+          "friendlyName": "blind_office_running",
+          "cSharpName": "BlindOfficeRunning"
+        },
+        {
+          "id": "binary_sensor.michals_iphone_focus",
+          "friendlyName": "Micha\u0142\u2019s iPhone Focus",
+          "cSharpName": "MichalsIphoneFocus"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "battery",
+          "cSharpName": "Battery",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "charging_status",
+          "cSharpName": "ChargingStatus",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_temperature",
+          "cSharpName": "DeviceTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motor_state",
+          "cSharpName": "MotorState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "position",
+          "cSharpName": "Position",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_outage_count",
+          "cSharpName": "PowerOutageCount",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "running",
+          "cSharpName": "Running",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "cover",
+      "entities": [
+        {
+          "id": "cover.blind_office",
+          "friendlyName": "blind_office",
+          "cSharpName": "BlindOffice"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "current_position",
+          "cSharpName": "CurrentPosition",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "battery",
+          "cSharpName": "Battery",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "charging_status",
+          "cSharpName": "ChargingStatus",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_temperature",
+          "cSharpName": "DeviceTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motor_state",
+          "cSharpName": "MotorState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "position",
+          "cSharpName": "Position",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_outage_count",
+          "cSharpName": "PowerOutageCount",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "running",
+          "cSharpName": "Running",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "persistent_notification",
+      "entities": [
+        {
+          "id": "persistent_notification.http_login",
+          "friendlyName": "Login attempt failed",
+          "cSharpName": "HttpLogin"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "message",
+          "cSharpName": "Message",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "title",
+          "cSharpName": "Title",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "person",
+      "entities": [
+        {
+          "id": "person.michal",
+          "friendlyName": "Micha\u0142",
+          "cSharpName": "Michal"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "user_id",
+          "cSharpName": "UserId",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "gps_accuracy",
+          "cSharpName": "GpsAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "source",
+          "cSharpName": "Source",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "select",
+      "entities": [
+        {
+          "id": "select.plug_hot_water_pump_power_on_behavior",
+          "friendlyName": "plug_hot_water_pump_power_on_behavior",
+          "cSharpName": "PlugHotWaterPumpPowerOnBehavior"
+        },
+        {
+          "id": "select.plug_upstairs_bathroom_fan_power_on_behavior",
+          "friendlyName": "plug_upstairs_bathroom_fan_power_on_behavior",
+          "cSharpName": "PlugUpstairsBathroomFanPowerOnBehavior"
+        },
+        {
+          "id": "select.switch_driveway_lights_power_on_behavior",
+          "friendlyName": "switch_driveway_lights_power_on_behavior",
+          "cSharpName": "SwitchDrivewayLightsPowerOnBehavior"
+        },
+        {
+          "id": "select.switch_staircase_lights_power_on_behavior",
+          "friendlyName": "switch_staircase_lights_power_on_behavior",
+          "cSharpName": "SwitchStaircaseLightsPowerOnBehavior"
+        },
+        {
+          "id": "select.switch_terrace_lights_power_on_behavior",
+          "friendlyName": "switch_terrace_lights_power_on_behavior",
+          "cSharpName": "SwitchTerraceLightsPowerOnBehavior"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_on_behavior",
+          "cSharpName": "PowerOnBehavior",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "entities": [
+        {
+          "id": "sensor.blind_office_motor_state",
+          "friendlyName": "blind_office_motor_state",
+          "cSharpName": "BlindOfficeMotorState"
+        },
+        {
+          "id": "sensor.light_sensor_outside_power_outage_count",
+          "friendlyName": "light_sensor_outside_power_outage_count",
+          "cSharpName": "LightSensorOutsidePowerOutageCount"
+        },
+        {
+          "id": "sensor.michals_iphone_activity",
+          "friendlyName": "Micha\u0142\u2019s iPhone Activity",
+          "cSharpName": "MichalsIphoneActivity"
+        },
+        {
+          "id": "sensor.michals_iphone_battery_state",
+          "friendlyName": "Micha\u0142\u2019s iPhone Battery State",
+          "cSharpName": "MichalsIphoneBatteryState"
+        },
+        {
+          "id": "sensor.michals_iphone_bssid",
+          "friendlyName": "Micha\u0142\u2019s iPhone BSSID",
+          "cSharpName": "MichalsIphoneBssid"
+        },
+        {
+          "id": "sensor.michals_iphone_connection_type",
+          "friendlyName": "Micha\u0142\u2019s iPhone Connection Type",
+          "cSharpName": "MichalsIphoneConnectionType"
+        },
+        {
+          "id": "sensor.michals_iphone_geocoded_location",
+          "friendlyName": "Micha\u0142\u2019s iPhone Geocoded Location",
+          "cSharpName": "MichalsIphoneGeocodedLocation"
+        },
+        {
+          "id": "sensor.michals_iphone_last_update_trigger",
+          "friendlyName": "Micha\u0142\u2019s iPhone Last Update Trigger",
+          "cSharpName": "MichalsIphoneLastUpdateTrigger"
+        },
+        {
+          "id": "sensor.michals_iphone_sim_1",
+          "friendlyName": "Micha\u0142\u2019s iPhone SIM 1",
+          "cSharpName": "MichalsIphoneSim1"
+        },
+        {
+          "id": "sensor.michals_iphone_sim_2",
+          "friendlyName": "Micha\u0142\u2019s iPhone SIM 2",
+          "cSharpName": "MichalsIphoneSim2"
+        },
+        {
+          "id": "sensor.michals_iphone_ssid",
+          "friendlyName": "Micha\u0142\u2019s iPhone SSID",
+          "cSharpName": "MichalsIphoneSsid"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "battery",
+          "cSharpName": "Battery",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "charging_status",
+          "cSharpName": "ChargingStatus",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_temperature",
+          "cSharpName": "DeviceTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motor_state",
+          "cSharpName": "MotorState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "position",
+          "cSharpName": "Position",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_outage_count",
+          "cSharpName": "PowerOutageCount",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "running",
+          "cSharpName": "Running",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Confidence",
+          "cSharpName": "Confidence",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Types",
+          "cSharpName": "Types",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Low Power Mode",
+          "cSharpName": "LowPowerMode",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "Allows VoIP",
+          "cSharpName": "AllowsVoIP",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "Carrier ID",
+          "cSharpName": "CarrierID",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Carrier Name",
+          "cSharpName": "CarrierName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Current Radio Technology",
+          "cSharpName": "CurrentRadioTechnology",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "ISO Country Code",
+          "cSharpName": "ISOCountryCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Mobile Country Code",
+          "cSharpName": "MobileCountryCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Mobile Network Code",
+          "cSharpName": "MobileNetworkCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Administrative Area",
+          "cSharpName": "AdministrativeArea",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Areas Of Interest",
+          "cSharpName": "AreasOfInterest",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Country",
+          "cSharpName": "Country",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Inland Water",
+          "cSharpName": "InlandWater",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Locality",
+          "cSharpName": "Locality",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Location",
+          "cSharpName": "Location",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "Name",
+          "cSharpName": "Name",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Ocean",
+          "cSharpName": "Ocean",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Postal Code",
+          "cSharpName": "PostalCode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Sub Administrative Area",
+          "cSharpName": "SubAdministrativeArea",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Sub Locality",
+          "cSharpName": "SubLocality",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Sub Thoroughfare",
+          "cSharpName": "SubThoroughfare",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Thoroughfare",
+          "cSharpName": "Thoroughfare",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Time Zone",
+          "cSharpName": "TimeZone",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Zones",
+          "cSharpName": "Zones",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "illuminance",
+          "cSharpName": "Illuminance",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "illuminance_lux",
+          "cSharpName": "IlluminanceLux",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "voltage",
+          "cSharpName": "Voltage",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "sensor.blind_office_battery",
+          "friendlyName": "blind_office_battery",
+          "cSharpName": "BlindOfficeBattery"
+        },
+        {
+          "id": "sensor.blind_office_device_temperature",
+          "friendlyName": "blind_office_device_temperature",
+          "cSharpName": "BlindOfficeDeviceTemperature"
+        },
+        {
+          "id": "sensor.hacs",
+          "friendlyName": "hacs",
+          "cSharpName": "Hacs"
+        },
+        {
+          "id": "sensor.light_sensor_outside_battery",
+          "friendlyName": "light_sensor_outside_battery",
+          "cSharpName": "LightSensorOutsideBattery"
+        },
+        {
+          "id": "sensor.light_sensor_outside_illuminance_lux",
+          "friendlyName": "light_sensor_outside_illuminance_lux",
+          "cSharpName": "LightSensorOutsideIlluminanceLux"
+        },
+        {
+          "id": "sensor.michals_iphone_average_active_pace",
+          "friendlyName": "Micha\u0142\u2019s iPhone Average Active Pace",
+          "cSharpName": "MichalsIphoneAverageActivePace"
+        },
+        {
+          "id": "sensor.michals_iphone_battery_level",
+          "friendlyName": "Micha\u0142\u2019s iPhone Battery Level",
+          "cSharpName": "MichalsIphoneBatteryLevel"
+        },
+        {
+          "id": "sensor.michals_iphone_distance",
+          "friendlyName": "Micha\u0142\u2019s iPhone Distance",
+          "cSharpName": "MichalsIphoneDistance"
+        },
+        {
+          "id": "sensor.michals_iphone_floors_ascended",
+          "friendlyName": "Micha\u0142\u2019s iPhone Floors Ascended",
+          "cSharpName": "MichalsIphoneFloorsAscended"
+        },
+        {
+          "id": "sensor.michals_iphone_floors_descended",
+          "friendlyName": "Micha\u0142\u2019s iPhone Floors Descended",
+          "cSharpName": "MichalsIphoneFloorsDescended"
+        },
+        {
+          "id": "sensor.michals_iphone_steps",
+          "friendlyName": "Micha\u0142\u2019s iPhone Steps",
+          "cSharpName": "MichalsIphoneSteps"
+        },
+        {
+          "id": "sensor.michals_iphone_storage",
+          "friendlyName": "Micha\u0142\u2019s iPhone Storage",
+          "cSharpName": "MichalsIphoneStorage"
+        },
+        {
+          "id": "sensor.temp_attic_battery",
+          "friendlyName": "temp_attic_battery",
+          "cSharpName": "TempAtticBattery"
+        },
+        {
+          "id": "sensor.temp_attic_humidity",
+          "friendlyName": "temp_attic_humidity",
+          "cSharpName": "TempAtticHumidity"
+        },
+        {
+          "id": "sensor.temp_attic_pressure",
+          "friendlyName": "temp_attic_pressure",
+          "cSharpName": "TempAtticPressure"
+        },
+        {
+          "id": "sensor.temp_attic_temperature",
+          "friendlyName": "temp_attic_temperature",
+          "cSharpName": "TempAtticTemperature"
+        },
+        {
+          "id": "sensor.temp_garage_battery",
+          "friendlyName": "temp_garage_battery",
+          "cSharpName": "TempGarageBattery"
+        },
+        {
+          "id": "sensor.temp_garage_corridor_battery",
+          "friendlyName": "temp_garage_corridor_battery",
+          "cSharpName": "TempGarageCorridorBattery"
+        },
+        {
+          "id": "sensor.temp_garage_corridor_humidity",
+          "friendlyName": "temp_garage_corridor_humidity",
+          "cSharpName": "TempGarageCorridorHumidity"
+        },
+        {
+          "id": "sensor.temp_garage_corridor_pressure",
+          "friendlyName": "temp_garage_corridor_pressure",
+          "cSharpName": "TempGarageCorridorPressure"
+        },
+        {
+          "id": "sensor.temp_garage_corridor_temperature",
+          "friendlyName": "temp_garage_corridor_temperature",
+          "cSharpName": "TempGarageCorridorTemperature"
+        },
+        {
+          "id": "sensor.temp_garage_humidity",
+          "friendlyName": "temp_garage_humidity",
+          "cSharpName": "TempGarageHumidity"
+        },
+        {
+          "id": "sensor.temp_garage_pressure",
+          "friendlyName": "temp_garage_pressure",
+          "cSharpName": "TempGaragePressure"
+        },
+        {
+          "id": "sensor.temp_garage_temperature",
+          "friendlyName": "temp_garage_temperature",
+          "cSharpName": "TempGarageTemperature"
+        },
+        {
+          "id": "sensor.temp_office_battery",
+          "friendlyName": "temp_office_battery",
+          "cSharpName": "TempOfficeBattery"
+        },
+        {
+          "id": "sensor.temp_office_humidity",
+          "friendlyName": "temp_office_humidity",
+          "cSharpName": "TempOfficeHumidity"
+        },
+        {
+          "id": "sensor.temp_office_pressure",
+          "friendlyName": "temp_office_pressure",
+          "cSharpName": "TempOfficePressure"
+        },
+        {
+          "id": "sensor.temp_office_temperature",
+          "friendlyName": "temp_office_temperature",
+          "cSharpName": "TempOfficeTemperature"
+        },
+        {
+          "id": "sensor.temp_outside_battery",
+          "friendlyName": "temp_outside_battery",
+          "cSharpName": "TempOutsideBattery"
+        },
+        {
+          "id": "sensor.temp_outside_humidity",
+          "friendlyName": "temp_outside_humidity",
+          "cSharpName": "TempOutsideHumidity"
+        },
+        {
+          "id": "sensor.temp_outside_pressure",
+          "friendlyName": "temp_outside_pressure",
+          "cSharpName": "TempOutsidePressure"
+        },
+        {
+          "id": "sensor.temp_outside_temperature",
+          "friendlyName": "temp_outside_temperature",
+          "cSharpName": "TempOutsideTemperature"
+        },
+        {
+          "id": "sensor.temp_upstairs_bathroom_battery",
+          "friendlyName": "temp_upstairs_bathroom_battery",
+          "cSharpName": "TempUpstairsBathroomBattery"
+        },
+        {
+          "id": "sensor.temp_upstairs_bathroom_humidity",
+          "friendlyName": "temp_upstairs_bathroom_humidity",
+          "cSharpName": "TempUpstairsBathroomHumidity"
+        },
+        {
+          "id": "sensor.temp_upstairs_bathroom_pressure",
+          "friendlyName": "temp_upstairs_bathroom_pressure",
+          "cSharpName": "TempUpstairsBathroomPressure"
+        },
+        {
+          "id": "sensor.temp_upstairs_bathroom_temperature",
+          "friendlyName": "temp_upstairs_bathroom_temperature",
+          "cSharpName": "TempUpstairsBathroomTemperature"
+        },
+        {
+          "id": "sensor.temp_utility_room_battery",
+          "friendlyName": "temp_utility_room_battery",
+          "cSharpName": "TempUtilityRoomBattery"
+        },
+        {
+          "id": "sensor.temp_utility_room_humidity",
+          "friendlyName": "temp_utility_room_humidity",
+          "cSharpName": "TempUtilityRoomHumidity"
+        },
+        {
+          "id": "sensor.temp_utility_room_pressure",
+          "friendlyName": "temp_utility_room_pressure",
+          "cSharpName": "TempUtilityRoomPressure"
+        },
+        {
+          "id": "sensor.temp_utility_room_temperature",
+          "friendlyName": "temp_utility_room_temperature",
+          "cSharpName": "TempUtilityRoomTemperature"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "state_class",
+          "cSharpName": "StateClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "battery",
+          "cSharpName": "Battery",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "humidity",
+          "cSharpName": "Humidity",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure",
+          "cSharpName": "Pressure",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "voltage",
+          "cSharpName": "Voltage",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "charging_status",
+          "cSharpName": "ChargingStatus",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_temperature",
+          "cSharpName": "DeviceTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motor_state",
+          "cSharpName": "MotorState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "position",
+          "cSharpName": "Position",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_outage_count",
+          "cSharpName": "PowerOutageCount",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "running",
+          "cSharpName": "Running",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "repositories",
+          "cSharpName": "Repositories",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Available",
+          "cSharpName": "Available",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Available (Important)",
+          "cSharpName": "AvailableImportant",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Available (Opportunistic)",
+          "cSharpName": "AvailableOpportunistic",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "Total",
+          "cSharpName": "Total",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "illuminance",
+          "cSharpName": "Illuminance",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "illuminance_lux",
+          "cSharpName": "IlluminanceLux",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "sun",
+      "entities": [
+        {
+          "id": "sun.sun",
+          "friendlyName": "Sun",
+          "cSharpName": "Sun"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "next_dawn",
+          "cSharpName": "NextDawn",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_dusk",
+          "cSharpName": "NextDusk",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_midnight",
+          "cSharpName": "NextMidnight",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_noon",
+          "cSharpName": "NextNoon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_rising",
+          "cSharpName": "NextRising",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "next_setting",
+          "cSharpName": "NextSetting",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "elevation",
+          "cSharpName": "Elevation",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "azimuth",
+          "cSharpName": "Azimuth",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "rising",
+          "cSharpName": "Rising",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "switch",
+      "entities": [
+        {
+          "id": "switch.plug_hot_water_pump",
+          "friendlyName": "plug_hot_water_pump",
+          "cSharpName": "PlugHotWaterPump"
+        },
+        {
+          "id": "switch.plug_upstairs_bathroom_fan",
+          "friendlyName": "plug_upstairs_bathroom_fan",
+          "cSharpName": "PlugUpstairsBathroomFan"
+        },
+        {
+          "id": "switch.switch_driveway_lights",
+          "friendlyName": "switch_driveway_lights",
+          "cSharpName": "SwitchDrivewayLights"
+        },
+        {
+          "id": "switch.switch_staircase_lights",
+          "friendlyName": "switch_staircase_lights",
+          "cSharpName": "SwitchStaircaseLights"
+        },
+        {
+          "id": "switch.switch_terrace_lights",
+          "friendlyName": "switch_terrace_lights",
+          "cSharpName": "SwitchTerraceLights"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_on_behavior",
+          "cSharpName": "PowerOnBehavior",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "domain": "update",
+      "entities": [
+        {
+          "id": "update.blind_office",
+          "friendlyName": "blind_office",
+          "cSharpName": "BlindOffice"
+        },
+        {
+          "id": "update.extender_kitchen",
+          "friendlyName": "extender_kitchen",
+          "cSharpName": "ExtenderKitchen"
+        },
+        {
+          "id": "update.plug_hot_water_pump",
+          "friendlyName": "plug_hot_water_pump",
+          "cSharpName": "PlugHotWaterPump"
+        },
+        {
+          "id": "update.plug_upstairs_bathroom_fan",
+          "friendlyName": "plug_upstairs_bathroom_fan",
+          "cSharpName": "PlugUpstairsBathroomFan"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "auto_update",
+          "cSharpName": "AutoUpdate",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "installed_version",
+          "cSharpName": "InstalledVersion",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "in_progress",
+          "cSharpName": "InProgress",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "latest_version",
+          "cSharpName": "LatestVersion",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "release_summary",
+          "cSharpName": "ReleaseSummary",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "release_url",
+          "cSharpName": "ReleaseUrl",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "skipped_version",
+          "cSharpName": "SkippedVersion",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "title",
+          "cSharpName": "Title",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_on_behavior",
+          "cSharpName": "PowerOnBehavior",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "battery",
+          "cSharpName": "Battery",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "charging_status",
+          "cSharpName": "ChargingStatus",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "device_temperature",
+          "cSharpName": "DeviceTemperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "motor_state",
+          "cSharpName": "MotorState",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "position",
+          "cSharpName": "Position",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_outage_count",
+          "cSharpName": "PowerOutageCount",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "running",
+          "cSharpName": "Running",
+          "clrType": "System.Boolean"
+        }
+      ]
+    },
+    {
+      "domain": "weather",
+      "entities": [
+        {
+          "id": "weather.forecast_home",
+          "friendlyName": "Forecast Home",
+          "cSharpName": "ForecastHome"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "temperature_unit",
+          "cSharpName": "TemperatureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "humidity",
+          "cSharpName": "Humidity",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure",
+          "cSharpName": "Pressure",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "pressure_unit",
+          "cSharpName": "PressureUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "wind_bearing",
+          "cSharpName": "WindBearing",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed",
+          "cSharpName": "WindSpeed",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "wind_speed_unit",
+          "cSharpName": "WindSpeedUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "visibility_unit",
+          "cSharpName": "VisibilityUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "precipitation_unit",
+          "cSharpName": "PrecipitationUnit",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "forecast",
+          "cSharpName": "Forecast",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "zone",
+      "entities": [
+        {
+          "id": "zone.home",
+          "friendlyName": "Home",
+          "cSharpName": "Home"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "radius",
+          "cSharpName": "Radius",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "passive",
+          "cSharpName": "Passive",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "persons",
+          "cSharpName": "Persons",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "device_tracker",
+      "entities": [
+        {
+          "id": "device_tracker.michals_iphone",
+          "friendlyName": "Micha\u0142\u2019s iPhone",
+          "cSharpName": "MichalsIphone"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "source_type",
+          "cSharpName": "SourceType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "battery_level",
+          "cSharpName": "BatteryLevel",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "gps_accuracy",
+          "cSharpName": "GpsAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "altitude",
+          "cSharpName": "Altitude",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "vertical_accuracy",
+          "cSharpName": "VerticalAccuracy",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "input_boolean",
+      "entities": [
+        {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_bathroom_fans_bathroom_fans",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_bathroom_fans_bathroom_fans",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsBathroomFansBathroomFans"
+        },
+        {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsLightsControlLightsControl"
+        },
+        {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_shades_shades_control",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_shades_shades_control",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsShadesShadesControl"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    }
+  ]
+}
