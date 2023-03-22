@@ -257,6 +257,11 @@
           "cSharpName": "SwitchDrivewayLightsPowerOnBehavior"
         },
         {
+          "id": "select.switch_gate_lights_power_on_behavior",
+          "friendlyName": "switch_gate_lights_power_on_behavior",
+          "cSharpName": "SwitchGateLightsPowerOnBehavior"
+        },
+        {
           "id": "select.switch_staircase_lights_power_on_behavior",
           "friendlyName": "switch_staircase_lights_power_on_behavior",
           "cSharpName": "SwitchStaircaseLightsPowerOnBehavior"
@@ -984,6 +989,11 @@
           "id": "switch.switch_driveway_lights",
           "friendlyName": "switch_driveway_lights",
           "cSharpName": "SwitchDrivewayLights"
+        },
+        {
+          "id": "switch.switch_gate_lights",
+          "friendlyName": "switch_gate_lights",
+          "cSharpName": "SwitchGateLights"
         },
         {
           "id": "switch.switch_staircase_lights",

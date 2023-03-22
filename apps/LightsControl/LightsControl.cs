@@ -22,7 +22,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
 
             // scheduler.RunEvery(TimeSpan.FromHours(24), SwitchOffTime(), () => TurnOffOutsideLamps(ha));
             scheduler.ScheduleCron("0 0 * * *", () => TurnOffOutsideLamps(ha)); 
-            // scheduler.ScheduleCron("0 2 * * *", () => TurnOffGateLamp(ha));
+            scheduler.ScheduleCron("0 2 * * *", () => TurnOffGateLamp(ha));
 
             // SunEntity sun = new Entities(ha).Sun.Sun;
             // sun.StateChanges()
@@ -44,20 +44,12 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
                 .Subscribe(_ => TurnOnOutsideLamps(ha));
         }
 
-        private DateTimeOffset SwitchOffTime()
-        {
-            DateTimeOffset time = new DateTimeOffset(DateTime.Now.Date.AddDays(1) + TimeSpan.FromMinutes(1));
-
-            _logger.LogInformation("New start time for outside lights off: {Time}", time);
-            return time;
-        }
-
         private void TurnOnOutsideLamps(IHaContext ha)
         {
             Entities entities = new Entities(ha);
             entities.Switch.SwitchTerraceLights.TurnOn();
             entities.Switch.SwitchDrivewayLights.TurnOn();
-            // entities.Switch.SwitchGate.TurnOn();
+            entities.Switch.SwitchGateLights.TurnOn();
             _logger.LogInformation("outside and gate lamps turned on");
         }
 
@@ -69,11 +61,11 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             _logger.LogInformation("outside lamps turned off");
         }
 
-        // private void TurnOffGateLamp(IHaContext ha)
-        // {
-        //     SwitchEntity gateSwitch = new Entities(ha).Switch.SwitchGate;
-        //     gateSwitch.TurnOff();
-        //     _logger.LogInformation("gate lamps turned off");
-        // }
+        private void TurnOffGateLamp(IHaContext ha)
+        {
+            SwitchEntity gateSwitch = new Entities(ha).Switch.SwitchGateLights;
+            gateSwitch.TurnOff();
+            _logger.LogInformation("gate lamps turned off");
+        }
     }
 }
