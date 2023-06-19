@@ -14,6 +14,26 @@
           "cSharpName": "BlindOfficeRunning"
         },
         {
+          "id": "binary_sensor.dahua_vto_button",
+          "friendlyName": "Dahua VTO Button",
+          "cSharpName": "DahuaVtoButton"
+        },
+        {
+          "id": "binary_sensor.dahua_vto_open_1",
+          "friendlyName": "Dahua VTO Open 1",
+          "cSharpName": "DahuaVtoOpen1"
+        },
+        {
+          "id": "binary_sensor.dahua_vto_open_2",
+          "friendlyName": "Dahua VTO Open 2",
+          "cSharpName": "DahuaVtoOpen2"
+        },
+        {
+          "id": "binary_sensor.iphone_natalia_focus",
+          "friendlyName": "iPhone (Natalia) Focus",
+          "cSharpName": "IphoneNataliaFocus"
+        },
+        {
           "id": "binary_sensor.michals_iphone_focus",
           "friendlyName": "Micha\u0142\u2019s iPhone Focus",
           "cSharpName": "MichalsIphoneFocus"
@@ -78,6 +98,11 @@
         {
           "jsonName": "icon",
           "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
           "clrType": "System.String"
         }
       ]
@@ -193,6 +218,11 @@
           "id": "person.michal",
           "friendlyName": "Micha\u0142",
           "cSharpName": "Michal"
+        },
+        {
+          "id": "person.natalia",
+          "friendlyName": "Natalia",
+          "cSharpName": "Natalia"
         }
       ],
       "attributes": [
@@ -235,6 +265,11 @@
           "jsonName": "source",
           "cSharpName": "Source",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "device_trackers",
+          "cSharpName": "DeviceTrackers",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
         }
       ]
     },
@@ -255,11 +290,6 @@
           "id": "select.switch_driveway_lights_power_on_behavior",
           "friendlyName": "switch_driveway_lights_power_on_behavior",
           "cSharpName": "SwitchDrivewayLightsPowerOnBehavior"
-        },
-        {
-          "id": "select.switch_gate_lights_power_on_behavior",
-          "friendlyName": "switch_gate_lights_power_on_behavior",
-          "cSharpName": "SwitchGateLightsPowerOnBehavior"
         },
         {
           "id": "select.switch_staircase_lights_power_on_behavior",
@@ -319,6 +349,86 @@
           "cSharpName": "BlindOfficeMotorState"
         },
         {
+          "id": "sensor.growatt_datalogger_serial",
+          "friendlyName": "Growatt - Datalogger serial",
+          "cSharpName": "GrowattDataloggerSerial"
+        },
+        {
+          "id": "sensor.growatt_datalogger_type",
+          "friendlyName": "Growatt - Datalogger type",
+          "cSharpName": "GrowattDataloggerType"
+        },
+        {
+          "id": "sensor.growatt_date",
+          "friendlyName": "Growatt - Date",
+          "cSharpName": "GrowattDate"
+        },
+        {
+          "id": "sensor.growatt_serial_number",
+          "friendlyName": "Growatt - Serial number",
+          "cSharpName": "GrowattSerialNumber"
+        },
+        {
+          "id": "sensor.growatt_state",
+          "friendlyName": "Growatt - State",
+          "cSharpName": "GrowattState"
+        },
+        {
+          "id": "sensor.growatt_time",
+          "friendlyName": "Growatt - Time",
+          "cSharpName": "GrowattTime"
+        },
+        {
+          "id": "sensor.growatt_type",
+          "friendlyName": "Growatt - Type",
+          "cSharpName": "GrowattType"
+        },
+        {
+          "id": "sensor.iphone_natalia_activity",
+          "friendlyName": "iPhone (Natalia) Activity",
+          "cSharpName": "IphoneNataliaActivity"
+        },
+        {
+          "id": "sensor.iphone_natalia_battery_state",
+          "friendlyName": "iPhone (Natalia) Battery State",
+          "cSharpName": "IphoneNataliaBatteryState"
+        },
+        {
+          "id": "sensor.iphone_natalia_bssid",
+          "friendlyName": "iPhone (Natalia) BSSID",
+          "cSharpName": "IphoneNataliaBssid"
+        },
+        {
+          "id": "sensor.iphone_natalia_connection_type",
+          "friendlyName": "iPhone (Natalia) Connection Type",
+          "cSharpName": "IphoneNataliaConnectionType"
+        },
+        {
+          "id": "sensor.iphone_natalia_geocoded_location",
+          "friendlyName": "iPhone (Natalia) Geocoded Location",
+          "cSharpName": "IphoneNataliaGeocodedLocation"
+        },
+        {
+          "id": "sensor.iphone_natalia_last_update_trigger",
+          "friendlyName": "iPhone (Natalia) Last Update Trigger",
+          "cSharpName": "IphoneNataliaLastUpdateTrigger"
+        },
+        {
+          "id": "sensor.iphone_natalia_sim_1",
+          "friendlyName": "iPhone (Natalia) SIM 1",
+          "cSharpName": "IphoneNataliaSim1"
+        },
+        {
+          "id": "sensor.iphone_natalia_sim_2",
+          "friendlyName": "iPhone (Natalia) SIM 2",
+          "cSharpName": "IphoneNataliaSim2"
+        },
+        {
+          "id": "sensor.iphone_natalia_ssid",
+          "friendlyName": "iPhone (Natalia) SSID",
+          "cSharpName": "IphoneNataliaSsid"
+        },
+        {
           "id": "sensor.light_sensor_outside_power_outage_count",
           "friendlyName": "light_sensor_outside_power_outage_count",
           "cSharpName": "LightSensorOutsidePowerOutageCount"
@@ -367,6 +477,36 @@
           "id": "sensor.michals_iphone_ssid",
           "friendlyName": "Micha\u0142\u2019s iPhone SSID",
           "cSharpName": "MichalsIphoneSsid"
+        },
+        {
+          "id": "sensor.sun_next_dawn",
+          "friendlyName": "Sun Next dawn",
+          "cSharpName": "SunNextDawn"
+        },
+        {
+          "id": "sensor.sun_next_dusk",
+          "friendlyName": "Sun Next dusk",
+          "cSharpName": "SunNextDusk"
+        },
+        {
+          "id": "sensor.sun_next_midnight",
+          "friendlyName": "Sun Next midnight",
+          "cSharpName": "SunNextMidnight"
+        },
+        {
+          "id": "sensor.sun_next_noon",
+          "friendlyName": "Sun Next noon",
+          "cSharpName": "SunNextNoon"
+        },
+        {
+          "id": "sensor.sun_next_rising",
+          "friendlyName": "Sun Next rising",
+          "cSharpName": "SunNextRising"
+        },
+        {
+          "id": "sensor.sun_next_setting",
+          "friendlyName": "Sun Next setting",
+          "cSharpName": "SunNextSetting"
         }
       ],
       "attributes": [
@@ -569,6 +709,11 @@
           "jsonName": "voltage",
           "cSharpName": "Voltage",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "System.String"
         }
       ]
     },
@@ -587,9 +732,114 @@
           "cSharpName": "BlindOfficeDeviceTemperature"
         },
         {
+          "id": "sensor.growatt_generated_energy_today",
+          "friendlyName": "Growatt - Generated energy (Today)",
+          "cSharpName": "GrowattGeneratedEnergyToday"
+        },
+        {
+          "id": "sensor.growatt_generated_energy_total",
+          "friendlyName": "Growatt - Generated energy (Total)",
+          "cSharpName": "GrowattGeneratedEnergyTotal"
+        },
+        {
+          "id": "sensor.growatt_grid_frequency",
+          "friendlyName": "Growatt - Grid frequency",
+          "cSharpName": "GrowattGridFrequency"
+        },
+        {
+          "id": "sensor.growatt_input_kilowatt_actual",
+          "friendlyName": "Growatt - Input kiloWatt (Actual)",
+          "cSharpName": "GrowattInputKilowattActual"
+        },
+        {
+          "id": "sensor.growatt_inverter_temperature",
+          "friendlyName": "Growatt - Inverter temperature",
+          "cSharpName": "GrowattInverterTemperature"
+        },
+        {
+          "id": "sensor.growatt_ipm_temperature",
+          "friendlyName": "Growatt - IPM temperature",
+          "cSharpName": "GrowattIpmTemperature"
+        },
+        {
+          "id": "sensor.growatt_output_kilowatt_actual",
+          "friendlyName": "Growatt - Output kiloWatt (Actual)",
+          "cSharpName": "GrowattOutputKilowattActual"
+        },
+        {
+          "id": "sensor.growatt_phase_voltage",
+          "friendlyName": "Growatt - Phase voltage",
+          "cSharpName": "GrowattPhaseVoltage"
+        },
+        {
+          "id": "sensor.growatt_string_1_current",
+          "friendlyName": "Growatt - String 1 (Current)",
+          "cSharpName": "GrowattString1Current"
+        },
+        {
+          "id": "sensor.growatt_string_1_kilowatt",
+          "friendlyName": "Growatt - String 1 (kiloWatt)",
+          "cSharpName": "GrowattString1Kilowatt"
+        },
+        {
+          "id": "sensor.growatt_string_1_voltage",
+          "friendlyName": "Growatt - String 1 (Voltage)",
+          "cSharpName": "GrowattString1Voltage"
+        },
+        {
+          "id": "sensor.growatt_string_2_current",
+          "friendlyName": "Growatt - String 2 (Current)",
+          "cSharpName": "GrowattString2Current"
+        },
+        {
+          "id": "sensor.growatt_string_2_kilowatt",
+          "friendlyName": "Growatt - String 2 (kiloWatt)",
+          "cSharpName": "GrowattString2Kilowatt"
+        },
+        {
+          "id": "sensor.growatt_string_2_voltage",
+          "friendlyName": "Growatt - String 2 (Voltage)",
+          "cSharpName": "GrowattString2Voltage"
+        },
+        {
           "id": "sensor.hacs",
           "friendlyName": "hacs",
           "cSharpName": "Hacs"
+        },
+        {
+          "id": "sensor.iphone_natalia_average_active_pace",
+          "friendlyName": "iPhone (Natalia) Average Active Pace",
+          "cSharpName": "IphoneNataliaAverageActivePace"
+        },
+        {
+          "id": "sensor.iphone_natalia_battery_level",
+          "friendlyName": "iPhone (Natalia) Battery Level",
+          "cSharpName": "IphoneNataliaBatteryLevel"
+        },
+        {
+          "id": "sensor.iphone_natalia_distance",
+          "friendlyName": "iPhone (Natalia) Distance",
+          "cSharpName": "IphoneNataliaDistance"
+        },
+        {
+          "id": "sensor.iphone_natalia_floors_ascended",
+          "friendlyName": "iPhone (Natalia) Floors Ascended",
+          "cSharpName": "IphoneNataliaFloorsAscended"
+        },
+        {
+          "id": "sensor.iphone_natalia_floors_descended",
+          "friendlyName": "iPhone (Natalia) Floors Descended",
+          "cSharpName": "IphoneNataliaFloorsDescended"
+        },
+        {
+          "id": "sensor.iphone_natalia_steps",
+          "friendlyName": "iPhone (Natalia) Steps",
+          "cSharpName": "IphoneNataliaSteps"
+        },
+        {
+          "id": "sensor.iphone_natalia_storage",
+          "friendlyName": "iPhone (Natalia) Storage",
+          "cSharpName": "IphoneNataliaStorage"
         },
         {
           "id": "sensor.light_sensor_outside_battery",
@@ -991,11 +1241,6 @@
           "cSharpName": "SwitchDrivewayLights"
         },
         {
-          "id": "switch.switch_gate_lights",
-          "friendlyName": "switch_gate_lights",
-          "cSharpName": "SwitchGateLights"
-        },
-        {
           "id": "switch.switch_staircase_lights",
           "friendlyName": "switch_staircase_lights",
           "cSharpName": "SwitchStaircaseLights"
@@ -1309,6 +1554,11 @@
       "domain": "device_tracker",
       "entities": [
         {
+          "id": "device_tracker.iphone_natalia",
+          "friendlyName": "iPhone (Natalia)",
+          "cSharpName": "IphoneNatalia"
+        },
+        {
           "id": "device_tracker.michals_iphone",
           "friendlyName": "Micha\u0142\u2019s iPhone",
           "cSharpName": "MichalsIphone"
@@ -1386,6 +1636,291 @@
           "jsonName": "friendly_name",
           "cSharpName": "FriendlyName",
           "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "automation",
+      "entities": [
+        {
+          "id": "automation.dauha_notification",
+          "friendlyName": "Dauha notification",
+          "cSharpName": "DauhaNotification"
+        },
+        {
+          "id": "automation.open_wicket",
+          "friendlyName": "Open wicket",
+          "cSharpName": "OpenWicket"
+        },
+        {
+          "id": "automation.open_wicket_from_notification",
+          "friendlyName": "Open wicket from notification",
+          "cSharpName": "OpenWicketFromNotification"
+        },
+        {
+          "id": "automation.silence_wicket_from_notification",
+          "friendlyName": "Silence wicket from notification",
+          "cSharpName": "SilenceWicketFromNotification"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "last_triggered",
+          "cSharpName": "LastTriggered",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "current",
+          "cSharpName": "Current",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "button",
+      "entities": [
+        {
+          "id": "button.open_wicket",
+          "friendlyName": "Open wicket",
+          "cSharpName": "OpenWicket"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "camera",
+      "entities": [
+        {
+          "id": "camera.192_168_1_111",
+          "friendlyName": "192_168_1_111",
+          "cSharpName": "_1921681111"
+        },
+        {
+          "id": "camera.192_168_1_44",
+          "friendlyName": "192_168_1_44",
+          "cSharpName": "_192168144"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "access_token",
+          "cSharpName": "AccessToken",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "frontend_stream_type",
+          "cSharpName": "FrontendStreamType",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        }
+      ]
+    },
+    {
+      "domain": "input_button",
+      "entities": [
+        {
+          "id": "input_button.open_wicket",
+          "friendlyName": "Open wicket",
+          "cSharpName": "OpenWicket"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        }
+      ]
+    },
+    {
+      "domain": "light",
+      "entities": [
+        {
+          "id": "light.gate_lamps",
+          "friendlyName": "Gate Lamps",
+          "cSharpName": "GateLamps"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "supported_color_modes",
+          "cSharpName": "SupportedColorModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "wifi_sta",
+          "cSharpName": "WifiSta",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "cloud",
+          "cSharpName": "Cloud",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "mqtt",
+          "cSharpName": "Mqtt",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "time",
+          "cSharpName": "Time",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "unixtime",
+          "cSharpName": "Unixtime",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "serial",
+          "cSharpName": "Serial",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "has_update",
+          "cSharpName": "HasUpdate",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "mac",
+          "cSharpName": "Mac",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "cfg_changed_cnt",
+          "cSharpName": "CfgChangedCnt",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "actions_stats",
+          "cSharpName": "ActionsStats",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "relays",
+          "cSharpName": "Relays",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "meters",
+          "cSharpName": "Meters",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "inputs",
+          "cSharpName": "Inputs",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Object]"
+        },
+        {
+          "jsonName": "ext_sensors",
+          "cSharpName": "ExtSensors",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "ext_temperature",
+          "cSharpName": "ExtTemperature",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "ext_humidity",
+          "cSharpName": "ExtHumidity",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "update",
+          "cSharpName": "Update",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "ram_total",
+          "cSharpName": "RamTotal",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "ram_free",
+          "cSharpName": "RamFree",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "fs_size",
+          "cSharpName": "FsSize",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "fs_free",
+          "cSharpName": "FsFree",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "uptime",
+          "cSharpName": "Uptime",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     }

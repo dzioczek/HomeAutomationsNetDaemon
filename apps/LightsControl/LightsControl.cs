@@ -34,7 +34,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             _logger.LogInformation("{LightSensorState}", lightSensor.State);
             
             lightSensor.StateChanges()
-                .WhenStateIsFor(e => e?.State <= 20.0, TimeSpan.FromSeconds(30))
+                .WhenStateIsFor(e => e?.State <= 20.0, TimeSpan.FromMinutes(5), scheduler)
                 .Where(s => DateTime.Now.Hour is > 16 and < 24)
                 .Subscribe(_ => _logger.LogInformation("works! {Test}", lightSensor.State));
             
@@ -49,7 +49,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             Entities entities = new Entities(ha);
             entities.Switch.SwitchTerraceLights.TurnOn();
             entities.Switch.SwitchDrivewayLights.TurnOn();
-            entities.Switch.SwitchGateLights.TurnOn();
+            entities.Light.GateLamps.TurnOn();
             _logger.LogInformation("outside and gate lamps turned on");
         }
 
@@ -63,7 +63,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
 
         private void TurnOffGateLamp(IHaContext ha)
         {
-            SwitchEntity gateSwitch = new Entities(ha).Switch.SwitchGateLights;
+            LightEntity gateSwitch = new Entities(ha).Light.GateLamps;
             gateSwitch.TurnOff();
             _logger.LogInformation("gate lamps turned off");
         }
