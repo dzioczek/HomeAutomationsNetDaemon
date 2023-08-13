@@ -287,19 +287,9 @@
           "cSharpName": "PlugUpstairsBathroomFanPowerOnBehavior"
         },
         {
-          "id": "select.switch_driveway_lights_power_on_behavior",
-          "friendlyName": "switch_driveway_lights_power_on_behavior",
-          "cSharpName": "SwitchDrivewayLightsPowerOnBehavior"
-        },
-        {
           "id": "select.switch_staircase_lights_power_on_behavior",
           "friendlyName": "switch_staircase_lights_power_on_behavior",
           "cSharpName": "SwitchStaircaseLightsPowerOnBehavior"
-        },
-        {
-          "id": "select.switch_terrace_lights_power_on_behavior",
-          "friendlyName": "switch_terrace_lights_power_on_behavior",
-          "cSharpName": "SwitchTerraceLightsPowerOnBehavior"
         }
       ],
       "attributes": [
@@ -1236,19 +1226,9 @@
           "cSharpName": "PlugUpstairsBathroomFan"
         },
         {
-          "id": "switch.switch_driveway_lights",
-          "friendlyName": "switch_driveway_lights",
-          "cSharpName": "SwitchDrivewayLights"
-        },
-        {
           "id": "switch.switch_staircase_lights",
           "friendlyName": "switch_staircase_lights",
           "cSharpName": "SwitchStaircaseLights"
-        },
-        {
-          "id": "switch.switch_terrace_lights",
-          "friendlyName": "switch_terrace_lights",
-          "cSharpName": "SwitchTerraceLights"
         }
       ],
       "attributes": [
@@ -1791,9 +1771,19 @@
       "domain": "light",
       "entities": [
         {
+          "id": "light.driveway_lamps",
+          "friendlyName": "Driveway Lamps",
+          "cSharpName": "DrivewayLamps"
+        },
+        {
           "id": "light.gate_lamps",
           "friendlyName": "Gate Lamps",
           "cSharpName": "GateLamps"
+        },
+        {
+          "id": "light.terrace_lamps",
+          "friendlyName": "Terrace Lamps",
+          "cSharpName": "TerraceLamps"
         }
       ],
       "attributes": [
