@@ -1,8 +1,61 @@
 {
+  "persistent_notification": {
+    "create": {
+      "name": "Create",
+      "description": "Shows a notification on the **Notifications** panel.",
+      "fields": {
+        "message": {
+          "required": true,
+          "example": "Please check your configuration.yaml.",
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "Message body of the notification."
+        },
+        "title": {
+          "example": "Test notification",
+          "selector": {
+            "text": null
+          },
+          "name": "Title",
+          "description": "Optional title of the notification."
+        },
+        "notification_id": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification. This new notification will overwrite an existing notification with the same ID."
+        }
+      }
+    },
+    "dismiss": {
+      "name": "Dismiss",
+      "description": "Removes a notification from the **Notifications** panel.",
+      "fields": {
+        "notification_id": {
+          "required": true,
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Notification ID",
+          "description": "ID of the notification to be removed."
+        }
+      }
+    },
+    "dismiss_all": {
+      "name": "Dismiss all",
+      "description": "Removes all notifications from the **Notifications** panel.",
+      "fields": {}
+    }
+  },
   "homeassistant": {
     "save_persistent_states": {
-      "name": "Save Persistent States",
-      "description": "Save the persistent states (for entities derived from RestoreEntity) immediately. Maintain the normal periodic saving interval.",
+      "name": "Save persistent states",
+      "description": "Saves the persistent states immediately. Maintains the normal periodic saving interval.",
       "fields": {}
     },
     "turn_off": {
@@ -27,7 +80,7 @@
     },
     "toggle": {
       "name": "Generic toggle",
-      "description": "Generic service to toggle devices on/off under any domain",
+      "description": "Generic service to toggle devices on/off under any domain.",
       "fields": {},
       "target": {
         "entity": [
@@ -37,22 +90,22 @@
     },
     "stop": {
       "name": "Stop",
-      "description": "Stop the Home Assistant service.",
+      "description": "Stops Home Assistant.",
       "fields": {}
     },
     "restart": {
       "name": "Restart",
-      "description": "Restart the Home Assistant service.",
+      "description": "Restarts Home Assistant.",
       "fields": {}
     },
     "check_config": {
       "name": "Check configuration",
-      "description": "Check the Home Assistant configuration files for errors. Errors will be displayed in the Home Assistant log.",
+      "description": "Checks the Home Assistant YAML-configuration files for errors. Errors will be shown in the Home Assistant logs.",
       "fields": {}
     },
     "update_entity": {
       "name": "Update entity",
-      "description": "Force one or more entities to update its data",
+      "description": "Forces one or more entities to update its data.",
       "fields": {},
       "target": {
         "entity": [
@@ -62,51 +115,51 @@
     },
     "reload_core_config": {
       "name": "Reload core configuration",
-      "description": "Reload the core configuration.",
+      "description": "Reloads the core configuration from the YAML-configuration.",
       "fields": {}
     },
     "set_location": {
       "name": "Set location",
-      "description": "Update the Home Assistant location.",
+      "description": "Updates the Home Assistant location.",
       "fields": {
         "latitude": {
-          "name": "Latitude",
-          "description": "Latitude of your location.",
           "required": true,
           "example": 32.87336,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Latitude",
+          "description": "Latitude of your location."
         },
         "longitude": {
-          "name": "Longitude",
-          "description": "Longitude of your location.",
           "required": true,
           "example": 117.22743,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Longitude",
+          "description": "Longitude of your location."
         }
       }
     },
     "reload_custom_templates": {
       "name": "Reload custom Jinja2 templates",
-      "description": "Reload Jinja2 templates found in the custom_templates folder in your config. New values will be applied on the next render of the template.",
+      "description": "Reloads Jinja2 templates found in the \u0060custom_templates\u0060 folder in your config. New values will be applied on the next render of the template.",
       "fields": {}
     },
     "reload_config_entry": {
       "name": "Reload config entry",
-      "description": "Reload a config entry that matches a target.",
+      "description": "Reloads the specified config entry.",
       "fields": {
         "entry_id": {
           "advanced": true,
-          "name": "Config entry id",
-          "description": "A configuration entry id",
           "required": false,
           "example": "8955375327824e14ba89e4b29cc3ec9a",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Config entry ID",
+          "description": "The configuration entry ID of the entry to be reloaded."
         }
       },
       "target": {
@@ -124,58 +177,10 @@
       "fields": {}
     }
   },
-  "persistent_notification": {
-    "create": {
-      "name": "Create",
-      "description": "Show a notification in the frontend.",
-      "fields": {
-        "message": {
-          "name": "Message",
-          "description": "Message body of the notification. [Templates accepted]",
-          "required": true,
-          "example": "Please check your configuration.yaml.",
-          "selector": {
-            "text": null
-          }
-        },
-        "title": {
-          "name": "Title",
-          "description": "Optional title for your notification. [Templates accepted]",
-          "example": "Test notification",
-          "selector": {
-            "text": null
-          }
-        },
-        "notification_id": {
-          "name": "Notification ID",
-          "description": "Target ID of the notification, will replace a notification with the same ID.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      }
-    },
-    "dismiss": {
-      "name": "Dismiss",
-      "description": "Remove a notification from the frontend.",
-      "fields": {
-        "notification_id": {
-          "name": "Notification ID",
-          "description": "Target ID of the notification, which should be removed.",
-          "required": true,
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      }
-    }
-  },
   "system_log": {
     "clear": {
       "name": "Clear all",
-      "description": "Clear all log entries.",
+      "description": "Clears all log entries.",
       "fields": {}
     },
     "write": {
@@ -183,52 +188,38 @@
       "description": "Write log entry.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message to log.",
           "required": true,
           "example": "Something went wrong",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Message",
+          "description": "Message to log."
         },
         "level": {
-          "name": "Level",
-          "description": "Log level.",
           "default": "error",
           "selector": {
             "select": {
               "options": [
-                {
-                  "label": "Debug",
-                  "value": "debug"
-                },
-                {
-                  "label": "Info",
-                  "value": "info"
-                },
-                {
-                  "label": "Warning",
-                  "value": "warning"
-                },
-                {
-                  "label": "Error",
-                  "value": "error"
-                },
-                {
-                  "label": "Critical",
-                  "value": "critical"
-                }
-              ]
+                "debug",
+                "info",
+                "warning",
+                "error",
+                "critical"
+              ],
+              "translation_key": "level"
             }
-          }
+          },
+          "name": "Level",
+          "description": "Log level."
         },
         "logger": {
-          "name": "Logger",
-          "description": "Logger name under which to log the message. Defaults to \u0027system_log.external\u0027.",
           "example": "mycomponent.myplatform",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Logger",
+          "description": "Logger name under which to log the message. Defaults to \u0060system_log.external\u0060."
         }
       }
     }
@@ -236,159 +227,137 @@
   "logger": {
     "set_default_level": {
       "name": "Set default level",
-      "description": "Set the default log level for integrations.",
+      "description": "Sets the default log level for integrations.",
       "fields": {
         "level": {
-          "name": "Level",
-          "description": "Default severity level for all integrations.",
           "selector": {
             "select": {
               "options": [
-                {
-                  "label": "Debug",
-                  "value": "debug"
-                },
-                {
-                  "label": "Info",
-                  "value": "info"
-                },
-                {
-                  "label": "Warning",
-                  "value": "warning"
-                },
-                {
-                  "label": "Error",
-                  "value": "error"
-                },
-                {
-                  "label": "Fatal",
-                  "value": "fatal"
-                },
-                {
-                  "label": "Critical",
-                  "value": "critical"
-                }
-              ]
+                "debug",
+                "info",
+                "warning",
+                "error",
+                "fatal",
+                "critical"
+              ],
+              "translation_key": "level"
             }
-          }
+          },
+          "name": "Level",
+          "description": "Default severity level for all integrations."
         }
       }
     },
     "set_level": {
       "name": "Set level",
-      "description": "Set log level for integrations.",
+      "description": "Sets the log level for one or more integrations.",
       "fields": {}
     }
   },
   "person": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the person configuration.",
+      "description": "Reloads persons from the YAML-configuration.",
       "fields": {}
     }
   },
   "frontend": {
     "set_theme": {
-      "name": "Set theme",
-      "description": "Set a theme unless the client selected per-device theme.",
+      "name": "Set the default theme",
+      "description": "Sets the default theme Home Assistant uses. Can be overridden by a user.",
       "fields": {
         "name": {
-          "name": "Theme",
-          "description": "Name of a predefined theme",
           "required": true,
           "example": "default",
           "selector": {
-            "theme": null
-          }
+            "theme": {
+              "include_default": true
+            }
+          },
+          "name": "Theme",
+          "description": "Name of a theme."
         },
         "mode": {
-          "name": "Mode",
-          "description": "The mode the theme is for.",
           "default": "light",
           "selector": {
             "select": {
               "options": [
-                {
-                  "label": "Dark",
-                  "value": "dark"
-                },
-                {
-                  "label": "Light",
-                  "value": "light"
-                }
-              ]
+                "dark",
+                "light"
+              ],
+              "translation_key": "mode"
             }
-          }
+          },
+          "name": "Mode",
+          "description": "Theme mode."
         }
       }
     },
     "reload_themes": {
       "name": "Reload themes",
-      "description": "Reload themes from YAML configuration.",
+      "description": "Reloads themes from the YAML-configuration.",
       "fields": {}
     }
   },
   "recorder": {
     "purge": {
       "name": "Purge",
-      "description": "Start purge task - to clean up old data from your database.",
+      "description": "Starts purge task - to clean up old data from your database.",
       "fields": {
         "keep_days": {
-          "name": "Days to keep",
-          "description": "Number of history days to keep in database after purge.",
           "selector": {
             "number": {
               "min": 0,
               "max": 365,
               "unit_of_measurement": "days"
             }
-          }
+          },
+          "name": "Days to keep",
+          "description": "Number of days to keep the data in the database. Starting today, counting backward. A value of \u00607\u0060 means that everything older than a week will be purged."
         },
         "repack": {
-          "name": "Repack",
-          "description": "Attempt to save disk space by rewriting the entire database file.",
           "default": false,
           "selector": {
             "boolean": null
-          }
+          },
+          "name": "Repack",
+          "description": "Attempt to save disk space by rewriting the entire database file."
         },
         "apply_filter": {
-          "name": "Apply filter",
-          "description": "Apply entity_id and event_type filter in addition to time based purge.",
           "default": false,
           "selector": {
             "boolean": null
-          }
+          },
+          "name": "Apply filter",
+          "description": "Applys \u0060entity_id\u0060 and \u0060event_type\u0060 filters in addition to time-based purge."
         }
       }
     },
     "purge_entities": {
-      "name": "Purge Entities",
-      "description": "Start purge task to remove specific entities from your database.",
+      "name": "Purge entities",
+      "description": "Starts a purge task to remove the data related to specific entities from your database.",
       "fields": {
         "domains": {
-          "name": "Domains to remove",
-          "description": "List the domains that need to be removed from the recorder database.",
           "example": "sun",
           "required": false,
           "default": [],
           "selector": {
             "object": null
-          }
+          },
+          "name": "Domains to remove",
+          "description": "List of domains for which the data needs to be removed from the recorder database."
         },
         "entity_globs": {
-          "name": "Entity Globs to remove",
-          "description": "List the glob patterns to select entities for removal from the recorder database.",
           "example": "domain*.object_id*",
           "required": false,
           "default": [],
           "selector": {
             "object": null
-          }
+          },
+          "name": "Entity globs to remove",
+          "description": "List of glob patterns used to select the entities for which the data is to be removed from the recorder database."
         },
         "keep_days": {
-          "name": "Days to keep",
-          "description": "Number of history days to keep in database of matching rows. The default of 0 days will remove all matching rows.",
           "default": 0,
           "selector": {
             "number": {
@@ -396,7 +365,9 @@
               "max": 365,
               "unit_of_measurement": "days"
             }
-          }
+          },
+          "name": "Days to keep",
+          "description": "Number of days to keep the data for rows matching the filter. Starting today, counting backward. A value of \u00607\u0060 means that everything older than a week will be purged. The default of 0 days will remove all matching rows immediately."
         }
       },
       "target": {
@@ -407,56 +378,60 @@
     },
     "enable": {
       "name": "Enable",
-      "description": "Start the recording of events and state changes",
+      "description": "Starts the recording of events and state changes.",
       "fields": {}
     },
     "disable": {
       "name": "Disable",
-      "description": "Stop the recording of events and state changes",
+      "description": "Stops the recording of events and state changes.",
       "fields": {}
     }
   },
   "cloud": {
     "remote_connect": {
       "name": "Remote connect",
-      "description": "Make instance UI available outside over NabuCasa cloud",
+      "description": "Makes the instance UI accessible from outside of the local network by using Home Assistant Cloud.",
       "fields": {}
     },
     "remote_disconnect": {
       "name": "Remote disconnect",
-      "description": "Disconnect UI from NabuCasa cloud",
+      "description": "Disconnects the Home Assistant UI from the Home Assistant Cloud. You will no longer be able to access your Home Assistant instance from outside your local network.",
       "fields": {}
     }
   },
   "conversation": {
     "process": {
       "name": "Process",
-      "description": "Launch a conversation from a transcribed text.",
+      "description": "Launches a conversation from a transcribed text.",
       "fields": {
         "text": {
-          "name": "Text",
-          "description": "Transcribed text",
           "example": "Turn all lights on",
+          "required": true,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Text",
+          "description": "Transcribed text input."
         },
         "language": {
-          "name": "Language",
-          "description": "Language of text. Defaults to server language",
           "example": "NL",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Language",
+          "description": "Language of text. Defaults to server language."
         },
         "agent_id": {
-          "name": "Agent",
-          "description": "Assist engine to process your request",
           "example": "homeassistant",
           "selector": {
-            "text": null
-          }
+            "conversation_agent": null
+          },
+          "name": "Agent",
+          "description": "Conversation agent to process your request. The conversation agent is the brains of your assistant. It processes the incoming text commands."
         }
+      },
+      "response": {
+        "optional": true
       }
     },
     "reload": {
@@ -468,40 +443,40 @@
   "logbook": {
     "log": {
       "name": "Log",
-      "description": "Create a custom entry in your logbook.",
+      "description": "Creates a custom entry in the logbook.",
       "fields": {
         "name": {
-          "name": "Name",
-          "description": "Custom name for an entity, can be referenced with entity_id.",
           "required": true,
           "example": "Kitchen",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Name",
+          "description": "Custom name for an entity, can be referenced using an \u0060entity_id\u0060."
         },
         "message": {
-          "name": "Message",
-          "description": "Message of the custom logbook entry.",
           "required": true,
           "example": "is being used",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Message",
+          "description": "Message of the logbook entry."
         },
         "entity_id": {
-          "name": "Entity ID",
-          "description": "Entity to reference in custom logbook entry.",
           "selector": {
             "entity": null
-          }
+          },
+          "name": "Entity ID",
+          "description": "Entity to reference in the logbook entry."
         },
         "domain": {
-          "name": "Domain",
-          "description": "Icon of domain to display in custom logbook entry.",
           "example": "light",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Domain",
+          "description": "Determines which icon is used in the logbook entry. The icon illustrates the integration domain related to this logbook entry."
         }
       }
     }
@@ -509,116 +484,14 @@
   "template": {
     "reload": {
       "name": "Reload",
-      "description": "Reload all template entities.",
-      "fields": {}
-    }
-  },
-  "timer": {
-    "reload": {
-      "name": "",
-      "description": "",
-      "fields": {}
-    },
-    "start": {
-      "name": "Start",
-      "description": "Start a timer",
-      "fields": {
-        "duration": {
-          "description": "Duration the timer requires to finish. [optional]",
-          "example": "00:01:00 or 60",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "timer"
-            ]
-          }
-        ]
-      }
-    },
-    "pause": {
-      "name": "Pause",
-      "description": "Pause a timer.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "timer"
-            ]
-          }
-        ]
-      }
-    },
-    "cancel": {
-      "name": "Cancel",
-      "description": "Cancel a timer.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "timer"
-            ]
-          }
-        ]
-      }
-    },
-    "finish": {
-      "name": "Finish",
-      "description": "Finish a timer.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "timer"
-            ]
-          }
-        ]
-      }
-    },
-    "change": {
-      "name": "Change",
-      "description": "Change a timer",
-      "fields": {
-        "duration": {
-          "description": "Duration to add or subtract to the running timer",
-          "default": 0,
-          "required": true,
-          "example": "00:01:00, 60 or -60",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "timer"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "zone": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the YAML-based zone configuration.",
+      "description": "Reloads template entities from the YAML-configuration.",
       "fields": {}
     }
   },
   "counter": {
     "increment": {
       "name": "Increment",
-      "description": "Increment a counter.",
+      "description": "Increments a counter.",
       "fields": {},
       "target": {
         "entity": [
@@ -632,7 +505,7 @@
     },
     "decrement": {
       "name": "Decrement",
-      "description": "Decrement a counter.",
+      "description": "Decrements a counter.",
       "fields": {},
       "target": {
         "entity": [
@@ -646,7 +519,7 @@
     },
     "reset": {
       "name": "Reset",
-      "description": "Reset a counter.",
+      "description": "Resets a counter.",
       "fields": {},
       "target": {
         "entity": [
@@ -660,19 +533,19 @@
     },
     "set_value": {
       "name": "Set",
-      "description": "Set the counter value",
+      "description": "Sets the counter value.",
       "fields": {
         "value": {
-          "name": "Value",
           "required": true,
-          "description": "The new counter value the entity should be set to.",
           "selector": {
             "number": {
               "min": 0,
               "max": 9223372036854775807,
               "mode": "box"
             }
-          }
+          },
+          "name": "Value",
+          "description": "The new counter value the entity should be set to."
         }
       },
       "target": {
@@ -691,240 +564,319 @@
       "fields": {}
     }
   },
-  "scene": {
+  "timer": {
     "reload": {
-      "name": "Reload",
-      "description": "Reload the scene configuration.",
+      "name": "",
+      "description": "",
       "fields": {}
     },
-    "apply": {
-      "name": "Apply",
-      "description": "Activate a scene with configuration.",
+    "start": {
+      "name": "Start",
+      "description": "Starts a timer.",
       "fields": {
-        "entities": {
-          "name": "Entities state",
-          "description": "The entities and the state that they need to be.",
-          "required": true,
-          "example": "light.kitchen: \u0022on\u0022\nlight.ceiling:\n  state: \u0022on\u0022\n  brightness: 80\n",
-          "selector": {
-            "object": null
-          }
-        },
-        "transition": {
-          "name": "Transition",
-          "description": "Transition duration it takes to bring devices to the state defined in the scene.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 300,
-              "unit_of_measurement": "seconds"
-            }
-          }
-        }
-      }
-    },
-    "create": {
-      "name": "Create",
-      "description": "Creates a new scene.",
-      "fields": {
-        "scene_id": {
-          "name": "Scene entity ID",
-          "description": "The entity_id of the new scene.",
-          "required": true,
-          "example": "all_lights",
+        "duration": {
+          "example": "00:01:00 or 60",
           "selector": {
             "text": null
-          }
-        },
-        "entities": {
-          "name": "Entities state",
-          "description": "The entities to control with the scene.",
-          "example": "light.tv_back_light: \u0022on\u0022\nlight.ceiling:\n  state: \u0022on\u0022\n  brightness: 200\n",
-          "selector": {
-            "object": null
-          }
-        },
-        "snapshot_entities": {
-          "name": "Snapshot entities",
-          "description": "The entities of which a snapshot is to be taken",
-          "example": "- light.ceiling\n- light.kitchen\n",
-          "selector": {
-            "object": null
-          }
-        }
-      }
-    },
-    "turn_on": {
-      "name": "Activate",
-      "description": "Activate a scene.",
-      "fields": {
-        "transition": {
-          "name": "Transition",
-          "description": "Transition duration it takes to bring devices to the state defined in the scene.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 300,
-              "unit_of_measurement": "seconds"
-            }
-          }
+          },
+          "name": "Duration",
+          "description": "Duration the timer requires to finish. [optional]."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "scene"
+              "timer"
             ]
           }
         ]
       }
-    }
-  },
-  "input_datetime": {
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the input_datetime configuration.",
-      "fields": {}
     },
-    "set_datetime": {
-      "name": "Set",
-      "description": "This can be used to dynamically set the date and/or time.",
+    "pause": {
+      "name": "Pause",
+      "description": "Pauses a timer.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "timer"
+            ]
+          }
+        ]
+      }
+    },
+    "cancel": {
+      "name": "Cancel",
+      "description": "Cancels a timer.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "timer"
+            ]
+          }
+        ]
+      }
+    },
+    "finish": {
+      "name": "Finish",
+      "description": "Finishes a timer.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "timer"
+            ]
+          }
+        ]
+      }
+    },
+    "change": {
+      "name": "Change",
+      "description": "Changes a timer.",
       "fields": {
-        "date": {
-          "name": "Date",
-          "description": "The target date the entity should be set to.",
-          "example": "\u00222019-04-20\u0022",
+        "duration": {
+          "default": 0,
+          "required": true,
+          "example": "00:01:00, 60 or -60",
           "selector": {
             "text": null
-          }
-        },
-        "time": {
-          "name": "Time",
-          "description": "The target time the entity should be set to.",
-          "example": "\u002205:04:20\u0022",
-          "selector": {
-            "time": null
-          }
-        },
-        "datetime": {
-          "name": "Date \u0026 Time",
-          "description": "The target date \u0026 time the entity should be set to.",
-          "example": "\u00222019-04-20 05:04:20\u0022",
-          "selector": {
-            "text": null
-          }
-        },
-        "timestamp": {
-          "name": "Timestamp",
-          "description": "The target date \u0026 time the entity should be set to as expressed by a UNIX timestamp.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 9223372036854775807,
-              "mode": "box"
-            }
-          }
+          },
+          "name": "Duration",
+          "description": "Duration to add or subtract to the running timer."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "input_datetime"
+              "timer"
             ]
           }
         ]
       }
     }
   },
-  "schedule": {
+  "zone": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the schedule configuration",
+      "description": "Reloads zones from the YAML-configuration.",
       "fields": {}
+    }
+  },
+  "input_select": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads helpers from the YAML-configuration.",
+      "fields": {}
+    },
+    "select_first": {
+      "name": "First",
+      "description": "Selects the first option.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_last": {
+      "name": "Last",
+      "description": "Selects the last option.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_next": {
+      "name": "Next",
+      "description": "Select the next option.",
+      "fields": {
+        "cycle": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the last to the first option on the list."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_option": {
+      "name": "Select",
+      "description": "Selects an option.",
+      "fields": {
+        "option": {
+          "required": true,
+          "example": "\u0022Item A\u0022",
+          "selector": {
+            "text": null
+          },
+          "name": "Option",
+          "description": "Option to be selected."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_previous": {
+      "name": "Previous",
+      "description": "Selects the previous option.",
+      "fields": {
+        "cycle": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the last to the first option on the list."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
+    },
+    "set_options": {
+      "name": "Set options",
+      "description": "Sets the options.",
+      "fields": {
+        "options": {
+          "required": true,
+          "example": "[\u0022Item A\u0022, \u0022Item B\u0022, \u0022Item C\u0022]",
+          "selector": {
+            "object": null
+          },
+          "name": "Options",
+          "description": "List of options."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "input_select"
+            ]
+          }
+        ]
+      }
     }
   },
   "group": {
     "reload": {
       "name": "Reload",
-      "description": "Reload group configuration, entities, and notify services.",
+      "description": "Reloads group configuration, entities, and notify services from YAML-configuration.",
       "fields": {}
     },
     "set": {
       "name": "Set",
-      "description": "Create/Update a user group.",
+      "description": "Creates/Updates a user group.",
       "fields": {
         "object_id": {
-          "name": "Object ID",
-          "description": "Group id and part of entity id.",
           "required": true,
           "example": "test_group",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Object ID",
+          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
         },
         "name": {
-          "name": "Name",
-          "description": "Name of group",
           "example": "My test group",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Name",
+          "description": "Name of the group."
         },
         "icon": {
-          "name": "Icon",
-          "description": "Name of icon for the group.",
           "example": "mdi:camera",
           "selector": {
             "icon": null
-          }
+          },
+          "name": "Icon",
+          "description": "Name of the icon for the group."
         },
         "entities": {
-          "name": "Entities",
-          "description": "List of all members in the group. Not compatible with \u0027delta\u0027.",
           "example": "domain.entity_id1, domain.entity_id2",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Entities",
+          "description": "List of all members in the group. Cannot be used in combination with \u0060Add entities\u0060 or \u0060Remove entities\u0060."
         },
         "add_entities": {
-          "name": "Add Entities",
-          "description": "List of members that will change on group listening.",
           "example": "domain.entity_id1, domain.entity_id2",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Add entities",
+          "description": "List of members to be added to the group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Remove entities\u0060."
         },
         "remove_entities": {
-          "name": "Remove Entities",
-          "description": "List of members that will be removed from group listening.",
           "example": "domain.entity_id1, domain.entity_id2",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Remove entities",
+          "description": "List of members to be removed from a group. Cannot be used in combination with \u0060Entities\u0060 or \u0060Add entities\u0060."
         },
         "all": {
-          "name": "All",
-          "description": "Enable this option if the group should only turn on when all entities are on.",
           "selector": {
             "boolean": null
-          }
+          },
+          "name": "All",
+          "description": "Enable this option if the group should only be used when all entities are in state \u0060on\u0060."
         }
       }
     },
     "remove": {
       "name": "Remove",
-      "description": "Remove a user group.",
+      "description": "Removes a group.",
       "fields": {
         "object_id": {
-          "name": "Object ID",
-          "description": "Group id and part of entity id.",
           "required": true,
           "example": "test_group",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Object ID",
+          "description": "Object ID of this group. This object ID is used as part of the entity ID. Entity ID format: [domain].[object_id]."
         }
       }
     }
@@ -932,12 +884,12 @@
   "script": {
     "reload": {
       "name": "Reload",
-      "description": "Reload all the available scripts",
+      "description": "Reloads all the available scripts.",
       "fields": {}
     },
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn on script",
+      "description": "Runs the sequence of actions defined in a script.",
       "fields": {},
       "target": {
         "entity": [
@@ -951,7 +903,7 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turn off script",
+      "description": "Stops a running script.",
       "fields": {},
       "target": {
         "entity": [
@@ -965,7 +917,7 @@
     },
     "toggle": {
       "name": "Toggle",
-      "description": "Toggle script",
+      "description": "Toggle a script. Starts it, if isn\u0027t running, stops it otherwise.",
       "fields": {},
       "target": {
         "entity": [
@@ -978,19 +930,24 @@
       }
     }
   },
+  "schedule": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads schedules from the YAML-configuration.",
+      "fields": {}
+    }
+  },
   "input_number": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the input_number configuration.",
+      "description": "Reloads helpers from the YAML-configuration.",
       "fields": {}
     },
     "set_value": {
       "name": "Set",
-      "description": "Set the value of an input number entity.",
+      "description": "Sets the value.",
       "fields": {
         "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
           "required": true,
           "selector": {
             "number": {
@@ -999,7 +956,9 @@
               "step": 0.001,
               "mode": "box"
             }
-          }
+          },
+          "name": "Value",
+          "description": "The target value."
         }
       },
       "target": {
@@ -1014,7 +973,7 @@
     },
     "increment": {
       "name": "Increment",
-      "description": "Increment the value of an input number entity by its stepping.",
+      "description": "Increments the value by 1 step.",
       "fields": {},
       "target": {
         "entity": [
@@ -1028,7 +987,7 @@
     },
     "decrement": {
       "name": "Decrement",
-      "description": "Decrement the value of an input number entity by its stepping.",
+      "description": "Decrements the current value by 1 step.",
       "fields": {},
       "target": {
         "entity": [
@@ -1044,21 +1003,21 @@
   "input_text": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the input_text configuration.",
+      "description": "Reloads helpers from the YAML-configuration.",
       "fields": {}
     },
     "set_value": {
       "name": "Set",
-      "description": "Set the value of an input text entity.",
+      "description": "Sets the value.",
       "fields": {
         "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
           "required": true,
           "example": "This is an example text",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Value",
+          "description": "The target value."
         }
       },
       "target": {
@@ -1072,129 +1031,57 @@
       }
     }
   },
-  "input_select": {
+  "input_datetime": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the input_select configuration.",
+      "description": "Reloads helpers from the YAML-configuration.",
       "fields": {}
     },
-    "select_first": {
-      "name": "First",
-      "description": "Select the first option of an input select entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_last": {
-      "name": "Last",
-      "description": "Select the last option of an input select entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_next": {
-      "name": "Next",
-      "description": "Select the next options of an input select entity.",
+    "set_datetime": {
+      "name": "Set",
+      "description": "Sets the date and/or time.",
       "fields": {
-        "cycle": {
-          "name": "Cycle",
-          "description": "If the option should cycle from the last to the first.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_option": {
-      "name": "Select",
-      "description": "Select an option of an input select entity.",
-      "fields": {
-        "option": {
-          "name": "Option",
-          "description": "Option to be selected.",
-          "required": true,
-          "example": "\u0022Item A\u0022",
+        "date": {
+          "example": "\u00222019-04-20\u0022",
           "selector": {
             "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_previous": {
-      "name": "Previous",
-      "description": "Select the previous options of an input select entity.",
-      "fields": {
-        "cycle": {
-          "name": "Cycle",
-          "description": "If the option should cycle from the first to the last.",
-          "default": true,
+          },
+          "name": "Date",
+          "description": "The target date."
+        },
+        "time": {
+          "example": "\u002205:04:20\u0022",
           "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "input_select"
-            ]
-          }
-        ]
-      }
-    },
-    "set_options": {
-      "name": "Set options",
-      "description": "Set the options of an input select entity.",
-      "fields": {
-        "options": {
-          "name": "Options",
-          "description": "Options for the input select entity.",
-          "required": true,
-          "example": "[\u0022Item A\u0022, \u0022Item B\u0022, \u0022Item C\u0022]",
+            "time": null
+          },
+          "name": "Time",
+          "description": "The target time."
+        },
+        "datetime": {
+          "example": "\u00222019-04-20 05:04:20\u0022",
           "selector": {
-            "object": null
-          }
+            "text": null
+          },
+          "name": "Date \u0026 time",
+          "description": "The target date \u0026 time."
+        },
+        "timestamp": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 9223372036854775807,
+              "mode": "box"
+            }
+          },
+          "name": "Timestamp",
+          "description": "The target date \u0026 time, expressed by a UNIX timestamp."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "input_select"
+              "input_datetime"
             ]
           }
         ]
@@ -1207,8 +1094,6 @@
       "description": "Sends a notification message using the ajfony service.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
           "required": true,
           "example": "The garage door has been open for 10 minutes.",
           "selector": {
@@ -1216,24 +1101,18 @@
           }
         },
         "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
           }
         },
         "target": {
-          "name": "Target",
-          "description": "An array of targets to send the notification to. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
           }
         },
         "data": {
-          "name": "Data",
-          "description": "Extended information for notification. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
@@ -1243,24 +1122,32 @@
     },
     "persistent_notification": {
       "name": "Send a persistent notification",
-      "description": "Sends a notification that is visible in the front-end.",
+      "description": "Sends a notification that is visible in the **Notifications** panel.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
           "required": true,
           "example": "The garage door has been open for 10 minutes.",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Message",
+          "description": "Message body of the notification."
         },
         "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Title",
+          "description": "Title of the notification."
+        },
+        "data": {
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          },
+          "name": "Data",
+          "description": "Some integrations provide extended functionality. For information on how to use _data_, refer to the integration documentation.."
         }
       }
     },
@@ -1269,8 +1156,6 @@
       "description": "Sends a notification message using the mobile_app_michals_iphone integration.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
           "required": true,
           "example": "The garage door has been open for 10 minutes.",
           "selector": {
@@ -1278,24 +1163,18 @@
           }
         },
         "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
           }
         },
         "target": {
-          "name": "Target",
-          "description": "An array of targets to send the notification to. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
           }
         },
         "data": {
-          "name": "Data",
-          "description": "Extended information for notification. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
@@ -1308,8 +1187,6 @@
       "description": "Sends a notification message using the mobile_app_iphone_natalia integration.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
           "required": true,
           "example": "The garage door has been open for 10 minutes.",
           "selector": {
@@ -1317,24 +1194,18 @@
           }
         },
         "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
           }
         },
         "target": {
-          "name": "Target",
-          "description": "An array of targets to send the notification to. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
           }
         },
         "data": {
-          "name": "Data",
-          "description": "Extended information for notification. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
@@ -1347,8 +1218,6 @@
       "description": "Sends a notification message using the notify service.",
       "fields": {
         "message": {
-          "name": "Message",
-          "description": "Message body of the notification.",
           "required": true,
           "example": "The garage door has been open for 10 minutes.",
           "selector": {
@@ -1356,24 +1225,18 @@
           }
         },
         "title": {
-          "name": "Title",
-          "description": "Title for your notification.",
           "example": "Your Garage Door Friend",
           "selector": {
             "text": null
           }
         },
         "target": {
-          "name": "Target",
-          "description": "An array of targets to send the notification to. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
           }
         },
         "data": {
-          "name": "Data",
-          "description": "Extended information for notification. Optional depending on the platform.",
           "example": "platform specific",
           "selector": {
             "object": null
@@ -1385,12 +1248,12 @@
   "input_boolean": {
     "reload": {
       "name": "Reload",
-      "description": "Reload the input_boolean configuration",
+      "description": "Reloads helpers from the YAML-configuration.",
       "fields": {}
     },
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn on an input boolean",
+      "description": "Turns on the helper.",
       "fields": {},
       "target": {
         "entity": [
@@ -1404,7 +1267,7 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turn off an input boolean",
+      "description": "Turns off the helper.",
       "fields": {},
       "target": {
         "entity": [
@@ -1418,7 +1281,7 @@
     },
     "toggle": {
       "name": "Toggle",
-      "description": "Toggle an input boolean",
+      "description": "Toggles the helper on/off.",
       "fields": {},
       "target": {
         "entity": [
@@ -1429,87 +1292,6 @@
           }
         ]
       }
-    }
-  },
-  "automation": {
-    "trigger": {
-      "name": "Trigger",
-      "description": "Trigger the actions of an automation.",
-      "fields": {
-        "skip_condition": {
-          "name": "Skip conditions",
-          "description": "Whether or not the conditions will be skipped.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle (enable / disable) an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Enable an automation.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Disable an automation.",
-      "fields": {
-        "stop_actions": {
-          "name": "Stop actions",
-          "description": "Stop currently running actions.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "automation"
-            ]
-          }
-        ]
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reload the automation configuration.",
-      "fields": {}
     }
   },
   "input_button": {
@@ -1520,7 +1302,7 @@
     },
     "press": {
       "name": "Press",
-      "description": "Press the input button entity.",
+      "description": "Mimics the physical button press on the device.",
       "fields": {},
       "target": {
         "entity": [
@@ -1533,10 +1315,91 @@
       }
     }
   },
+  "automation": {
+    "trigger": {
+      "name": "Trigger",
+      "description": "Triggers the actions of an automation.",
+      "fields": {
+        "skip_condition": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Skip conditions",
+          "description": "Defines whether or not the conditions will be skipped."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles (enable / disable) an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Enables an automation.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Disables an automation.",
+      "fields": {
+        "stop_actions": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Stop actions",
+          "description": "Stops currently running actions."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "automation"
+            ]
+          }
+        ]
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads the automation configuration.",
+      "fields": {}
+    }
+  },
   "camera": {
     "enable_motion_detection": {
       "name": "Enable motion detection",
-      "description": "Enable the motion detection in a camera.",
+      "description": "Enables the motion detection.",
       "fields": {},
       "target": {
         "entity": [
@@ -1550,7 +1413,7 @@
     },
     "disable_motion_detection": {
       "name": "Disable motion detection",
-      "description": "Disable the motion detection in a camera.",
+      "description": "Disables the motion detection.",
       "fields": {},
       "target": {
         "entity": [
@@ -1564,7 +1427,7 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turn off camera.",
+      "description": "Turns off the camera.",
       "fields": {},
       "target": {
         "entity": [
@@ -1578,7 +1441,7 @@
     },
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn on camera.",
+      "description": "Turns on the camera.",
       "fields": {},
       "target": {
         "entity": [
@@ -1592,16 +1455,16 @@
     },
     "snapshot": {
       "name": "Take snapshot",
-      "description": "Take a snapshot from a camera.",
+      "description": "Takes a snapshot from a camera.",
       "fields": {
         "filename": {
-          "name": "Filename",
-          "description": "Template of a Filename. Variable is entity_id.",
           "required": true,
           "example": "/tmp/snapshot_{{ entity_id.name }}.jpg",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Filename",
+          "description": "Template of a filename. Variable available is \u0060entity_id\u0060."
         }
       },
       "target": {
@@ -1616,21 +1479,19 @@
     },
     "play_stream": {
       "name": "Play stream",
-      "description": "Play camera stream on supported media player.",
+      "description": "Plays the camera stream on a supported media player.",
       "fields": {
         "media_player": {
-          "name": "Media Player",
-          "description": "Name(s) of media player to stream to.",
           "required": true,
           "selector": {
             "entity": {
               "domain": "media_player"
             }
-          }
+          },
+          "name": "Media player",
+          "description": "Media players to stream to."
         },
         "format": {
-          "name": "Format",
-          "description": "Stream format supported by media player.",
           "default": "hls",
           "selector": {
             "select": {
@@ -1638,7 +1499,9 @@
                 "hls"
               ]
             }
-          }
+          },
+          "name": "Format",
+          "description": "Stream format supported by the media player."
         }
       },
       "target": {
@@ -1653,20 +1516,18 @@
     },
     "record": {
       "name": "Record",
-      "description": "Record live camera feed.",
+      "description": "Creates a recording of a live camera feed.",
       "fields": {
         "filename": {
-          "name": "Filename",
-          "description": "Template of a Filename. Variable is entity_id. Must be mp4.",
           "required": true,
           "example": "/tmp/snapshot_{{ entity_id.name }}.mp4",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Filename",
+          "description": "Template of a filename. Variable available is \u0060entity_id\u0060. Must be mp4."
         },
         "duration": {
-          "name": "Duration",
-          "description": "Target recording length.",
           "default": 30,
           "selector": {
             "number": {
@@ -1674,11 +1535,11 @@
               "max": 3600,
               "unit_of_measurement": "seconds"
             }
-          }
+          },
+          "name": "Duration",
+          "description": "Planned duration of the recording. The actual duration may vary."
         },
         "lookback": {
-          "name": "Lookback",
-          "description": "Target lookback period to include in addition to duration. Only available if there is currently an active HLS stream.",
           "default": 0,
           "selector": {
             "number": {
@@ -1686,7 +1547,9 @@
               "max": 300,
               "unit_of_measurement": "seconds"
             }
-          }
+          },
+          "name": "Lookback",
+          "description": "Planned lookback period to include in the recording (in addition to the duration). Only available if there is currently an active HLS stream. The actual length of the lookback period may vary."
         }
       },
       "target": {
@@ -1698,94 +1561,6 @@
           }
         ]
       }
-    }
-  },
-  "mqtt": {
-    "publish": {
-      "name": "Publish",
-      "description": "Publish a message to an MQTT topic.",
-      "fields": {
-        "topic": {
-          "name": "Topic",
-          "description": "Topic to publish payload.",
-          "required": true,
-          "example": "/homeassistant/hello",
-          "selector": {
-            "text": null
-          }
-        },
-        "payload": {
-          "name": "Payload",
-          "description": "Payload to publish.",
-          "example": "This is great",
-          "selector": {
-            "text": null
-          }
-        },
-        "payload_template": {
-          "name": "Payload Template",
-          "description": "Template to render as payload value. Ignored if payload given.",
-          "advanced": true,
-          "example": "{{ states(\u0027sensor.temperature\u0027) }}",
-          "selector": {
-            "object": null
-          }
-        },
-        "qos": {
-          "name": "QoS",
-          "description": "Quality of Service to use.",
-          "advanced": true,
-          "default": 0,
-          "selector": {
-            "select": {
-              "options": [
-                "0",
-                "1",
-                "2"
-              ]
-            }
-          }
-        },
-        "retain": {
-          "name": "Retain",
-          "description": "If message should have the retain flag set.",
-          "default": false,
-          "selector": {
-            "boolean": null
-          }
-        }
-      }
-    },
-    "dump": {
-      "name": "Dump",
-      "description": "Dump messages on a topic selector to the \u0027mqtt_dump.txt\u0027 file in your configuration folder.",
-      "fields": {
-        "topic": {
-          "name": "Topic",
-          "description": "topic to listen to",
-          "example": "OpenZWave/#",
-          "selector": {
-            "text": null
-          }
-        },
-        "duration": {
-          "name": "Duration",
-          "description": "how long we should listen for messages in seconds",
-          "default": 5,
-          "selector": {
-            "number": {
-              "min": 1,
-              "max": 300,
-              "unit_of_measurement": "seconds"
-            }
-          }
-        }
-      }
-    },
-    "reload": {
-      "name": "Reload",
-      "description": "Reload all MQTT entities from YAML.",
-      "fields": {}
     }
   },
   "netdaemon": {
@@ -1879,330 +1654,10 @@
       "fields": {}
     }
   },
-  "device_tracker": {
-    "see": {
-      "name": "See",
-      "description": "Control tracked device.",
-      "fields": {
-        "mac": {
-          "name": "MAC address",
-          "description": "MAC address of device",
-          "example": "FF:FF:FF:FF:FF:FF",
-          "selector": {
-            "text": null
-          }
-        },
-        "dev_id": {
-          "name": "Device ID",
-          "description": "Id of device (find id in known_devices.yaml).",
-          "example": "phonedave",
-          "selector": {
-            "text": null
-          }
-        },
-        "host_name": {
-          "name": "Host name",
-          "description": "Hostname of device",
-          "example": "Dave",
-          "selector": {
-            "text": null
-          }
-        },
-        "location_name": {
-          "name": "Location name",
-          "description": "Name of location where device is located (not_home is away).",
-          "example": "home",
-          "selector": {
-            "text": null
-          }
-        },
-        "gps": {
-          "name": "GPS coordinates",
-          "description": "GPS coordinates where device is located (latitude, longitude).",
-          "example": "[51.509802, -0.086692]",
-          "selector": {
-            "object": null
-          }
-        },
-        "gps_accuracy": {
-          "name": "GPS accuracy",
-          "description": "Accuracy of GPS coordinates.",
-          "selector": {
-            "number": {
-              "min": 1,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        },
-        "battery": {
-          "name": "Battery level",
-          "description": "Battery level of device.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      }
-    }
-  },
-  "fan": {
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn fan on.",
-      "fields": {
-        "speed": {
-          "name": "Speed",
-          "description": "Speed setting.",
-          "example": "high",
-          "selector": {
-            "text": null
-          }
-        },
-        "percentage": {
-          "name": "Percentage",
-          "description": "Percentage speed setting.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        },
-        "preset_mode": {
-          "name": "Preset mode",
-          "description": "Preset mode setting.",
-          "example": "auto",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn fan off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggle the fan on/off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "increase_speed": {
-      "name": "Increase speed",
-      "description": "Increase the speed of the fan by one speed or a percentage_step.",
-      "fields": {
-        "percentage_step": {
-          "advanced": true,
-          "required": false,
-          "description": "Increase speed by a percentage.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "decrease_speed": {
-      "name": "Decrease speed",
-      "description": "Decrease the speed of the fan by one speed or a percentage_step.",
-      "fields": {
-        "percentage_step": {
-          "advanced": true,
-          "required": false,
-          "description": "Decrease speed by a percentage.",
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "oscillate": {
-      "name": "Oscillate",
-      "description": "Oscillate the fan.",
-      "fields": {
-        "oscillating": {
-          "name": "Oscillating",
-          "description": "Flag to turn on/off oscillation.",
-          "required": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "set_direction": {
-      "name": "Set direction",
-      "description": "Set the fan rotation.",
-      "fields": {
-        "direction": {
-          "name": "Direction",
-          "description": "The direction to rotate.",
-          "required": true,
-          "selector": {
-            "select": {
-              "options": [
-                {
-                  "label": "Forward",
-                  "value": "forward"
-                },
-                {
-                  "label": "Reverse",
-                  "value": "reverse"
-                }
-              ]
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "set_percentage": {
-      "name": "Set speed percentage",
-      "description": "Set fan speed percentage.",
-      "fields": {
-        "percentage": {
-          "name": "Percentage",
-          "description": "Percentage speed setting.",
-          "required": true,
-          "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    },
-    "set_preset_mode": {
-      "name": "Set preset mode",
-      "description": "Set preset mode for a fan device.",
-      "fields": {
-        "preset_mode": {
-          "name": "Preset mode",
-          "description": "New value of preset mode.",
-          "required": true,
-          "example": "auto",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "fan"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "button": {
-    "press": {
-      "name": "Press",
-      "description": "Press the button entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "button"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "climate": {
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn climate device on.",
+      "description": "Turns climate device on.",
       "fields": {},
       "target": {
         "entity": [
@@ -2216,7 +1671,7 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turn climate device off.",
+      "description": "Turns climate device off.",
       "fields": {},
       "target": {
         "entity": [
@@ -2230,45 +1685,25 @@
     },
     "set_hvac_mode": {
       "name": "Set HVAC mode",
-      "description": "Set HVAC operation mode for climate device.",
+      "description": "Sets HVAC operation mode.",
       "fields": {
         "hvac_mode": {
-          "name": "HVAC mode",
-          "description": "New value of operation mode.",
           "selector": {
             "select": {
               "options": [
-                {
-                  "label": "Off",
-                  "value": "off"
-                },
-                {
-                  "label": "Auto",
-                  "value": "auto"
-                },
-                {
-                  "label": "Cool",
-                  "value": "cool"
-                },
-                {
-                  "label": "Dry",
-                  "value": "dry"
-                },
-                {
-                  "label": "Fan Only",
-                  "value": "fan_only"
-                },
-                {
-                  "label": "Heat/Cool",
-                  "value": "heat_cool"
-                },
-                {
-                  "label": "Heat",
-                  "value": "heat"
-                }
-              ]
+                "off",
+                "auto",
+                "cool",
+                "dry",
+                "fan_only",
+                "heat_cool",
+                "heat"
+              ],
+              "translation_key": "hvac_mode"
             }
-          }
+          },
+          "name": "HVAC mode",
+          "description": "HVAC operation mode."
         }
       },
       "target": {
@@ -2283,16 +1718,16 @@
     },
     "set_preset_mode": {
       "name": "Set preset mode",
-      "description": "Set preset mode for climate device.",
+      "description": "Sets preset mode.",
       "fields": {
         "preset_mode": {
-          "name": "Preset mode",
-          "description": "New value of preset mode.",
           "required": true,
           "example": "away",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Preset mode",
+          "description": "Preset mode."
         }
       },
       "target": {
@@ -2310,15 +1745,15 @@
     },
     "set_aux_heat": {
       "name": "Turn on/off auxiliary heater",
-      "description": "Turn auxiliary heater on/off for climate device.",
+      "description": "Turns auxiliary heater on/off.",
       "fields": {
         "aux_heat": {
-          "name": "Auxiliary heating",
-          "description": "New value of auxiliary heater.",
           "required": true,
           "selector": {
             "boolean": null
-          }
+          },
+          "name": "Auxiliary heating",
+          "description": "New value of auxiliary heater."
         }
       },
       "target": {
@@ -2335,12 +1770,10 @@
       }
     },
     "set_temperature": {
-      "name": "Set temperature",
-      "description": "Set target temperature of climate device.",
+      "name": "Set target temperature",
+      "description": "Sets target temperature.",
       "fields": {
         "temperature": {
-          "name": "Temperature",
-          "description": "New target temperature for HVAC.",
           "filter": {
             "supported_features": [
               1
@@ -2353,11 +1786,11 @@
               "step": 0.1,
               "mode": "box"
             }
-          }
+          },
+          "name": "Temperature",
+          "description": "Target temperature."
         },
         "target_temp_high": {
-          "name": "Target temperature high",
-          "description": "New target high temperature for HVAC.",
           "filter": {
             "supported_features": [
               2
@@ -2371,11 +1804,11 @@
               "step": 0.1,
               "mode": "box"
             }
-          }
+          },
+          "name": "Target temperature high",
+          "description": "High target temperature."
         },
         "target_temp_low": {
-          "name": "Target temperature low",
-          "description": "New target low temperature for HVAC.",
           "filter": {
             "supported_features": [
               2
@@ -2389,45 +1822,27 @@
               "step": 0.1,
               "mode": "box"
             }
-          }
+          },
+          "name": "Target temperature low",
+          "description": "Low target temperature."
         },
         "hvac_mode": {
-          "name": "HVAC mode",
-          "description": "HVAC operation mode to set temperature to.",
           "selector": {
             "select": {
               "options": [
-                {
-                  "label": "Off",
-                  "value": "off"
-                },
-                {
-                  "label": "Auto",
-                  "value": "auto"
-                },
-                {
-                  "label": "Cool",
-                  "value": "cool"
-                },
-                {
-                  "label": "Dry",
-                  "value": "dry"
-                },
-                {
-                  "label": "Fan Only",
-                  "value": "fan_only"
-                },
-                {
-                  "label": "Heat/Cool",
-                  "value": "heat_cool"
-                },
-                {
-                  "label": "Heat",
-                  "value": "heat"
-                }
-              ]
+                "off",
+                "auto",
+                "cool",
+                "dry",
+                "fan_only",
+                "heat_cool",
+                "heat"
+              ],
+              "translation_key": "hvac_mode"
             }
-          }
+          },
+          "name": "HVAC mode",
+          "description": "HVAC operation mode."
         }
       },
       "target": {
@@ -2446,11 +1861,9 @@
     },
     "set_humidity": {
       "name": "Set target humidity",
-      "description": "Set target humidity of climate device.",
+      "description": "Sets target humidity.",
       "fields": {
         "humidity": {
-          "name": "Humidity",
-          "description": "New target humidity for climate device.",
           "required": true,
           "selector": {
             "number": {
@@ -2458,7 +1871,9 @@
               "max": 99,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Humidity",
+          "description": "Target humidity."
         }
       },
       "target": {
@@ -2476,16 +1891,16 @@
     },
     "set_fan_mode": {
       "name": "Set fan mode",
-      "description": "Set fan operation for climate device.",
+      "description": "Sets fan operation mode.",
       "fields": {
         "fan_mode": {
-          "name": "Fan mode",
-          "description": "New value of fan mode.",
           "required": true,
           "example": "low",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Fan mode",
+          "description": "Fan operation mode."
         }
       },
       "target": {
@@ -2503,16 +1918,16 @@
     },
     "set_swing_mode": {
       "name": "Set swing mode",
-      "description": "Set swing operation for climate device.",
+      "description": "Sets swing operation mode.",
       "fields": {
         "swing_mode": {
-          "name": "Swing mode",
-          "description": "New value of swing mode.",
           "required": true,
           "example": "horizontal",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Swing mode",
+          "description": "Swing operation mode."
         }
       },
       "target": {
@@ -2529,71 +1944,308 @@
       }
     }
   },
-  "cover": {
-    "open_cover": {
-      "name": "Open",
-      "description": "Open all or specified cover.",
+  "select": {
+    "select_first": {
+      "name": "First",
+      "description": "Selects the first option.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "select"
             ]
           }
         ]
       }
     },
-    "close_cover": {
-      "name": "Close",
-      "description": "Close all or specified cover.",
+    "select_last": {
+      "name": "Last",
+      "description": "Selects the last option.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "select"
             ]
           }
         ]
       }
     },
-    "set_cover_position": {
-      "name": "Set position",
-      "description": "Move to specific position all or specified cover.",
+    "select_next": {
+      "name": "Next",
+      "description": "Selects the next option.",
       "fields": {
-        "position": {
-          "name": "Position",
-          "description": "Position of the cover",
-          "required": true,
+        "cycle": {
+          "default": true,
           "selector": {
-            "number": {
-              "min": 0,
-              "max": 100,
-              "unit_of_measurement": "%"
-            }
-          }
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the last to the first."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "select"
             ]
           }
         ]
       }
     },
-    "stop_cover": {
-      "name": "Stop",
-      "description": "Stop all or specified cover.",
+    "select_option": {
+      "name": "Select",
+      "description": "Selects an option.",
+      "fields": {
+        "option": {
+          "required": true,
+          "example": "\u0022Item A\u0022",
+          "selector": {
+            "text": null
+          },
+          "name": "Option",
+          "description": "Option to be selected."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "select"
+            ]
+          }
+        ]
+      }
+    },
+    "select_previous": {
+      "name": "Previous",
+      "description": "Selects the previous option.",
+      "fields": {
+        "cycle": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cycle",
+          "description": "If the option should cycle from the first to the last."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "select"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scene": {
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads the scenes from the YAML-configuration.",
+      "fields": {}
+    },
+    "apply": {
+      "name": "Apply",
+      "description": "Activates a scene with configuration.",
+      "fields": {
+        "entities": {
+          "required": true,
+          "example": "light.kitchen: \u0022on\u0022\nlight.ceiling:\n  state: \u0022on\u0022\n  brightness: 80\n",
+          "selector": {
+            "object": null
+          },
+          "name": "Entities state",
+          "description": "List of entities and their target state."
+        },
+        "transition": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 300,
+              "unit_of_measurement": "seconds"
+            }
+          },
+          "name": "Transition",
+          "description": "Time it takes the devices to transition into the states defined in the scene."
+        }
+      }
+    },
+    "create": {
+      "name": "Create",
+      "description": "Creates a new scene.",
+      "fields": {
+        "scene_id": {
+          "required": true,
+          "example": "all_lights",
+          "selector": {
+            "text": null
+          },
+          "name": "Scene entity ID",
+          "description": "The entity ID of the new scene."
+        },
+        "entities": {
+          "example": "light.tv_back_light: \u0022on\u0022\nlight.ceiling:\n  state: \u0022on\u0022\n  brightness: 200\n",
+          "selector": {
+            "object": null
+          },
+          "name": "Entities state",
+          "description": "List of entities and their target state. If your entities are already in the target state right now, use \u0060snapshot_entities\u0060 instead."
+        },
+        "snapshot_entities": {
+          "example": "- light.ceiling\n- light.kitchen\n",
+          "selector": {
+            "object": null
+          },
+          "name": "Snapshot entities",
+          "description": "List of entities to be included in the snapshot. By taking a snapshot, you record the current state of those entities. If you do not want to use the current state of all your entities for this scene, you can combine the \u0060snapshot_entities\u0060 with \u0060entities\u0060."
+        }
+      }
+    },
+    "turn_on": {
+      "name": "Activate",
+      "description": "Activates a scene.",
+      "fields": {
+        "transition": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 300,
+              "unit_of_measurement": "seconds"
+            }
+          },
+          "name": "Transition",
+          "description": "Time it takes the devices to transition into the states defined in the scene."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "scene"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "mqtt": {
+    "publish": {
+      "name": "Publish",
+      "description": "Publishes a message to an MQTT topic.",
+      "fields": {
+        "topic": {
+          "required": true,
+          "example": "/homeassistant/hello",
+          "selector": {
+            "text": null
+          },
+          "name": "Topic",
+          "description": "Topic to publish to."
+        },
+        "payload": {
+          "example": "This is great",
+          "selector": {
+            "text": null
+          },
+          "name": "Payload",
+          "description": "The payload to publish."
+        },
+        "payload_template": {
+          "advanced": true,
+          "example": "{{ states(\u0027sensor.temperature\u0027) }}",
+          "selector": {
+            "object": null
+          },
+          "name": "Payload template",
+          "description": "Template to render as a payload value. If a payload is provided, the template is ignored."
+        },
+        "qos": {
+          "advanced": true,
+          "default": 0,
+          "selector": {
+            "select": {
+              "options": [
+                "0",
+                "1",
+                "2"
+              ]
+            }
+          },
+          "name": "QoS",
+          "description": "Quality of Service to use. O. At most once. 1: At least once. 2: Exactly once."
+        },
+        "retain": {
+          "default": false,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Retain",
+          "description": "If the message should have the retain flag set. If set, the broker stores the most recent message on a topic."
+        }
+      }
+    },
+    "dump": {
+      "name": "Export",
+      "description": "Writes all messages on a specific topic into the \u0060mqtt_dump.txt\u0060 file in your configuration folder.",
+      "fields": {
+        "topic": {
+          "example": "OpenZWave/#",
+          "selector": {
+            "text": null
+          },
+          "name": "Topic",
+          "description": "Topic to listen to."
+        },
+        "duration": {
+          "default": 5,
+          "selector": {
+            "number": {
+              "min": 1,
+              "max": 300,
+              "unit_of_measurement": "seconds"
+            }
+          },
+          "name": "Duration",
+          "description": "How long we should listen for messages in seconds."
+        }
+      }
+    },
+    "reload": {
+      "name": "Reload",
+      "description": "Reloads MQTT entities from the YAML-configuration.",
+      "fields": {}
+    }
+  },
+  "switch": {
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turns a switch off.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "switch"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turns a switch on.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "switch"
             ]
           }
         ]
@@ -2601,67 +2253,590 @@
     },
     "toggle": {
       "name": "Toggle",
-      "description": "Toggle a cover open/closed.",
+      "description": "Toggles a switch on/off.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "switch"
             ]
           }
         ]
       }
-    },
-    "open_cover_tilt": {
-      "name": "Open tilt",
-      "description": "Open all or specified cover tilt.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "cover"
-            ]
-          }
-        ]
-      }
-    },
-    "close_cover_tilt": {
-      "name": "Close tilt",
-      "description": "Close all or specified cover tilt.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "cover"
-            ]
-          }
-        ]
-      }
-    },
-    "stop_cover_tilt": {
-      "name": "Stop tilt",
-      "description": "Stop all or specified cover.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "cover"
-            ]
-          }
-        ]
-      }
-    },
-    "set_cover_tilt_position": {
-      "name": "Set tilt position",
-      "description": "Move to specific position all or specified cover tilt.",
+    }
+  },
+  "tts": {
+    "google_translate_say": {
+      "name": "Say a TTS message with google_translate",
+      "description": "Say something using text-to-speech on a media player with google_translate.",
       "fields": {
-        "tilt_position": {
-          "name": "Tilt position",
-          "description": "Tilt position of the cover.",
+        "entity_id": {
+          "required": true,
+          "selector": {
+            "entity": {
+              "domain": "media_player"
+            }
+          }
+        },
+        "message": {
+          "example": "My name is hanna",
+          "required": true,
+          "selector": {
+            "text": null
+          }
+        },
+        "cache": {
+          "default": false,
+          "selector": {
+            "boolean": null
+          }
+        },
+        "language": {
+          "example": "ru",
+          "selector": {
+            "text": null
+          }
+        },
+        "options": {
+          "advanced": true,
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          }
+        }
+      }
+    },
+    "speak": {
+      "name": "Speak",
+      "description": "Speaks something using text-to-speech on a media player.",
+      "fields": {
+        "media_player_entity_id": {
+          "required": true,
+          "selector": {
+            "entity": {
+              "domain": "media_player"
+            }
+          },
+          "name": "Media player entity",
+          "description": "Media players to play the message."
+        },
+        "message": {
+          "example": "My name is hanna",
+          "required": true,
+          "selector": {
+            "text": null
+          },
+          "name": "Message",
+          "description": "The text you want to convert into speech so that you can listen to it on your device."
+        },
+        "cache": {
+          "default": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Cache",
+          "description": "Stores this message locally so that when the text is requested again, the output can be produced more quickly."
+        },
+        "language": {
+          "example": "ru",
+          "selector": {
+            "text": null
+          },
+          "name": "Language",
+          "description": "Language to use for speech generation."
+        },
+        "options": {
+          "advanced": true,
+          "example": "platform specific",
+          "selector": {
+            "object": null
+          },
+          "name": "Options",
+          "description": "A dictionary containing integration-specific options."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "tts"
+            ]
+          }
+        ]
+      }
+    },
+    "clear_cache": {
+      "name": "Clear TTS cache",
+      "description": "Removes all cached text-to-speech files and purges the memory.",
+      "fields": {}
+    }
+  },
+  "button": {
+    "press": {
+      "name": "Press",
+      "description": "Press the button entity.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "button"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "alarm_control_panel": {
+    "alarm_disarm": {
+      "name": "Disarm",
+      "description": "Disarms the alarm.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to disarm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_home": {
+      "name": "Arm home",
+      "description": "Sets the alarm to: _armed, but someone is home_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_away": {
+      "name": "Arm away",
+      "description": "Sets the alarm to: _armed, no one home_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_night": {
+      "name": "Arm night",
+      "description": "Sets the alarm to: _armed for the night_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_vacation": {
+      "name": "Arm vacation",
+      "description": "Sets the alarm to: _armed for vacation_.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_arm_custom_bypass": {
+      "name": "Arm with custom bypass",
+      "description": "Arms the alarm while allowing to bypass a custom area.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              16
+            ]
+          }
+        ]
+      }
+    },
+    "alarm_trigger": {
+      "name": "Trigger",
+      "description": "Enables an external alarm trigger.",
+      "fields": {
+        "code": {
+          "example": "1234",
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code to arm the alarm."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "alarm_control_panel"
+            ],
+            "supported_features": [
+              8
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "device_tracker": {
+    "see": {
+      "name": "See",
+      "description": "Records a seen tracked device.",
+      "fields": {
+        "mac": {
+          "example": "FF:FF:FF:FF:FF:FF",
+          "selector": {
+            "text": null
+          },
+          "name": "MAC address",
+          "description": "MAC address of the device."
+        },
+        "dev_id": {
+          "example": "phonedave",
+          "selector": {
+            "text": null
+          },
+          "name": "Device ID",
+          "description": "ID of the device (find the ID in \u0060known_devices.yaml\u0060)."
+        },
+        "host_name": {
+          "example": "Dave",
+          "selector": {
+            "text": null
+          },
+          "name": "Hostname",
+          "description": "Hostname of the device."
+        },
+        "location_name": {
+          "example": "home",
+          "selector": {
+            "text": null
+          },
+          "name": "Location",
+          "description": "Name of the location where the device is located. The options are: \u0060home\u0060, \u0060not_home\u0060, or the name of the zone."
+        },
+        "gps": {
+          "example": "[51.509802, -0.086692]",
+          "selector": {
+            "object": null
+          },
+          "name": "GPS coordinates",
+          "description": "GPS coordinates where the device is located, specified by latitude and longitude (for example: [51.513845, -0.100539])."
+        },
+        "gps_accuracy": {
+          "selector": {
+            "number": {
+              "min": 1,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "GPS accuracy",
+          "description": "Accuracy of the GPS coordinates."
+        },
+        "battery": {
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Battery level",
+          "description": "Battery level of the device."
+        }
+      }
+    }
+  },
+  "fan": {
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turns fan on.",
+      "fields": {
+        "percentage": {
+          "filter": {
+            "supported_features": [
+              1
+            ]
+          },
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Percentage",
+          "description": "Speed of the fan."
+        },
+        "preset_mode": {
+          "example": "auto",
+          "filter": {
+            "supported_features": [
+              8
+            ]
+          },
+          "selector": {
+            "text": null
+          },
+          "name": "Preset mode",
+          "description": "Preset mode."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turns fan off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles the fan on/off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ]
+          }
+        ]
+      }
+    },
+    "increase_speed": {
+      "name": "Increase speed",
+      "description": "Increases the speed of the fan.",
+      "fields": {
+        "percentage_step": {
+          "advanced": true,
+          "required": false,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Increment",
+          "description": "Increases the speed by a percentage step."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ],
+            "supported_features": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "decrease_speed": {
+      "name": "Decrease speed",
+      "description": "Decreases the speed of the fan.",
+      "fields": {
+        "percentage_step": {
+          "advanced": true,
+          "required": false,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Decrement",
+          "description": "Decreases the speed by a percentage step."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ],
+            "supported_features": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    "oscillate": {
+      "name": "Oscillate",
+      "description": "Controls oscillatation of the fan.",
+      "fields": {
+        "oscillating": {
+          "required": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Oscillating",
+          "description": "Turn on/off oscillation."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ],
+            "supported_features": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    "set_direction": {
+      "name": "Set direction",
+      "description": "Sets the fan rotation direction.",
+      "fields": {
+        "direction": {
+          "required": true,
+          "selector": {
+            "select": {
+              "options": [
+                "forward",
+                "reverse"
+              ],
+              "translation_key": "direction"
+            }
+          },
+          "name": "Direction",
+          "description": "Direction to rotate."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "fan"
+            ],
+            "supported_features": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "set_percentage": {
+      "name": "Set speed",
+      "description": "Sets the fan speed.",
+      "fields": {
+        "percentage": {
           "required": true,
           "selector": {
             "number": {
@@ -2669,28 +2844,46 @@
               "max": 100,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Percentage",
+          "description": "Speed of the fan."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "fan"
+            ],
+            "supported_features": [
+              1
             ]
           }
         ]
       }
     },
-    "toggle_cover_tilt": {
-      "name": "Toggle tilt",
-      "description": "Toggle a cover tilt open/closed.",
-      "fields": {},
+    "set_preset_mode": {
+      "name": "Set preset mode",
+      "description": "Sets preset mode.",
+      "fields": {
+        "preset_mode": {
+          "required": true,
+          "example": "auto",
+          "selector": {
+            "text": null
+          },
+          "name": "Preset mode",
+          "description": "Preset mode."
+        }
+      },
       "target": {
         "entity": [
           {
             "domain": [
-              "cover"
+              "fan"
+            ],
+            "supported_features": [
+              8
             ]
           }
         ]
@@ -2700,15 +2893,15 @@
   "number": {
     "set_value": {
       "name": "Set",
-      "description": "Set the value of a Number entity.",
+      "description": "Sets the value of a number.",
       "fields": {
         "value": {
-          "name": "Value",
-          "description": "The target value the entity should be set to.",
           "example": 42,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Value",
+          "description": "The target value to set."
         }
       },
       "target": {
@@ -2722,71 +2915,26 @@
       }
     }
   },
-  "lock": {
-    "unlock": {
-      "name": "Unlock",
-      "description": "Unlock all or specified locks.",
+  "text": {
+    "set_value": {
+      "name": "Set value",
+      "description": "Sets the value.",
       "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to unlock the lock with.",
-          "example": 1234,
+        "value": {
+          "required": true,
+          "example": "Hello world!",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Value",
+          "description": "Enter your text."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "lock"
-            ]
-          }
-        ]
-      }
-    },
-    "lock": {
-      "name": "Lock",
-      "description": "Lock all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to lock the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "lock"
-            ]
-          }
-        ]
-      }
-    },
-    "open": {
-      "name": "Open",
-      "description": "Open all or specified locks.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to open the lock with.",
-          "example": 1234,
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "lock"
+              "text"
             ]
           }
         ]
@@ -2796,7 +2944,7 @@
   "humidifier": {
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn humidifier device on.",
+      "description": "Turns the humidifier on.",
       "fields": {},
       "target": {
         "entity": [
@@ -2810,7 +2958,7 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turn humidifier device off.",
+      "description": "Turns the humidifier off.",
       "fields": {},
       "target": {
         "entity": [
@@ -2824,7 +2972,7 @@
     },
     "toggle": {
       "name": "Toggle",
-      "description": "Toggles a humidifier device.",
+      "description": "Toggles the humidifier on/off.",
       "fields": {},
       "target": {
         "entity": [
@@ -2838,15 +2986,16 @@
     },
     "set_mode": {
       "name": "Set mode",
-      "description": "Set mode for humidifier device.",
+      "description": "Sets the humidifier operation mode.",
       "fields": {
         "mode": {
-          "description": "New mode",
           "required": true,
           "example": "away",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Mode",
+          "description": "Operation mode. For example, _normal_, _eco_, or _away_. For a list of possible values, refer to the integration documentation."
         }
       },
       "target": {
@@ -2854,6 +3003,9 @@
           {
             "domain": [
               "humidifier"
+            ],
+            "supported_features": [
+              1
             ]
           }
         ]
@@ -2861,10 +3013,9 @@
     },
     "set_humidity": {
       "name": "Set humidity",
-      "description": "Set target humidity of humidifier device.",
+      "description": "Sets the target humidity.",
       "fields": {
         "humidity": {
-          "description": "New target humidity for humidifier device.",
           "required": true,
           "selector": {
             "number": {
@@ -2872,7 +3023,9 @@
               "max": 100,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Humidity",
+          "description": "Target humidity."
         }
       },
       "target": {
@@ -2888,20 +3041,30 @@
   },
   "siren": {
     "turn_on": {
-      "name": "",
-      "description": "Turn siren on.",
+      "name": "Turn on",
+      "description": "Turns the siren on.",
       "fields": {
         "tone": {
-          "description": "The tone to emit when turning the siren on. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration.",
           "example": "fire",
+          "filter": {
+            "supported_features": [
+              4
+            ]
+          },
           "required": false,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Tone",
+          "description": "The tone to emit. When \u0060available_tones\u0060 property is a map, either the key or the value can be used. Must be supported by the integration."
         },
         "volume_level": {
-          "description": "The volume level of the noise to emit when turning the siren on. Must be supported by the integration.",
           "example": 0.5,
+          "filter": {
+            "supported_features": [
+              8
+            ]
+          },
           "required": false,
           "selector": {
             "number": {
@@ -2909,15 +3072,23 @@
               "max": 1,
               "step": 0.05
             }
-          }
+          },
+          "name": "Volume",
+          "description": "The volume. 0 is inaudible, 1 is the maximum volume. Must be supported by the integration."
         },
         "duration": {
-          "description": "The duration in seconds of the noise to emit when turning the siren on. Must be supported by the integration.",
           "example": 15,
+          "filter": {
+            "supported_features": [
+              16
+            ]
+          },
           "required": false,
           "selector": {
             "text": null
-          }
+          },
+          "name": "Duration",
+          "description": "Number of seconds the sound is played. Must be supported by the integration."
         }
       },
       "target": {
@@ -2925,76 +3096,9 @@
           {
             "domain": [
               "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_off": {
-      "name": "",
-      "description": "Turn siren off.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "",
-      "description": "Toggles a siren.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "siren"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "text": {
-    "set_value": {
-      "name": "Set value",
-      "description": "Set value of a text entity.",
-      "fields": {
-        "value": {
-          "name": "Value",
-          "description": "Value to set.",
-          "required": true,
-          "example": "Hello world!",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "text"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "vacuum": {
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Start a new cleaning task.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "vacuum"
+            ],
+            "supported_features": [
+              1
             ]
           }
         ]
@@ -3002,435 +3106,418 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Stop the current cleaning task and return to home.",
+      "description": "Turns the siren off.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "siren"
+            ],
+            "supported_features": [
+              2
             ]
           }
         ]
       }
     },
     "toggle": {
-      "name": "",
-      "description": "",
-      "fields": {}
-    },
-    "start_pause": {
-      "name": "Start/Pause",
-      "description": "Start, pause, or resume the cleaning task.",
+      "name": "Toggle",
+      "description": "Toggles the siren on/off.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "siren"
+            ],
+            "supported_features": [
+              3
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "lock": {
+    "unlock": {
+      "name": "Unlock",
+      "description": "Unlocks a lock.",
+      "fields": {
+        "code": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code used to unlock the lock."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
             ]
           }
         ]
       }
     },
-    "start": {
-      "name": "Start",
-      "description": "Start or resume the cleaning task.",
+    "lock": {
+      "name": "Lock",
+      "description": "Locks a lock.",
+      "fields": {
+        "code": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code used to lock the lock."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
+            ]
+          }
+        ]
+      }
+    },
+    "open": {
+      "name": "Open",
+      "description": "Opens a lock.",
+      "fields": {
+        "code": {
+          "example": 1234,
+          "selector": {
+            "text": null
+          },
+          "name": "Code",
+          "description": "Code used to open the lock."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "lock"
+            ],
+            "supported_features": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "cover": {
+    "open_cover": {
+      "name": "Open",
+      "description": "Opens a cover.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "cover"
+            ],
+            "supported_features": [
+              1
             ]
           }
         ]
       }
     },
-    "pause": {
-      "name": "Pause",
-      "description": "Pause the cleaning task.",
+    "close_cover": {
+      "name": "Close",
+      "description": "Closes a cover.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "cover"
+            ],
+            "supported_features": [
+              2
             ]
           }
         ]
       }
     },
-    "return_to_base": {
-      "name": "Return to base",
-      "description": "Tell the vacuum cleaner to return to its dock.",
-      "fields": {},
+    "set_cover_position": {
+      "name": "Set position",
+      "description": "Moves a cover to a specific position.",
+      "fields": {
+        "position": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Position",
+          "description": "Target position."
+        }
+      },
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "cover"
+            ],
+            "supported_features": [
+              4
             ]
           }
         ]
       }
     },
-    "clean_spot": {
-      "name": "Clean spot",
-      "description": "Tell the vacuum cleaner to do a spot clean-up.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "vacuum"
-            ]
-          }
-        ]
-      }
-    },
-    "locate": {
-      "name": "Locate",
-      "description": "Locate the vacuum cleaner robot.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "vacuum"
-            ]
-          }
-        ]
-      }
-    },
-    "stop": {
+    "stop_cover": {
       "name": "Stop",
-      "description": "Stop the current cleaning task.",
+      "description": "Stops the cover movement.",
       "fields": {},
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "cover"
+            ],
+            "supported_features": [
+              8
             ]
           }
         ]
       }
     },
-    "set_fan_speed": {
-      "name": "Set fan speed",
-      "description": "Set the fan speed of the vacuum cleaner.",
-      "fields": {
-        "fan_speed": {
-          "name": "Fan speed",
-          "description": "Platform dependent vacuum cleaner fan speed, with speed steps, like \u0027medium\u0027 or by percentage, between 0 and 100.",
-          "required": true,
-          "example": "low",
-          "selector": {
-            "text": null
+    "toggle": {
+      "name": "Toggle",
+      "description": "Toggles a cover open/closed.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "cover"
+            ],
+            "supported_features": [
+              3
+            ]
           }
+        ]
+      }
+    },
+    "open_cover_tilt": {
+      "name": "Open tilt",
+      "description": "Tilts a cover open.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "cover"
+            ],
+            "supported_features": [
+              16
+            ]
+          }
+        ]
+      }
+    },
+    "close_cover_tilt": {
+      "name": "Close tilt",
+      "description": "Tilts a cover to close.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "cover"
+            ],
+            "supported_features": [
+              32
+            ]
+          }
+        ]
+      }
+    },
+    "stop_cover_tilt": {
+      "name": "Stop tilt",
+      "description": "Stops a tilting cover movement.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "cover"
+            ],
+            "supported_features": [
+              64
+            ]
+          }
+        ]
+      }
+    },
+    "set_cover_tilt_position": {
+      "name": "Set tilt position",
+      "description": "Moves a cover tilt to a specific position.",
+      "fields": {
+        "tilt_position": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "unit_of_measurement": "%"
+            }
+          },
+          "name": "Tilt position",
+          "description": "Target tilt positition."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
+              "cover"
+            ],
+            "supported_features": [
+              128
             ]
           }
         ]
       }
     },
-    "send_command": {
-      "name": "Send command",
-      "description": "Send a raw command to the vacuum cleaner.",
-      "fields": {
-        "command": {
-          "name": "Command",
-          "description": "Command to execute.",
-          "required": true,
-          "example": "set_dnd_timer",
-          "selector": {
-            "text": null
+    "toggle_cover_tilt": {
+      "name": "Toggle tilt",
+      "description": "Toggles a cover tilt open/closed.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "cover"
+            ],
+            "supported_features": [
+              48
+            ]
           }
+        ]
+      }
+    }
+  },
+  "water_heater": {
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Turns water heater on.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "water_heater"
+            ]
+          }
+        ]
+      }
+    },
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Turns water heater off.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "water_heater"
+            ]
+          }
+        ]
+      }
+    },
+    "set_away_mode": {
+      "name": "Set away mode",
+      "description": "Turns away mode on/off.",
+      "fields": {
+        "away_mode": {
+          "required": true,
+          "selector": {
+            "boolean": null
+          },
+          "name": "Away mode",
+          "description": "New value of away mode."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "water_heater"
+            ]
+          }
+        ]
+      }
+    },
+    "set_temperature": {
+      "name": "Set temperature",
+      "description": "Sets the target temperature.",
+      "fields": {
+        "temperature": {
+          "required": true,
+          "selector": {
+            "number": {
+              "min": 0,
+              "max": 100,
+              "step": 0.5,
+              "unit_of_measurement": "\u00B0"
+            }
+          },
+          "name": "Temperature",
+          "description": "New target temperature for the water heater."
         },
-        "params": {
-          "name": "Parameters",
-          "description": "Parameters for the command.",
-          "example": "{ \u0022key\u0022: \u0022value\u0022 }",
+        "operation_mode": {
+          "example": "eco",
           "selector": {
-            "object": null
-          }
+            "text": null
+          },
+          "name": "Operation mode",
+          "description": "New value of the operation mode. For a list of possible modes, refer to the integration documentation."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "vacuum"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "select": {
-    "select_first": {
-      "name": "First",
-      "description": "Select the first option of an select entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "select"
+              "water_heater"
             ]
           }
         ]
       }
     },
-    "select_last": {
-      "name": "Last",
-      "description": "Select the last option of an select entity.",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_next": {
-      "name": "Next",
-      "description": "Select the next options of an select entity.",
+    "set_operation_mode": {
+      "name": "Set operation mode",
+      "description": "Sets the operation mode.",
       "fields": {
-        "cycle": {
-          "name": "Cycle",
-          "description": "If the option should cycle from the last to the first.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_option": {
-      "name": "Select",
-      "description": "Select an option of an select entity.",
-      "fields": {
-        "option": {
-          "name": "Option",
-          "description": "Option to be selected.",
+        "operation_mode": {
           "required": true,
-          "example": "\u0022Item A\u0022",
+          "example": "eco",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Operation mode",
+          "description": "New value of the operation mode. For a list of possible modes, refer to the integration documentation."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "select"
-            ]
-          }
-        ]
-      }
-    },
-    "select_previous": {
-      "name": "Previous",
-      "description": "Select the previous options of an select entity.",
-      "fields": {
-        "cycle": {
-          "name": "Cycle",
-          "description": "If the option should cycle from the first to the last.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "select"
-            ]
-          }
-        ]
-      }
-    }
-  },
-  "alarm_control_panel": {
-    "alarm_disarm": {
-      "name": "Disarm",
-      "description": "Send the alarm the command for disarm.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to disarm the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_home": {
-      "name": "Arm home",
-      "description": "Send the alarm the command for arm home.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm home the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_away": {
-      "name": "Arm away",
-      "description": "Send the alarm the command for arm away.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm away the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_night": {
-      "name": "Arm night",
-      "description": "Send the alarm the command for arm night.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm night the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_vacation": {
-      "name": "Arm vacation",
-      "description": "Send the alarm the command for arm vacation.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm vacation the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_arm_custom_bypass": {
-      "name": "Arm with custom bypass",
-      "description": "Send arm custom bypass command.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to arm custom bypass the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
-            ]
-          }
-        ]
-      }
-    },
-    "alarm_trigger": {
-      "name": "Trigger",
-      "description": "Send the alarm the command for trigger.",
-      "fields": {
-        "code": {
-          "name": "Code",
-          "description": "An optional code to trigger the alarm control panel with.",
-          "example": "1234",
-          "selector": {
-            "text": null
-          }
-        }
-      },
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "alarm_control_panel"
+              "water_heater"
             ]
           }
         ]
@@ -3440,24 +3527,24 @@
   "update": {
     "install": {
       "name": "Install update",
-      "description": "Install an update for this device or service",
+      "description": "Installs an update for this device or service.",
       "fields": {
         "version": {
-          "name": "Version",
-          "description": "Version to install, if omitted, the latest version will be installed.",
           "required": false,
           "example": "1.0.0",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Version",
+          "description": "The version to install. If omitted, the latest version will be installed."
         },
         "backup": {
-          "name": "Backup",
-          "description": "Backup before installing the update, if supported by the integration.",
           "required": false,
           "selector": {
             "boolean": null
-          }
+          },
+          "name": "Backup",
+          "description": "If supported by the integration, this creates a backup before starting the update ."
         }
       },
       "target": {
@@ -3472,7 +3559,7 @@
     },
     "skip": {
       "name": "Skip update",
-      "description": "Mark currently available update as skipped.",
+      "description": "Marks currently available update as skipped.",
       "fields": {},
       "target": {
         "entity": [
@@ -3499,130 +3586,225 @@
       }
     }
   },
-  "tts": {
-    "google_translate_say": {
-      "name": "Say a TTS message with google_translate",
-      "description": "Say something using text-to-speech on a media player with google_translate.",
-      "fields": {
-        "entity_id": {
-          "name": "Entity",
-          "description": "Name(s) of media player entities.",
-          "required": true,
-          "selector": {
-            "entity": {
-              "domain": "media_player"
-            }
+  "vacuum": {
+    "turn_on": {
+      "name": "Turn on",
+      "description": "Starts a new cleaning task.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              1
+            ]
           }
-        },
-        "message": {
-          "name": "Message",
-          "description": "Text to speak on devices.",
-          "example": "My name is hanna",
-          "required": true,
-          "selector": {
-            "text": null
-          }
-        },
-        "cache": {
-          "name": "Cache",
-          "description": "Control file cache of this message.",
-          "default": false,
-          "selector": {
-            "boolean": null
-          }
-        },
-        "language": {
-          "name": "Language",
-          "description": "Language to use for speech generation.",
-          "example": "ru",
-          "selector": {
-            "text": null
-          }
-        },
-        "options": {
-          "name": "Options",
-          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
-          "advanced": true,
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
-        }
+        ]
       }
     },
-    "speak": {
-      "name": "Speak",
-      "description": "Speak something using text-to-speech on a media player.",
+    "turn_off": {
+      "name": "Turn off",
+      "description": "Stops the current cleaning task and returns to its dock.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              2
+            ]
+          }
+        ]
+      }
+    },
+    "toggle": {
+      "name": "",
+      "description": "",
+      "fields": {}
+    },
+    "start_pause": {
+      "name": "Start/pause",
+      "description": "Starts, pauses, or resumes the cleaning task.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "start": {
+      "name": "Start",
+      "description": "Starts or resumes the cleaning task.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              8192
+            ]
+          }
+        ]
+      }
+    },
+    "pause": {
+      "name": "Pause",
+      "description": "Pauses the cleaning task.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "return_to_base": {
+      "name": "Return to dock",
+      "description": "Tells the vacuum cleaner to return to its dock.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              16
+            ]
+          }
+        ]
+      }
+    },
+    "clean_spot": {
+      "name": "Clean spot",
+      "description": "Tells the vacuum cleaner to do a spot clean-up.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ]
+          }
+        ]
+      }
+    },
+    "locate": {
+      "name": "Locate",
+      "description": "Locates the vacuum cleaner robot.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              512
+            ]
+          }
+        ]
+      }
+    },
+    "stop": {
+      "name": "Stop",
+      "description": "Stops the current cleaning task.",
+      "fields": {},
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ],
+            "supported_features": [
+              8
+            ]
+          }
+        ]
+      }
+    },
+    "set_fan_speed": {
+      "name": "Set fan speed",
+      "description": "Sets the fan speed of the vacuum cleaner.",
       "fields": {
-        "media_player_entity_id": {
-          "name": "Media Player Entity",
-          "description": "Name(s) of media player entities.",
+        "fan_speed": {
           "required": true,
-          "selector": {
-            "entity": {
-              "domain": "media_player"
-            }
-          }
-        },
-        "message": {
-          "name": "Message",
-          "description": "Text to speak on devices.",
-          "example": "My name is hanna",
-          "required": true,
+          "example": "low",
           "selector": {
             "text": null
-          }
-        },
-        "cache": {
-          "name": "Cache",
-          "description": "Control file cache of this message.",
-          "default": true,
-          "selector": {
-            "boolean": null
-          }
-        },
-        "language": {
-          "name": "Language",
-          "description": "Language to use for speech generation.",
-          "example": "ru",
-          "selector": {
-            "text": null
-          }
-        },
-        "options": {
-          "name": "Options",
-          "description": "A dictionary containing platform-specific options. Optional depending on the platform.",
-          "advanced": true,
-          "example": "platform specific",
-          "selector": {
-            "object": null
-          }
+          },
+          "name": "Fan speed",
+          "description": "Fan speed. The value depends on the integration. Some integrations have speed steps, like \u0027medium\u0027. Some use a percentage, between 0 and 100."
         }
       },
       "target": {
         "entity": [
           {
             "domain": [
-              "tts"
+              "vacuum"
             ]
           }
         ]
       }
     },
-    "clear_cache": {
-      "name": "Clear TTS cache",
-      "description": "Remove all text-to-speech cache files and RAM cache.",
-      "fields": {}
+    "send_command": {
+      "name": "Send command",
+      "description": "Sends a command to the vacuum cleaner.",
+      "fields": {
+        "command": {
+          "required": true,
+          "example": "set_dnd_timer",
+          "selector": {
+            "text": null
+          },
+          "name": "Command",
+          "description": "Command to execute. The commands are integration-specific."
+        },
+        "params": {
+          "example": "{ \u0022key\u0022: \u0022value\u0022 }",
+          "selector": {
+            "object": null
+          },
+          "name": "Parameters",
+          "description": "Parameters for the command. The parameters are integration-specific."
+        }
+      },
+      "target": {
+        "entity": [
+          {
+            "domain": [
+              "vacuum"
+            ]
+          }
+        ]
+      }
     }
   },
   "light": {
     "turn_on": {
       "name": "Turn on",
-      "description": "Turn on one or more lights and adjust properties of the light, even when they are turned on already.\n",
+      "description": "Turn on one or more lights and adjust properties of the light, even when they are turned on already.",
       "fields": {
         "transition": {
-          "name": "Transition",
-          "description": "Duration it takes to get to next state.",
           "filter": {
             "supported_features": [
               32
@@ -3634,11 +3816,11 @@
               "max": 300,
               "unit_of_measurement": "seconds"
             }
-          }
+          },
+          "name": "Transition",
+          "description": "Duration it takes to get to next state."
         },
         "rgb_color": {
-          "name": "Color",
-          "description": "The color for the light (based on RGB - red, green, blue).",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3652,11 +3834,11 @@
           },
           "selector": {
             "color_rgb": null
-          }
+          },
+          "name": "Color",
+          "description": "The color in RGB format. A list of three integers between 0 and 255 representing the values of red, green, and blue."
         },
         "rgbw_color": {
-          "name": "RGBW-color",
-          "description": "A list containing four integers between 0 and 255 representing the RGBW (red, green, blue, white) color for the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3672,11 +3854,11 @@
           "example": "[255, 100, 100, 50]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "RGBW-color",
+          "description": "The color in RGBW format. A list of four integers between 0 and 255 representing the values of red, green, blue, and white."
         },
         "rgbww_color": {
-          "name": "RGBWW-color",
-          "description": "A list containing five integers between 0 and 255 representing the RGBWW (red, green, blue, cold white, warm white) color for the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3692,11 +3874,11 @@
           "example": "[255, 100, 100, 50, 70]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "RGBWW-color",
+          "description": "The color in RGBWW format. A list of five integers between 0 and 255 representing the values of red, green, blue, cold white, and warm white."
         },
         "color_name": {
-          "name": "Color name",
-          "description": "A human readable color name.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3711,6 +3893,7 @@
           "advanced": true,
           "selector": {
             "select": {
+              "translation_key": "color_name",
               "options": [
                 "homeassistant",
                 "aliceblue",
@@ -3862,11 +4045,11 @@
                 "yellowgreen"
               ]
             }
-          }
+          },
+          "name": "Color name",
+          "description": "A human-readable color name."
         },
         "hs_color": {
-          "name": "Hue/Sat color",
-          "description": "Color for the light in hue/sat format. Hue is 0-360 and Sat is 0-100.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3882,11 +4065,11 @@
           "example": "[300, 70]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Hue/Sat color",
+          "description": "Color in hue/sat format. A list of two integers. Hue is 0-360 and Sat is 0-100."
         },
         "xy_color": {
-          "name": "XY-color",
-          "description": "Color for the light in XY-format.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3902,11 +4085,11 @@
           "example": "[0.52, 0.43]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "XY-color",
+          "description": "Color in XY-format. A list of two decimal numbers between 0 and 1."
         },
         "color_temp": {
-          "name": "Color temperature",
-          "description": "Color temperature for the light in mireds.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3924,11 +4107,11 @@
               "min_mireds": 153,
               "max_mireds": 500
             }
-          }
+          },
+          "name": "Color temperature",
+          "description": "Color temperature in mireds."
         },
         "kelvin": {
-          "name": "Color temperature (Kelvin)",
-          "description": "Color temperature for the light in Kelvin.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3949,11 +4132,11 @@
               "step": 100,
               "unit_of_measurement": "K"
             }
-          }
+          },
+          "name": "Color temperature",
+          "description": "Color temperature in Kelvin."
         },
         "brightness": {
-          "name": "Brightness value",
-          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness and 255 is the maximum brightness supported by the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3973,11 +4156,11 @@
               "min": 0,
               "max": 255
             }
-          }
+          },
+          "name": "Brightness value",
+          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness, and 255 is the maximum brightness."
         },
         "brightness_pct": {
-          "name": "Brightness",
-          "description": "Number indicating percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness and 100 is the maximum brightness supported by the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -3997,11 +4180,11 @@
               "max": 100,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Brightness",
+          "description": "Number indicating the percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness, and 100 is the maximum brightness."
         },
         "brightness_step": {
-          "name": "Brightness step value",
-          "description": "Change brightness by an amount.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4021,11 +4204,11 @@
               "min": -225,
               "max": 255
             }
-          }
+          },
+          "name": "Brightness step value",
+          "description": "Change brightness by an amount."
         },
         "brightness_step_pct": {
-          "name": "Brightness step",
-          "description": "Change brightness by a percentage.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4045,11 +4228,11 @@
               "max": 100,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Brightness step",
+          "description": "Change brightness by a percentage."
         },
         "white": {
-          "name": "White",
-          "description": "Set the light to white mode.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4063,20 +4246,20 @@
               "value": true,
               "label": "Enabled"
             }
-          }
+          },
+          "name": "White",
+          "description": "Set the light to white mode."
         },
         "profile": {
-          "name": "Profile",
-          "description": "Name of a light profile to use.",
           "advanced": true,
           "example": "relax",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Profile",
+          "description": "Name of a light profile to use."
         },
         "flash": {
-          "name": "Flash",
-          "description": "If the light should flash.",
           "filter": {
             "supported_features": [
               8
@@ -4096,11 +4279,11 @@
                 }
               ]
             }
-          }
+          },
+          "name": "Flash",
+          "description": "If the light should flash."
         },
         "effect": {
-          "name": "Effect",
-          "description": "Light effect.",
           "filter": {
             "supported_features": [
               4
@@ -4108,7 +4291,9 @@
           },
           "selector": {
             "text": null
-          }
+          },
+          "name": "Effect",
+          "description": "Light effect."
         }
       },
       "target": {
@@ -4123,11 +4308,9 @@
     },
     "turn_off": {
       "name": "Turn off",
-      "description": "Turns off one or more lights.",
+      "description": "Turn off one or more lights.",
       "fields": {
         "transition": {
-          "name": "Transition",
-          "description": "Duration it takes to get to next state.",
           "filter": {
             "supported_features": [
               32
@@ -4139,11 +4322,11 @@
               "max": 300,
               "unit_of_measurement": "seconds"
             }
-          }
+          },
+          "name": "Transition",
+          "description": "Duration it takes to get to next state."
         },
         "flash": {
-          "name": "Flash",
-          "description": "If the light should flash.",
           "filter": {
             "supported_features": [
               8
@@ -4163,7 +4346,9 @@
                 }
               ]
             }
-          }
+          },
+          "name": "Flash",
+          "description": "If the light should flash."
         }
       },
       "target": {
@@ -4178,11 +4363,9 @@
     },
     "toggle": {
       "name": "Toggle",
-      "description": "Toggles one or more lights, from on to off, or, off to on, based on their current state.\n",
+      "description": "Toggles one or more lights, from on to off, or, off to on, based on their current state.",
       "fields": {
         "transition": {
-          "name": "Transition",
-          "description": "Duration it takes to get to next state.",
           "filter": {
             "supported_features": [
               32
@@ -4194,11 +4377,11 @@
               "max": 300,
               "unit_of_measurement": "seconds"
             }
-          }
+          },
+          "name": "Transition",
+          "description": "Duration it takes to get to next state."
         },
         "rgb_color": {
-          "name": "RGB-color",
-          "description": "Color for the light in RGB-format.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4214,11 +4397,11 @@
           "example": "[255, 100, 100]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Color",
+          "description": "The color in RGB format. A list of three integers between 0 and 255 representing the values of red, green, and blue."
         },
         "color_name": {
-          "name": "Color name",
-          "description": "A human readable color name.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4233,6 +4416,7 @@
           "advanced": true,
           "selector": {
             "select": {
+              "translation_key": "color_name",
               "options": [
                 "homeassistant",
                 "aliceblue",
@@ -4384,11 +4568,11 @@
                 "yellowgreen"
               ]
             }
-          }
+          },
+          "name": "Color name",
+          "description": "A human-readable color name."
         },
         "hs_color": {
-          "name": "Hue/Sat color",
-          "description": "Color for the light in hue/sat format. Hue is 0-360 and Sat is 0-100.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4404,11 +4588,11 @@
           "example": "[300, 70]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "Hue/Sat color",
+          "description": "Color in hue/sat format. A list of two integers. Hue is 0-360 and Sat is 0-100."
         },
         "xy_color": {
-          "name": "XY-color",
-          "description": "Color for the light in XY-format.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4424,11 +4608,11 @@
           "example": "[0.52, 0.43]",
           "selector": {
             "object": null
-          }
+          },
+          "name": "XY-color",
+          "description": "Color in XY-format. A list of two decimal numbers between 0 and 1."
         },
         "color_temp": {
-          "name": "Color temperature (mireds)",
-          "description": "Color temperature for the light in mireds.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4444,11 +4628,11 @@
           "advanced": true,
           "selector": {
             "color_temp": null
-          }
+          },
+          "name": "Color temperature",
+          "description": "Color temperature in mireds."
         },
         "kelvin": {
-          "name": "Color temperature (Kelvin)",
-          "description": "Color temperature for the light in Kelvin.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4469,11 +4653,11 @@
               "step": 100,
               "unit_of_measurement": "K"
             }
-          }
+          },
+          "name": "Color temperature",
+          "description": "Color temperature in Kelvin."
         },
         "brightness": {
-          "name": "Brightness value",
-          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness and 255 is the maximum brightness supported by the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4493,11 +4677,11 @@
               "min": 0,
               "max": 255
             }
-          }
+          },
+          "name": "Brightness value",
+          "description": "Number indicating brightness, where 0 turns the light off, 1 is the minimum brightness, and 255 is the maximum brightness."
         },
         "brightness_pct": {
-          "name": "Brightness",
-          "description": "Number indicating percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness and 100 is the maximum brightness supported by the light.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4517,11 +4701,11 @@
               "max": 100,
               "unit_of_measurement": "%"
             }
-          }
+          },
+          "name": "Brightness",
+          "description": "Number indicating the percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness, and 100 is the maximum brightness."
         },
         "white": {
-          "name": "White",
-          "description": "Set the light to white mode.",
           "filter": {
             "attribute": {
               "supported_color_modes": [
@@ -4535,20 +4719,20 @@
               "value": true,
               "label": "Enabled"
             }
-          }
+          },
+          "name": "White",
+          "description": "Set the light to white mode."
         },
         "profile": {
-          "name": "Profile",
-          "description": "Name of a light profile to use.",
           "advanced": true,
           "example": "relax",
           "selector": {
             "text": null
-          }
+          },
+          "name": "Profile",
+          "description": "Name of a light profile to use."
         },
         "flash": {
-          "name": "Flash",
-          "description": "If the light should flash.",
           "filter": {
             "supported_features": [
               8
@@ -4568,11 +4752,11 @@
                 }
               ]
             }
-          }
+          },
+          "name": "Flash",
+          "description": "If the light should flash."
         },
         "effect": {
-          "name": "Effect",
-          "description": "Light effect.",
           "filter": {
             "supported_features": [
               4
@@ -4580,7 +4764,9 @@
           },
           "selector": {
             "text": null
-          }
+          },
+          "name": "Effect",
+          "description": "Light effect."
         }
       },
       "target": {
@@ -4594,54 +4780,10 @@
       }
     }
   },
-  "switch": {
-    "turn_off": {
-      "name": "Turn off",
-      "description": "Turn a switch off",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "turn_on": {
-      "name": "Turn on",
-      "description": "Turn a switch on",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    },
-    "toggle": {
-      "name": "Toggle",
-      "description": "Toggles a switch state",
-      "fields": {},
-      "target": {
-        "entity": [
-          {
-            "domain": [
-              "switch"
-            ]
-          }
-        ]
-      }
-    }
-  },
   "backup": {
     "create": {
       "name": "Create backup",
-      "description": "Create a new backup.",
+      "description": "Creates a new backup.",
       "fields": {}
     }
   }

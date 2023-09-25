@@ -5,12 +5,12 @@
       "entities": [
         {
           "id": "binary_sensor.blind_office_charging_status",
-          "friendlyName": "blind_office_charging_status",
+          "friendlyName": "blind_office _charging_status",
           "cSharpName": "BlindOfficeChargingStatus"
         },
         {
           "id": "binary_sensor.blind_office_running",
-          "friendlyName": "blind_office_running",
+          "friendlyName": "blind_office _running",
           "cSharpName": "BlindOfficeRunning"
         },
         {
@@ -37,6 +37,16 @@
           "id": "binary_sensor.michals_iphone_focus",
           "friendlyName": "Micha\u0142\u2019s iPhone Focus",
           "cSharpName": "MichalsIphoneFocus"
+        },
+        {
+          "id": "binary_sensor.octoprint_printing",
+          "friendlyName": "OctoPrint Printing",
+          "cSharpName": "OctoprintPrinting"
+        },
+        {
+          "id": "binary_sensor.octoprint_printing_error",
+          "friendlyName": "OctoPrint Printing Error",
+          "cSharpName": "OctoprintPrintingError"
         }
       ],
       "attributes": [
@@ -277,18 +287,23 @@
       "domain": "select",
       "entities": [
         {
+          "id": "select.plug_ender_power_on_behavior",
+          "friendlyName": "plug_ender _power_on_behavior",
+          "cSharpName": "PlugEnderPowerOnBehavior"
+        },
+        {
           "id": "select.plug_hot_water_pump_power_on_behavior",
-          "friendlyName": "plug_hot_water_pump_power_on_behavior",
+          "friendlyName": "plug_hot_water_pump _power_on_behavior",
           "cSharpName": "PlugHotWaterPumpPowerOnBehavior"
         },
         {
           "id": "select.plug_upstairs_bathroom_fan_power_on_behavior",
-          "friendlyName": "plug_upstairs_bathroom_fan_power_on_behavior",
+          "friendlyName": "plug_upstairs_bathroom_fan _power_on_behavior",
           "cSharpName": "PlugUpstairsBathroomFanPowerOnBehavior"
         },
         {
           "id": "select.switch_staircase_lights_power_on_behavior",
-          "friendlyName": "switch_staircase_lights_power_on_behavior",
+          "friendlyName": "switch_staircase_lights _power_on_behavior",
           "cSharpName": "SwitchStaircaseLightsPowerOnBehavior"
         }
       ],
@@ -335,7 +350,7 @@
       "entities": [
         {
           "id": "sensor.blind_office_motor_state",
-          "friendlyName": "blind_office_motor_state",
+          "friendlyName": "blind_office _motor_state",
           "cSharpName": "BlindOfficeMotorState"
         },
         {
@@ -420,7 +435,7 @@
         },
         {
           "id": "sensor.light_sensor_outside_power_outage_count",
-          "friendlyName": "light_sensor_outside_power_outage_count",
+          "friendlyName": "light_sensor_outside _power_outage_count",
           "cSharpName": "LightSensorOutsidePowerOutageCount"
         },
         {
@@ -467,6 +482,21 @@
           "id": "sensor.michals_iphone_ssid",
           "friendlyName": "Micha\u0142\u2019s iPhone SSID",
           "cSharpName": "MichalsIphoneSsid"
+        },
+        {
+          "id": "sensor.octoprint_current_state",
+          "friendlyName": "OctoPrint Current State",
+          "cSharpName": "OctoprintCurrentState"
+        },
+        {
+          "id": "sensor.octoprint_estimated_finish_time",
+          "friendlyName": "OctoPrint Estimated Finish Time",
+          "cSharpName": "OctoprintEstimatedFinishTime"
+        },
+        {
+          "id": "sensor.octoprint_start_time",
+          "friendlyName": "OctoPrint Start Time",
+          "cSharpName": "OctoprintStartTime"
         },
         {
           "id": "sensor.sun_next_dawn",
@@ -713,12 +743,12 @@
       "entities": [
         {
           "id": "sensor.blind_office_battery",
-          "friendlyName": "blind_office_battery",
+          "friendlyName": "blind_office _battery",
           "cSharpName": "BlindOfficeBattery"
         },
         {
           "id": "sensor.blind_office_device_temperature",
-          "friendlyName": "blind_office_device_temperature",
+          "friendlyName": "blind_office _device_temperature",
           "cSharpName": "BlindOfficeDeviceTemperature"
         },
         {
@@ -833,12 +863,12 @@
         },
         {
           "id": "sensor.light_sensor_outside_battery",
-          "friendlyName": "light_sensor_outside_battery",
+          "friendlyName": "light_sensor_outside _battery",
           "cSharpName": "LightSensorOutsideBattery"
         },
         {
           "id": "sensor.light_sensor_outside_illuminance_lux",
-          "friendlyName": "light_sensor_outside_illuminance_lux",
+          "friendlyName": "light_sensor_outside _illuminance_lux",
           "cSharpName": "LightSensorOutsideIlluminanceLux"
         },
         {
@@ -877,143 +907,178 @@
           "cSharpName": "MichalsIphoneStorage"
         },
         {
+          "id": "sensor.octoprint_actual_bed_temp",
+          "friendlyName": "OctoPrint actual bed temp",
+          "cSharpName": "OctoprintActualBedTemp"
+        },
+        {
+          "id": "sensor.octoprint_actual_tool0_temp",
+          "friendlyName": "OctoPrint actual tool0 temp",
+          "cSharpName": "OctoprintActualTool0Temp"
+        },
+        {
+          "id": "sensor.octoprint_actual_w_temp",
+          "friendlyName": "OctoPrint actual W temp",
+          "cSharpName": "OctoprintActualWTemp"
+        },
+        {
+          "id": "sensor.octoprint_job_percentage",
+          "friendlyName": "OctoPrint Job Percentage",
+          "cSharpName": "OctoprintJobPercentage"
+        },
+        {
+          "id": "sensor.octoprint_target_bed_temp",
+          "friendlyName": "OctoPrint target bed temp",
+          "cSharpName": "OctoprintTargetBedTemp"
+        },
+        {
+          "id": "sensor.octoprint_target_tool0_temp",
+          "friendlyName": "OctoPrint target tool0 temp",
+          "cSharpName": "OctoprintTargetTool0Temp"
+        },
+        {
+          "id": "sensor.octoprint_target_w_temp",
+          "friendlyName": "OctoPrint target W temp",
+          "cSharpName": "OctoprintTargetWTemp"
+        },
+        {
           "id": "sensor.temp_attic_battery",
-          "friendlyName": "temp_attic_battery",
+          "friendlyName": "temp_attic _battery",
           "cSharpName": "TempAtticBattery"
         },
         {
           "id": "sensor.temp_attic_humidity",
-          "friendlyName": "temp_attic_humidity",
+          "friendlyName": "temp_attic _humidity",
           "cSharpName": "TempAtticHumidity"
         },
         {
           "id": "sensor.temp_attic_pressure",
-          "friendlyName": "temp_attic_pressure",
+          "friendlyName": "temp_attic _pressure",
           "cSharpName": "TempAtticPressure"
         },
         {
           "id": "sensor.temp_attic_temperature",
-          "friendlyName": "temp_attic_temperature",
+          "friendlyName": "temp_attic _temperature",
           "cSharpName": "TempAtticTemperature"
         },
         {
           "id": "sensor.temp_garage_battery",
-          "friendlyName": "temp_garage_battery",
+          "friendlyName": "temp_garage _battery",
           "cSharpName": "TempGarageBattery"
         },
         {
           "id": "sensor.temp_garage_corridor_battery",
-          "friendlyName": "temp_garage_corridor_battery",
+          "friendlyName": "temp_garage_corridor _battery",
           "cSharpName": "TempGarageCorridorBattery"
         },
         {
           "id": "sensor.temp_garage_corridor_humidity",
-          "friendlyName": "temp_garage_corridor_humidity",
+          "friendlyName": "temp_garage_corridor _humidity",
           "cSharpName": "TempGarageCorridorHumidity"
         },
         {
           "id": "sensor.temp_garage_corridor_pressure",
-          "friendlyName": "temp_garage_corridor_pressure",
+          "friendlyName": "temp_garage_corridor _pressure",
           "cSharpName": "TempGarageCorridorPressure"
         },
         {
           "id": "sensor.temp_garage_corridor_temperature",
-          "friendlyName": "temp_garage_corridor_temperature",
+          "friendlyName": "temp_garage_corridor _temperature",
           "cSharpName": "TempGarageCorridorTemperature"
         },
         {
           "id": "sensor.temp_garage_humidity",
-          "friendlyName": "temp_garage_humidity",
+          "friendlyName": "temp_garage _humidity",
           "cSharpName": "TempGarageHumidity"
         },
         {
           "id": "sensor.temp_garage_pressure",
-          "friendlyName": "temp_garage_pressure",
+          "friendlyName": "temp_garage _pressure",
           "cSharpName": "TempGaragePressure"
         },
         {
           "id": "sensor.temp_garage_temperature",
-          "friendlyName": "temp_garage_temperature",
+          "friendlyName": "temp_garage _temperature",
           "cSharpName": "TempGarageTemperature"
         },
         {
           "id": "sensor.temp_office_battery",
-          "friendlyName": "temp_office_battery",
+          "friendlyName": "temp_office _battery",
           "cSharpName": "TempOfficeBattery"
         },
         {
           "id": "sensor.temp_office_humidity",
-          "friendlyName": "temp_office_humidity",
+          "friendlyName": "temp_office _humidity",
           "cSharpName": "TempOfficeHumidity"
         },
         {
           "id": "sensor.temp_office_pressure",
-          "friendlyName": "temp_office_pressure",
+          "friendlyName": "temp_office _pressure",
           "cSharpName": "TempOfficePressure"
         },
         {
           "id": "sensor.temp_office_temperature",
-          "friendlyName": "temp_office_temperature",
+          "friendlyName": "temp_office _temperature",
           "cSharpName": "TempOfficeTemperature"
         },
         {
           "id": "sensor.temp_outside_battery",
-          "friendlyName": "temp_outside_battery",
+          "friendlyName": "temp_outside _battery",
           "cSharpName": "TempOutsideBattery"
         },
         {
           "id": "sensor.temp_outside_humidity",
-          "friendlyName": "temp_outside_humidity",
+          "friendlyName": "temp_outside _humidity",
           "cSharpName": "TempOutsideHumidity"
         },
         {
           "id": "sensor.temp_outside_pressure",
-          "friendlyName": "temp_outside_pressure",
+          "friendlyName": "temp_outside _pressure",
           "cSharpName": "TempOutsidePressure"
         },
         {
           "id": "sensor.temp_outside_temperature",
-          "friendlyName": "temp_outside_temperature",
+          "friendlyName": "temp_outside _temperature",
           "cSharpName": "TempOutsideTemperature"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_battery",
-          "friendlyName": "temp_upstairs_bathroom_battery",
+          "friendlyName": "temp_upstairs_bathroom _battery",
           "cSharpName": "TempUpstairsBathroomBattery"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_humidity",
-          "friendlyName": "temp_upstairs_bathroom_humidity",
+          "friendlyName": "temp_upstairs_bathroom _humidity",
           "cSharpName": "TempUpstairsBathroomHumidity"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_pressure",
-          "friendlyName": "temp_upstairs_bathroom_pressure",
+          "friendlyName": "temp_upstairs_bathroom _pressure",
           "cSharpName": "TempUpstairsBathroomPressure"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_temperature",
-          "friendlyName": "temp_upstairs_bathroom_temperature",
+          "friendlyName": "temp_upstairs_bathroom _temperature",
           "cSharpName": "TempUpstairsBathroomTemperature"
         },
         {
           "id": "sensor.temp_utility_room_battery",
-          "friendlyName": "temp_utility_room_battery",
+          "friendlyName": "temp_utility_room _battery",
           "cSharpName": "TempUtilityRoomBattery"
         },
         {
           "id": "sensor.temp_utility_room_humidity",
-          "friendlyName": "temp_utility_room_humidity",
+          "friendlyName": "temp_utility_room _humidity",
           "cSharpName": "TempUtilityRoomHumidity"
         },
         {
           "id": "sensor.temp_utility_room_pressure",
-          "friendlyName": "temp_utility_room_pressure",
+          "friendlyName": "temp_utility_room _pressure",
           "cSharpName": "TempUtilityRoomPressure"
         },
         {
           "id": "sensor.temp_utility_room_temperature",
-          "friendlyName": "temp_utility_room_temperature",
+          "friendlyName": "temp_utility_room _temperature",
           "cSharpName": "TempUtilityRoomTemperature"
         }
       ],
@@ -1216,6 +1281,11 @@
       "domain": "switch",
       "entities": [
         {
+          "id": "switch.plug_ender",
+          "friendlyName": "plug_ender",
+          "cSharpName": "PlugEnder"
+        },
+        {
           "id": "switch.plug_hot_water_pump",
           "friendlyName": "plug_hot_water_pump",
           "cSharpName": "PlugHotWaterPump"
@@ -1271,6 +1341,11 @@
           "id": "update.extender_kitchen",
           "friendlyName": "extender_kitchen",
           "cSharpName": "ExtenderKitchen"
+        },
+        {
+          "id": "update.plug_ender",
+          "friendlyName": "plug_ender",
+          "cSharpName": "PlugEnder"
         },
         {
           "id": "update.plug_hot_water_pump",
@@ -1475,6 +1550,11 @@
           "jsonName": "friendly_name",
           "cSharpName": "FriendlyName",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "cloud_coverage",
+          "cSharpName": "CloudCoverage",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1675,6 +1755,21 @@
       "domain": "button",
       "entities": [
         {
+          "id": "button.octoprint_pause_job",
+          "friendlyName": "OctoPrint Pause Job",
+          "cSharpName": "OctoprintPauseJob"
+        },
+        {
+          "id": "button.octoprint_resume_job",
+          "friendlyName": "OctoPrint Resume Job",
+          "cSharpName": "OctoprintResumeJob"
+        },
+        {
+          "id": "button.octoprint_stop_job",
+          "friendlyName": "OctoPrint Stop Job",
+          "cSharpName": "OctoprintStopJob"
+        },
+        {
           "id": "button.open_wicket",
           "friendlyName": "Open wicket",
           "cSharpName": "OpenWicket"
@@ -1710,6 +1805,11 @@
           "id": "camera.192_168_1_44",
           "friendlyName": "192_168_1_44",
           "cSharpName": "_192168144"
+        },
+        {
+          "id": "camera.octoprint_camera",
+          "friendlyName": "OctoPrint Camera",
+          "cSharpName": "OctoprintCamera"
         }
       ],
       "attributes": [
@@ -1911,6 +2011,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
         }
       ]
     }
