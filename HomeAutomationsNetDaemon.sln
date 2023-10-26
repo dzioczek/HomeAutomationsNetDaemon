@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeAutomationsNetDaemon", "HomeAutomationsNetDaemon.csproj", "{335BC043-D135-41B5-87FD-9E2BA141A661}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationsTesting", "AutomationsTesting\AutomationsTesting.csproj", "{C1404C8B-911F-4789-AC9C-CA48F337AA71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{335BC043-D135-41B5-87FD-9E2BA141A661}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335BC043-D135-41B5-87FD-9E2BA141A661}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335BC043-D135-41B5-87FD-9E2BA141A661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1404C8B-911F-4789-AC9C-CA48F337AA71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1404C8B-911F-4789-AC9C-CA48F337AA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1404C8B-911F-4789-AC9C-CA48F337AA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1404C8B-911F-4789-AC9C-CA48F337AA71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

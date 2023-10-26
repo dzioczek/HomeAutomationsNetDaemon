@@ -5,12 +5,12 @@
       "entities": [
         {
           "id": "binary_sensor.blind_office_charging_status",
-          "friendlyName": "blind_office _charging_status",
+          "friendlyName": "blind_office Charging status",
           "cSharpName": "BlindOfficeChargingStatus"
         },
         {
           "id": "binary_sensor.blind_office_running",
-          "friendlyName": "blind_office _running",
+          "friendlyName": "blind_office Running",
           "cSharpName": "BlindOfficeRunning"
         },
         {
@@ -287,23 +287,28 @@
       "domain": "select",
       "entities": [
         {
+          "id": "select.bulb_master_bed_power_on_behavior",
+          "friendlyName": "bulb_master_bed Power-on behavior",
+          "cSharpName": "BulbMasterBedPowerOnBehavior"
+        },
+        {
           "id": "select.plug_ender_power_on_behavior",
-          "friendlyName": "plug_ender _power_on_behavior",
+          "friendlyName": "plug_ender Power-on behavior",
           "cSharpName": "PlugEnderPowerOnBehavior"
         },
         {
           "id": "select.plug_hot_water_pump_power_on_behavior",
-          "friendlyName": "plug_hot_water_pump _power_on_behavior",
+          "friendlyName": "plug_hot_water_pump Power-on behavior",
           "cSharpName": "PlugHotWaterPumpPowerOnBehavior"
         },
         {
           "id": "select.plug_upstairs_bathroom_fan_power_on_behavior",
-          "friendlyName": "plug_upstairs_bathroom_fan _power_on_behavior",
+          "friendlyName": "plug_upstairs_bathroom_fan Power-on behavior",
           "cSharpName": "PlugUpstairsBathroomFanPowerOnBehavior"
         },
         {
           "id": "select.switch_staircase_lights_power_on_behavior",
-          "friendlyName": "switch_staircase_lights _power_on_behavior",
+          "friendlyName": "switch_staircase_lights Power-on behavior",
           "cSharpName": "SwitchStaircaseLightsPowerOnBehavior"
         }
       ],
@@ -342,6 +347,31 @@
           "jsonName": "update_available",
           "cSharpName": "UpdateAvailable",
           "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "color_options",
+          "cSharpName": "ColorOptions",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp_startup",
+          "cSharpName": "ColorTempStartup",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -350,8 +380,13 @@
       "entities": [
         {
           "id": "sensor.blind_office_motor_state",
-          "friendlyName": "blind_office _motor_state",
+          "friendlyName": "blind_office Motor state",
           "cSharpName": "BlindOfficeMotorState"
+        },
+        {
+          "id": "sensor.bulb_master_bed_color_options",
+          "friendlyName": "bulb_master_bed Color options",
+          "cSharpName": "BulbMasterBedColorOptions"
         },
         {
           "id": "sensor.growatt_datalogger_serial",
@@ -432,11 +467,6 @@
           "id": "sensor.iphone_natalia_ssid",
           "friendlyName": "iPhone (Natalia) SSID",
           "cSharpName": "IphoneNataliaSsid"
-        },
-        {
-          "id": "sensor.light_sensor_outside_power_outage_count",
-          "friendlyName": "light_sensor_outside _power_outage_count",
-          "cSharpName": "LightSensorOutsidePowerOutageCount"
         },
         {
           "id": "sensor.michals_iphone_activity",
@@ -734,6 +764,36 @@
           "jsonName": "device_class",
           "cSharpName": "DeviceClass",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "color_options",
+          "cSharpName": "ColorOptions",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp_startup",
+          "cSharpName": "ColorTempStartup",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_on_behavior",
+          "cSharpName": "PowerOnBehavior",
+          "clrType": "System.String"
         }
       ]
     },
@@ -743,12 +803,12 @@
       "entities": [
         {
           "id": "sensor.blind_office_battery",
-          "friendlyName": "blind_office _battery",
+          "friendlyName": "blind_office Battery",
           "cSharpName": "BlindOfficeBattery"
         },
         {
           "id": "sensor.blind_office_device_temperature",
-          "friendlyName": "blind_office _device_temperature",
+          "friendlyName": "blind_office Temperature",
           "cSharpName": "BlindOfficeDeviceTemperature"
         },
         {
@@ -863,12 +923,12 @@
         },
         {
           "id": "sensor.light_sensor_outside_battery",
-          "friendlyName": "light_sensor_outside _battery",
+          "friendlyName": "light_sensor_outside Battery",
           "cSharpName": "LightSensorOutsideBattery"
         },
         {
           "id": "sensor.light_sensor_outside_illuminance_lux",
-          "friendlyName": "light_sensor_outside _illuminance_lux",
+          "friendlyName": "light_sensor_outside Illuminance",
           "cSharpName": "LightSensorOutsideIlluminanceLux"
         },
         {
@@ -943,142 +1003,162 @@
         },
         {
           "id": "sensor.temp_attic_battery",
-          "friendlyName": "temp_attic _battery",
+          "friendlyName": "temp_attic Battery",
           "cSharpName": "TempAtticBattery"
         },
         {
           "id": "sensor.temp_attic_humidity",
-          "friendlyName": "temp_attic _humidity",
+          "friendlyName": "temp_attic Humidity",
           "cSharpName": "TempAtticHumidity"
         },
         {
           "id": "sensor.temp_attic_pressure",
-          "friendlyName": "temp_attic _pressure",
+          "friendlyName": "temp_attic Atmospheric pressure",
           "cSharpName": "TempAtticPressure"
         },
         {
           "id": "sensor.temp_attic_temperature",
-          "friendlyName": "temp_attic _temperature",
+          "friendlyName": "temp_attic Temperature",
           "cSharpName": "TempAtticTemperature"
         },
         {
           "id": "sensor.temp_garage_battery",
-          "friendlyName": "temp_garage _battery",
+          "friendlyName": "temp_garage Battery",
           "cSharpName": "TempGarageBattery"
         },
         {
           "id": "sensor.temp_garage_corridor_battery",
-          "friendlyName": "temp_garage_corridor _battery",
+          "friendlyName": "temp_garage_corridor Battery",
           "cSharpName": "TempGarageCorridorBattery"
         },
         {
           "id": "sensor.temp_garage_corridor_humidity",
-          "friendlyName": "temp_garage_corridor _humidity",
+          "friendlyName": "temp_garage_corridor Humidity",
           "cSharpName": "TempGarageCorridorHumidity"
         },
         {
           "id": "sensor.temp_garage_corridor_pressure",
-          "friendlyName": "temp_garage_corridor _pressure",
+          "friendlyName": "temp_garage_corridor Atmospheric pressure",
           "cSharpName": "TempGarageCorridorPressure"
         },
         {
           "id": "sensor.temp_garage_corridor_temperature",
-          "friendlyName": "temp_garage_corridor _temperature",
+          "friendlyName": "temp_garage_corridor Temperature",
           "cSharpName": "TempGarageCorridorTemperature"
         },
         {
           "id": "sensor.temp_garage_humidity",
-          "friendlyName": "temp_garage _humidity",
+          "friendlyName": "temp_garage Humidity",
           "cSharpName": "TempGarageHumidity"
         },
         {
           "id": "sensor.temp_garage_pressure",
-          "friendlyName": "temp_garage _pressure",
+          "friendlyName": "temp_garage Atmospheric pressure",
           "cSharpName": "TempGaragePressure"
         },
         {
           "id": "sensor.temp_garage_temperature",
-          "friendlyName": "temp_garage _temperature",
+          "friendlyName": "temp_garage Temperature",
           "cSharpName": "TempGarageTemperature"
         },
         {
+          "id": "sensor.temp_master_bedroom_battery",
+          "friendlyName": "temp_master_bedroom Battery",
+          "cSharpName": "TempMasterBedroomBattery"
+        },
+        {
+          "id": "sensor.temp_master_bedroom_humidity",
+          "friendlyName": "temp_master_bedroom Humidity",
+          "cSharpName": "TempMasterBedroomHumidity"
+        },
+        {
+          "id": "sensor.temp_master_bedroom_pressure",
+          "friendlyName": "temp_master_bedroom Atmospheric pressure",
+          "cSharpName": "TempMasterBedroomPressure"
+        },
+        {
+          "id": "sensor.temp_master_bedroom_temperature",
+          "friendlyName": "temp_master_bedroom Temperature",
+          "cSharpName": "TempMasterBedroomTemperature"
+        },
+        {
           "id": "sensor.temp_office_battery",
-          "friendlyName": "temp_office _battery",
+          "friendlyName": "temp_office Battery",
           "cSharpName": "TempOfficeBattery"
         },
         {
           "id": "sensor.temp_office_humidity",
-          "friendlyName": "temp_office _humidity",
+          "friendlyName": "temp_office Humidity",
           "cSharpName": "TempOfficeHumidity"
         },
         {
           "id": "sensor.temp_office_pressure",
-          "friendlyName": "temp_office _pressure",
+          "friendlyName": "temp_office Atmospheric pressure",
           "cSharpName": "TempOfficePressure"
         },
         {
           "id": "sensor.temp_office_temperature",
-          "friendlyName": "temp_office _temperature",
+          "friendlyName": "temp_office Temperature",
           "cSharpName": "TempOfficeTemperature"
         },
         {
           "id": "sensor.temp_outside_battery",
-          "friendlyName": "temp_outside _battery",
+          "friendlyName": "temp_outside Battery",
           "cSharpName": "TempOutsideBattery"
         },
         {
           "id": "sensor.temp_outside_humidity",
-          "friendlyName": "temp_outside _humidity",
+          "friendlyName": "temp_outside Humidity",
           "cSharpName": "TempOutsideHumidity"
         },
         {
           "id": "sensor.temp_outside_pressure",
-          "friendlyName": "temp_outside _pressure",
+          "friendlyName": "temp_outside Atmospheric pressure",
           "cSharpName": "TempOutsidePressure"
         },
         {
           "id": "sensor.temp_outside_temperature",
-          "friendlyName": "temp_outside _temperature",
+          "friendlyName": "temp_outside Temperature",
           "cSharpName": "TempOutsideTemperature"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_battery",
-          "friendlyName": "temp_upstairs_bathroom _battery",
+          "friendlyName": "temp_upstairs_bathroom Battery",
           "cSharpName": "TempUpstairsBathroomBattery"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_humidity",
-          "friendlyName": "temp_upstairs_bathroom _humidity",
+          "friendlyName": "temp_upstairs_bathroom Humidity",
           "cSharpName": "TempUpstairsBathroomHumidity"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_pressure",
-          "friendlyName": "temp_upstairs_bathroom _pressure",
+          "friendlyName": "temp_upstairs_bathroom Atmospheric pressure",
           "cSharpName": "TempUpstairsBathroomPressure"
         },
         {
           "id": "sensor.temp_upstairs_bathroom_temperature",
-          "friendlyName": "temp_upstairs_bathroom _temperature",
+          "friendlyName": "temp_upstairs_bathroom Temperature",
           "cSharpName": "TempUpstairsBathroomTemperature"
         },
         {
           "id": "sensor.temp_utility_room_battery",
-          "friendlyName": "temp_utility_room _battery",
+          "friendlyName": "temp_utility_room Battery",
           "cSharpName": "TempUtilityRoomBattery"
         },
         {
           "id": "sensor.temp_utility_room_humidity",
-          "friendlyName": "temp_utility_room _humidity",
+          "friendlyName": "temp_utility_room Humidity",
           "cSharpName": "TempUtilityRoomHumidity"
         },
         {
           "id": "sensor.temp_utility_room_pressure",
-          "friendlyName": "temp_utility_room _pressure",
+          "friendlyName": "temp_utility_room Atmospheric pressure",
           "cSharpName": "TempUtilityRoomPressure"
         },
         {
           "id": "sensor.temp_utility_room_temperature",
-          "friendlyName": "temp_utility_room _temperature",
+          "friendlyName": "temp_utility_room Temperature",
           "cSharpName": "TempUtilityRoomTemperature"
         }
       ],
@@ -1338,6 +1418,11 @@
           "cSharpName": "BlindOffice"
         },
         {
+          "id": "update.bulb_master_bed",
+          "friendlyName": "bulb_master_bed",
+          "cSharpName": "BulbMasterBed"
+        },
+        {
           "id": "update.extender_kitchen",
           "friendlyName": "extender_kitchen",
           "cSharpName": "ExtenderKitchen"
@@ -1473,6 +1558,31 @@
           "jsonName": "running",
           "cSharpName": "Running",
           "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "color_options",
+          "cSharpName": "ColorOptions",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp_startup",
+          "cSharpName": "ColorTempStartup",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1676,6 +1786,11 @@
           "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsBathroomFansBathroomFans"
         },
         {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_ender_ender",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_ender_ender",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsEnderEnder"
+        },
+        {
           "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
           "friendlyName": "netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
           "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsLightsControlLightsControl"
@@ -1837,6 +1952,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
         }
       ]
     },
@@ -1870,6 +1990,11 @@
     {
       "domain": "light",
       "entities": [
+        {
+          "id": "light.bulb_master_bed",
+          "friendlyName": "bulb_master_bed",
+          "cSharpName": "BulbMasterBed"
+        },
         {
           "id": "light.driveway_lamps",
           "friendlyName": "Driveway Lamps",
@@ -2016,6 +2141,86 @@
           "jsonName": "color_mode",
           "cSharpName": "ColorMode",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "min_color_temp_kelvin",
+          "cSharpName": "MinColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_color_temp_kelvin",
+          "cSharpName": "MaxColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "min_mireds",
+          "cSharpName": "MinMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "max_mireds",
+          "cSharpName": "MaxMireds",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "effect_list",
+          "cSharpName": "EffectList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp_kelvin",
+          "cSharpName": "ColorTempKelvin",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "hs_color",
+          "cSharpName": "HsColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "rgb_color",
+          "cSharpName": "RgbColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "xy_color",
+          "cSharpName": "XyColor",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.Double]"
+        },
+        {
+          "jsonName": "color_options",
+          "cSharpName": "ColorOptions",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "color_temp_startup",
+          "cSharpName": "ColorTempStartup",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "linkquality",
+          "cSharpName": "Linkquality",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "power_on_behavior",
+          "cSharpName": "PowerOnBehavior",
+          "clrType": "System.String"
+        },
+        {
+          "jsonName": "update_available",
+          "cSharpName": "UpdateAvailable",
+          "clrType": "System.Boolean"
         }
       ]
     }
