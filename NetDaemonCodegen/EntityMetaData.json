@@ -114,6 +114,16 @@
           "jsonName": "device_class",
           "cSharpName": "DeviceClass",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -378,6 +388,16 @@
     {
       "domain": "sensor",
       "entities": [
+        {
+          "id": "sensor.0x5c0272fffe80807c_action",
+          "friendlyName": "0x5c0272fffe80807c Action",
+          "cSharpName": "_0x5c0272fffe80807cAction"
+        },
+        {
+          "id": "sensor.0x5c0272fffe80807c_click",
+          "friendlyName": "0x5c0272fffe80807c Click",
+          "cSharpName": "_0x5c0272fffe80807cClick"
+        },
         {
           "id": "sensor.blind_office_motor_state",
           "friendlyName": "blind_office Motor state",
@@ -794,6 +814,26 @@
           "jsonName": "power_on_behavior",
           "cSharpName": "PowerOnBehavior",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "action",
+          "cSharpName": "Action",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "click",
+          "cSharpName": "Click",
+          "clrType": "System.Object"
         }
       ]
     },
@@ -801,6 +841,11 @@
       "domain": "sensor",
       "isNumeric": true,
       "entities": [
+        {
+          "id": "sensor.0x5c0272fffe80807c_battery",
+          "friendlyName": "0x5c0272fffe80807c Battery",
+          "cSharpName": "_0x5c0272fffe80807cBattery"
+        },
         {
           "id": "sensor.blind_office_battery",
           "friendlyName": "blind_office Battery",
@@ -1292,6 +1337,26 @@
           "jsonName": "illuminance_lux",
           "cSharpName": "IlluminanceLux",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "action",
+          "cSharpName": "Action",
+          "clrType": "System.Object"
+        },
+        {
+          "jsonName": "click",
+          "cSharpName": "Click",
+          "clrType": "System.Object"
         }
       ]
     },
@@ -1413,6 +1478,11 @@
       "domain": "update",
       "entities": [
         {
+          "id": "update.0x5c0272fffe80807c",
+          "friendlyName": "0x5c0272fffe80807c",
+          "cSharpName": "_0x5c0272fffe80807c"
+        },
+        {
           "id": "update.blind_office",
           "friendlyName": "blind_office",
           "cSharpName": "BlindOffice"
@@ -1457,7 +1527,7 @@
         {
           "jsonName": "in_progress",
           "cSharpName": "InProgress",
-          "clrType": "System.Boolean"
+          "clrType": "System.Object"
         },
         {
           "jsonName": "latest_version",
@@ -1774,6 +1844,16 @@
           "jsonName": "friendly_name",
           "cSharpName": "FriendlyName",
           "clrType": "System.String"
+        },
+        {
+          "jsonName": "course",
+          "cSharpName": "Course",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "speed",
+          "cSharpName": "Speed",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1794,6 +1874,11 @@
           "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
           "friendlyName": "netdaemon_home_automations_net_daemon_apps_lights_control_lights_control",
           "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsLightsControlLightsControl"
+        },
+        {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_morning_alarm_morning_alarm",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_morning_alarm_morning_alarm",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsMorningAlarmMorningAlarm"
         },
         {
           "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_shades_shades_control",

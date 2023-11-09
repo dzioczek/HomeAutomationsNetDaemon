@@ -71,7 +71,7 @@ namespace HomeAutomationsNetDaemon.apps.BathroomFans
 
             int numberOfLastChanges = 5; 
 
-            var arr = states.OrderBy(s => s.LastUpdated).TakeLast(numberOfLastChanges).ToArray();
+            var arr = states.Where(s => s.State != "unavailable").OrderBy(s => s.LastUpdated).TakeLast(numberOfLastChanges).ToArray();
 
             double indexesMultiplication = 1; // first chain index for that is always 1 as we don't have previous value
 
