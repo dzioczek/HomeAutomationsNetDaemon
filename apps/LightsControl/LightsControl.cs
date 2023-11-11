@@ -35,12 +35,11 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             
             lightSensor.StateChanges()
                 .WhenStateIsFor(e => e?.State <= 20.0, TimeSpan.FromMinutes(5), scheduler)
-                .Where(s => DateTime.Now.Hour is > 16 and < 24)
                 .Subscribe(_ => _logger.LogInformation("works! {Test}", lightSensor.State));
             
             lightSensor.StateAllChanges()
                 .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
-                .Where(e => DateTime.Now.Hour is > 16 and < 24)
+                .Where(e => DateTime.Now.Hour is > 15 and < 24)
                 .Subscribe(_ => TurnOnOutsideLamps(ha));
         }
 

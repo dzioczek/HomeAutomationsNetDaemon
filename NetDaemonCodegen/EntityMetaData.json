@@ -1796,6 +1796,11 @@
           "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsLightsControlLightsControl"
         },
         {
+          "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_morning_alarm_morning_alarm",
+          "friendlyName": "netdaemon_home_automations_net_daemon_apps_morning_alarm_morning_alarm",
+          "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsMorningAlarmMorningAlarm"
+        },
+        {
           "id": "input_boolean.netdaemon_home_automations_net_daemon_apps_shades_shades_control",
           "friendlyName": "netdaemon_home_automations_net_daemon_apps_shades_shades_control",
           "cSharpName": "NetdaemonHomeAutomationsNetDaemonAppsShadesShadesControl"
