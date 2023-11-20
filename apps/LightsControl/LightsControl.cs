@@ -39,7 +39,6 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             
             lightSensor.StateAllChanges()
                 .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
-                .Where(e => DateTime.Now.Hour is > 15 and < 24)
                 .Subscribe(_ => TurnOnOutsideLamps(ha));
         }
 
