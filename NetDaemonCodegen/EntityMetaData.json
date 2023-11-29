@@ -37,16 +37,6 @@
           "id": "binary_sensor.michals_iphone_focus",
           "friendlyName": "Micha\u0142\u2019s iPhone Focus",
           "cSharpName": "MichalsIphoneFocus"
-        },
-        {
-          "id": "binary_sensor.octoprint_printing",
-          "friendlyName": "OctoPrint Printing",
-          "cSharpName": "OctoprintPrinting"
-        },
-        {
-          "id": "binary_sensor.octoprint_printing_error",
-          "friendlyName": "OctoPrint Printing Error",
-          "cSharpName": "OctoprintPrintingError"
         }
       ],
       "attributes": [
@@ -534,19 +524,29 @@
           "cSharpName": "MichalsIphoneSsid"
         },
         {
-          "id": "sensor.octoprint_current_state",
-          "friendlyName": "OctoPrint Current State",
-          "cSharpName": "OctoprintCurrentState"
+          "id": "sensor.prusamk4",
+          "friendlyName": "PrusaMK4",
+          "cSharpName": "Prusamk4"
         },
         {
-          "id": "sensor.octoprint_estimated_finish_time",
-          "friendlyName": "OctoPrint Estimated Finish Time",
-          "cSharpName": "OctoprintEstimatedFinishTime"
+          "id": "sensor.prusamk4_filename",
+          "friendlyName": "PrusaMK4 Filename",
+          "cSharpName": "Prusamk4Filename"
         },
         {
-          "id": "sensor.octoprint_start_time",
-          "friendlyName": "OctoPrint Start Time",
-          "cSharpName": "OctoprintStartTime"
+          "id": "sensor.prusamk4_material",
+          "friendlyName": "PrusaMK4 Material",
+          "cSharpName": "Prusamk4Material"
+        },
+        {
+          "id": "sensor.prusamk4_print_finish",
+          "friendlyName": "PrusaMK4 Print finish",
+          "cSharpName": "Prusamk4PrintFinish"
+        },
+        {
+          "id": "sensor.prusamk4_print_start",
+          "friendlyName": "PrusaMK4 Print start",
+          "cSharpName": "Prusamk4PrintStart"
         },
         {
           "id": "sensor.sun_next_dawn",
@@ -834,6 +834,11 @@
           "jsonName": "click",
           "cSharpName": "Click",
           "clrType": "System.Object"
+        },
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]"
         }
       ]
     },
@@ -1012,39 +1017,14 @@
           "cSharpName": "MichalsIphoneStorage"
         },
         {
-          "id": "sensor.octoprint_actual_bed_temp",
-          "friendlyName": "OctoPrint actual bed temp",
-          "cSharpName": "OctoprintActualBedTemp"
+          "id": "sensor.prusamk4_print_speed",
+          "friendlyName": "PrusaMK4 Print speed",
+          "cSharpName": "Prusamk4PrintSpeed"
         },
         {
-          "id": "sensor.octoprint_actual_tool0_temp",
-          "friendlyName": "OctoPrint actual tool0 temp",
-          "cSharpName": "OctoprintActualTool0Temp"
-        },
-        {
-          "id": "sensor.octoprint_actual_w_temp",
-          "friendlyName": "OctoPrint actual W temp",
-          "cSharpName": "OctoprintActualWTemp"
-        },
-        {
-          "id": "sensor.octoprint_job_percentage",
-          "friendlyName": "OctoPrint Job Percentage",
-          "cSharpName": "OctoprintJobPercentage"
-        },
-        {
-          "id": "sensor.octoprint_target_bed_temp",
-          "friendlyName": "OctoPrint target bed temp",
-          "cSharpName": "OctoprintTargetBedTemp"
-        },
-        {
-          "id": "sensor.octoprint_target_tool0_temp",
-          "friendlyName": "OctoPrint target tool0 temp",
-          "cSharpName": "OctoprintTargetTool0Temp"
-        },
-        {
-          "id": "sensor.octoprint_target_w_temp",
-          "friendlyName": "OctoPrint target W temp",
-          "cSharpName": "OctoprintTargetWTemp"
+          "id": "sensor.prusamk4_progress",
+          "friendlyName": "PrusaMK4 Progress",
+          "cSharpName": "Prusamk4Progress"
         },
         {
           "id": "sensor.temp_attic_battery",
@@ -1955,24 +1935,24 @@
       "domain": "button",
       "entities": [
         {
-          "id": "button.octoprint_pause_job",
-          "friendlyName": "OctoPrint Pause Job",
-          "cSharpName": "OctoprintPauseJob"
-        },
-        {
-          "id": "button.octoprint_resume_job",
-          "friendlyName": "OctoPrint Resume Job",
-          "cSharpName": "OctoprintResumeJob"
-        },
-        {
-          "id": "button.octoprint_stop_job",
-          "friendlyName": "OctoPrint Stop Job",
-          "cSharpName": "OctoprintStopJob"
-        },
-        {
           "id": "button.open_wicket",
           "friendlyName": "Open wicket",
           "cSharpName": "OpenWicket"
+        },
+        {
+          "id": "button.prusamk4_cancel_job",
+          "friendlyName": "PrusaMK4 Cancel job",
+          "cSharpName": "Prusamk4CancelJob"
+        },
+        {
+          "id": "button.prusamk4_pause_job",
+          "friendlyName": "PrusaMK4 Pause job",
+          "cSharpName": "Prusamk4PauseJob"
+        },
+        {
+          "id": "button.prusamk4_resume_job",
+          "friendlyName": "PrusaMK4 Resume job",
+          "cSharpName": "Prusamk4ResumeJob"
         }
       ],
       "attributes": [
@@ -1990,6 +1970,11 @@
           "jsonName": "supported_features",
           "cSharpName": "SupportedFeatures",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String"
         }
       ]
     },
@@ -2007,9 +1992,9 @@
           "cSharpName": "_192168144"
         },
         {
-          "id": "camera.octoprint_camera",
-          "friendlyName": "OctoPrint Camera",
-          "cSharpName": "OctoprintCamera"
+          "id": "camera.prusamk4_preview",
+          "friendlyName": "PrusaMK4 Preview",
+          "cSharpName": "Prusamk4Preview"
         }
       ],
       "attributes": [

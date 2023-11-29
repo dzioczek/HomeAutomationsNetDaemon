@@ -21,12 +21,13 @@ namespace HomeAutomationsNetDaemon.apps.Ender
 
             Entities entities = new Entities(context);
 
-            entities.BinarySensor.OctoprintPrinting.StateChanges()
-                .WhenStateIsFor(e => e?.State == "off", TimeSpan.FromMinutes(15), scheduler)
-                .Subscribe(_ => TurnOffPrinter(entities));
+            //entities.BinarySensor.OctoprintPrinting.StateChanges()
+            //    .WhenStateIsFor(e => e?.State == "off", TimeSpan.FromMinutes(15), scheduler)
+            //    .Subscribe(_ => TurnOffPrinter(entities));
 
-            entities.BinarySensor.OctoprintPrinting.StateChanges()
-                .Where(e => e.Old?.State == "on" && e.New?.State == "off")
+            
+            entities.Sensor.Prusamk4.StateChanges()
+                .Where(e => e.Old?.State == "printing" && e.New?.State == "idle")
                 .SubscribeSafe(_ => NotifyMichal(context), _logger);
             
 
