@@ -48,6 +48,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             entities.Light.TerraceLamps.TurnOn();
             entities.Light.DrivewayLamps.TurnOn();
             entities.Light.GateLamps.TurnOn();
+            entities.Switch.PlugEnder.TurnOn();
             _logger.LogInformation("outside and gate lamps turned on");
         }
 
@@ -56,6 +57,7 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             Entities entities = new Entities(ha);
             entities.Light.TerraceLamps.TurnOff();
             entities.Light.DrivewayLamps.TurnOff();
+            entities.Switch.PlugEnder.TurnOff();
             _logger.LogInformation("outside lamps turned off");
         }
 
