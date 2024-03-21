@@ -29,6 +29,21 @@
           "cSharpName": "DahuaVtoOpen2"
         },
         {
+          "id": "binary_sensor.dryer_door",
+          "friendlyName": "Dryer Door",
+          "cSharpName": "DryerDoor"
+        },
+        {
+          "id": "binary_sensor.dryer_remote_control",
+          "friendlyName": "Dryer Remote Control",
+          "cSharpName": "DryerRemoteControl"
+        },
+        {
+          "id": "binary_sensor.dryer_remote_start",
+          "friendlyName": "Dryer Remote Start",
+          "cSharpName": "DryerRemoteStart"
+        },
+        {
           "id": "binary_sensor.iphone_natalia_focus",
           "friendlyName": "iPhone (Natalia) Focus",
           "cSharpName": "IphoneNataliaFocus"
@@ -397,6 +412,16 @@
           "id": "sensor.bulb_master_bed_color_options",
           "friendlyName": "bulb_master_bed Color options",
           "cSharpName": "BulbMasterBedColorOptions"
+        },
+        {
+          "id": "sensor.dryer_operation_state",
+          "friendlyName": "Dryer Operation State",
+          "cSharpName": "DryerOperationState"
+        },
+        {
+          "id": "sensor.dryer_remaining_program_time",
+          "friendlyName": "Dryer Remaining Program Time",
+          "cSharpName": "DryerRemainingProgramTime"
         },
         {
           "id": "sensor.growatt_datalogger_serial",
@@ -860,6 +885,16 @@
           "id": "sensor.blind_office_device_temperature",
           "friendlyName": "blind_office Temperature",
           "cSharpName": "BlindOfficeDeviceTemperature"
+        },
+        {
+          "id": "sensor.dryer_duration",
+          "friendlyName": "Dryer Duration",
+          "cSharpName": "DryerDuration"
+        },
+        {
+          "id": "sensor.dryer_program_progress",
+          "friendlyName": "Dryer Program Progress",
+          "cSharpName": "DryerProgramProgress"
         },
         {
           "id": "sensor.growatt_generated_energy_today",
@@ -1405,6 +1440,56 @@
     {
       "domain": "switch",
       "entities": [
+        {
+          "id": "switch.dryer_power",
+          "friendlyName": "Dryer Power",
+          "cSharpName": "DryerPower"
+        },
+        {
+          "id": "switch.dryer_program_cotton",
+          "friendlyName": "Dryer Program Cotton",
+          "cSharpName": "DryerProgramCotton"
+        },
+        {
+          "id": "switch.dryer_program_delicates",
+          "friendlyName": "Dryer Program Delicates",
+          "cSharpName": "DryerProgramDelicates"
+        },
+        {
+          "id": "switch.dryer_program_hygiene",
+          "friendlyName": "Dryer Program Hygiene",
+          "cSharpName": "DryerProgramHygiene"
+        },
+        {
+          "id": "switch.dryer_program_mix",
+          "friendlyName": "Dryer Program Mix",
+          "cSharpName": "DryerProgramMix"
+        },
+        {
+          "id": "switch.dryer_program_super40",
+          "friendlyName": "Dryer Program Super40",
+          "cSharpName": "DryerProgramSuper40"
+        },
+        {
+          "id": "switch.dryer_program_synthetic",
+          "friendlyName": "Dryer Program Synthetic",
+          "cSharpName": "DryerProgramSynthetic"
+        },
+        {
+          "id": "switch.dryer_program_timewarm",
+          "friendlyName": "Dryer Program TimeWarm",
+          "cSharpName": "DryerProgramTimewarm"
+        },
+        {
+          "id": "switch.dryer_program_towels",
+          "friendlyName": "Dryer Program Towels",
+          "cSharpName": "DryerProgramTowels"
+        },
+        {
+          "id": "switch.office_heating_switch",
+          "friendlyName": "office_heating_switch",
+          "cSharpName": "OfficeHeatingSwitch"
+        },
         {
           "id": "switch.plug_ender",
           "friendlyName": "plug_ender",
