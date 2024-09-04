@@ -424,6 +424,16 @@
           "cSharpName": "DryerRemainingProgramTime"
         },
         {
+          "id": "sensor.greencell_app_version",
+          "friendlyName": "greenCell App Version",
+          "cSharpName": "GreencellAppVersion"
+        },
+        {
+          "id": "sensor.greencell_location_permission",
+          "friendlyName": "greenCell Location permission",
+          "cSharpName": "GreencellLocationPermission"
+        },
+        {
           "id": "sensor.growatt_datalogger_serial",
           "friendlyName": "Growatt - Datalogger serial",
           "cSharpName": "GrowattDataloggerSerial"
@@ -464,6 +474,11 @@
           "cSharpName": "IphoneNataliaActivity"
         },
         {
+          "id": "sensor.iphone_natalia_app_version",
+          "friendlyName": "iPhone (Natalia) App Version",
+          "cSharpName": "IphoneNataliaAppVersion"
+        },
+        {
           "id": "sensor.iphone_natalia_battery_state",
           "friendlyName": "iPhone (Natalia) Battery State",
           "cSharpName": "IphoneNataliaBatteryState"
@@ -487,6 +502,11 @@
           "id": "sensor.iphone_natalia_last_update_trigger",
           "friendlyName": "iPhone (Natalia) Last Update Trigger",
           "cSharpName": "IphoneNataliaLastUpdateTrigger"
+        },
+        {
+          "id": "sensor.iphone_natalia_location_permission",
+          "friendlyName": "iPhone (Natalia) Location permission",
+          "cSharpName": "IphoneNataliaLocationPermission"
         },
         {
           "id": "sensor.iphone_natalia_sim_1",
@@ -550,28 +570,53 @@
         },
         {
           "id": "sensor.prusamk4",
-          "friendlyName": "PrusaMK4",
+          "friendlyName": null,
           "cSharpName": "Prusamk4"
         },
         {
+          "id": "sensor.prusamk4_2",
+          "friendlyName": null,
+          "cSharpName": "Prusamk42"
+        },
+        {
           "id": "sensor.prusamk4_filename",
-          "friendlyName": "PrusaMK4 Filename",
+          "friendlyName": "Filename",
           "cSharpName": "Prusamk4Filename"
         },
         {
+          "id": "sensor.prusamk4_filename_2",
+          "friendlyName": "Filename",
+          "cSharpName": "Prusamk4Filename2"
+        },
+        {
           "id": "sensor.prusamk4_material",
-          "friendlyName": "PrusaMK4 Material",
+          "friendlyName": "Material",
           "cSharpName": "Prusamk4Material"
         },
         {
+          "id": "sensor.prusamk4_material_2",
+          "friendlyName": "Material",
+          "cSharpName": "Prusamk4Material2"
+        },
+        {
           "id": "sensor.prusamk4_print_finish",
-          "friendlyName": "PrusaMK4 Print finish",
+          "friendlyName": "Print finish",
           "cSharpName": "Prusamk4PrintFinish"
         },
         {
+          "id": "sensor.prusamk4_print_finish_2",
+          "friendlyName": "Print finish",
+          "cSharpName": "Prusamk4PrintFinish2"
+        },
+        {
           "id": "sensor.prusamk4_print_start",
-          "friendlyName": "PrusaMK4 Print start",
+          "friendlyName": "Print start",
           "cSharpName": "Prusamk4PrintStart"
+        },
+        {
+          "id": "sensor.prusamk4_print_start_2",
+          "friendlyName": "Print start",
+          "cSharpName": "Prusamk4PrintStart2"
         },
         {
           "id": "sensor.sun_next_dawn",
@@ -897,6 +942,11 @@
           "cSharpName": "DryerProgramProgress"
         },
         {
+          "id": "sensor.greencell_watch_battery",
+          "friendlyName": "greenCell Watch Battery",
+          "cSharpName": "GreencellWatchBattery"
+        },
+        {
           "id": "sensor.growatt_generated_energy_today",
           "friendlyName": "Growatt - Generated energy (Today)",
           "cSharpName": "GrowattGeneratedEnergyToday"
@@ -1007,6 +1057,11 @@
           "cSharpName": "IphoneNataliaStorage"
         },
         {
+          "id": "sensor.iphone_natalia_watch_battery",
+          "friendlyName": "iPhone (Natalia) Watch Battery",
+          "cSharpName": "IphoneNataliaWatchBattery"
+        },
+        {
           "id": "sensor.light_sensor_outside_battery",
           "friendlyName": "light_sensor_outside Battery",
           "cSharpName": "LightSensorOutsideBattery"
@@ -1053,13 +1108,23 @@
         },
         {
           "id": "sensor.prusamk4_print_speed",
-          "friendlyName": "PrusaMK4 Print speed",
+          "friendlyName": "Print speed",
           "cSharpName": "Prusamk4PrintSpeed"
         },
         {
+          "id": "sensor.prusamk4_print_speed_2",
+          "friendlyName": "Print speed",
+          "cSharpName": "Prusamk4PrintSpeed2"
+        },
+        {
           "id": "sensor.prusamk4_progress",
-          "friendlyName": "PrusaMK4 Progress",
+          "friendlyName": "Progress",
           "cSharpName": "Prusamk4Progress"
+        },
+        {
+          "id": "sensor.prusamk4_progress_2",
+          "friendlyName": "Progress",
+          "cSharpName": "Prusamk4Progress2"
         },
         {
           "id": "sensor.temp_attic_battery",
@@ -1536,6 +1601,16 @@
           "jsonName": "update_available",
           "cSharpName": "UpdateAvailable",
           "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "restored",
+          "cSharpName": "Restored",
+          "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1800,6 +1875,16 @@
           "jsonName": "cloud_coverage",
           "cSharpName": "CloudCoverage",
           "clrType": "System.Double"
+        },
+        {
+          "jsonName": "dew_point",
+          "cSharpName": "DewPoint",
+          "clrType": "System.Double"
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "System.Double"
         }
       ]
     },
@@ -1865,7 +1950,7 @@
         },
         {
           "id": "device_tracker.michals_iphone",
-          "friendlyName": "Micha\u0142\u2019s iPhone",
+          "friendlyName": "greenCell",
           "cSharpName": "MichalsIphone"
         }
       ],
@@ -2026,18 +2111,33 @@
         },
         {
           "id": "button.prusamk4_cancel_job",
-          "friendlyName": "PrusaMK4 Cancel job",
+          "friendlyName": "Cancel job",
           "cSharpName": "Prusamk4CancelJob"
         },
         {
+          "id": "button.prusamk4_cancel_job_2",
+          "friendlyName": "Cancel job",
+          "cSharpName": "Prusamk4CancelJob2"
+        },
+        {
           "id": "button.prusamk4_pause_job",
-          "friendlyName": "PrusaMK4 Pause job",
+          "friendlyName": "Pause job",
           "cSharpName": "Prusamk4PauseJob"
         },
         {
+          "id": "button.prusamk4_pause_job_2",
+          "friendlyName": "Pause job",
+          "cSharpName": "Prusamk4PauseJob2"
+        },
+        {
           "id": "button.prusamk4_resume_job",
-          "friendlyName": "PrusaMK4 Resume job",
+          "friendlyName": "Resume job",
           "cSharpName": "Prusamk4ResumeJob"
+        },
+        {
+          "id": "button.prusamk4_resume_job_2",
+          "friendlyName": "Resume job",
+          "cSharpName": "Prusamk4ResumeJob2"
         }
       ],
       "attributes": [
@@ -2078,8 +2178,13 @@
         },
         {
           "id": "camera.prusamk4_preview",
-          "friendlyName": "PrusaMK4 Preview",
+          "friendlyName": "Preview",
           "cSharpName": "Prusamk4Preview"
+        },
+        {
+          "id": "camera.prusamk4_preview_2",
+          "friendlyName": "Preview",
+          "cSharpName": "Prusamk4Preview2"
         }
       ],
       "attributes": [
@@ -2376,6 +2481,28 @@
           "jsonName": "update_available",
           "cSharpName": "UpdateAvailable",
           "clrType": "System.Boolean"
+        },
+        {
+          "jsonName": "effect",
+          "cSharpName": "Effect",
+          "clrType": null
+        }
+      ]
+    },
+    {
+      "domain": "conversation",
+      "entities": [
+        {
+          "id": "conversation.home_assistant",
+          "friendlyName": "Home Assistant",
+          "cSharpName": "HomeAssistant"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "System.String"
         }
       ]
     }
