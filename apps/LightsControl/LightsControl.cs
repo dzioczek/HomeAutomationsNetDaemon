@@ -40,6 +40,15 @@ namespace HomeAutomationsNetDaemon.apps.LightsControl
             //lightSensor.StateAllChanges()
             //    .Where(e => e.New?.State < 20 && e.Old?.State > e.New?.State)
             //    .Subscribe(_ => TurnOnOutsideLamps(ha));
+
+            Entities entities = new Entities(ha);
+            entities.Sensor.SwitchIkeaMasterBedroomClick.StateChanges()
+                .Where(e => e.New?.State == "on")
+                .Subscribe(_ => entities.Light.BulbMasterBed.TurnOn()); 
+
+            entities.Sensor.SwitchIkeaMasterBedroomClick.StateChanges()
+                .Where(e => e.New?.State == "off")
+                .Subscribe(_ => entities.Light.BulbMasterBed.TurnOff()); 
         }
 
         private void TurnOnOutsideLamps(IHaContext ha)

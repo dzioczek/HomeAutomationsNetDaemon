@@ -20,8 +20,8 @@ public class Ender
         //    .Subscribe(_ => TurnOffPrinter(entities));
 
 
-        entities.Sensor.Prusamk4.StateChanges()
-            .Where(e => e.Old?.State == "printing" && e.New?.State == "idle")
+        entities.Sensor.Prusamk42.StateChanges()
+            .Where(e => e.Old?.State == "printing" && e.New?.State == "finished")
             .SubscribeSafe(_ => NotifyMichal(), _logger);
     }
 
@@ -33,7 +33,7 @@ public class Ender
 
     private void NotifyMichal()
     {
-        _services.MobileAppGreencell(
+        _services.MobileAppTitancell(
             title: "Print Done!",
             message: "Your fresh print is now ready.",
             data: new { tag = "PrinterNotification" }

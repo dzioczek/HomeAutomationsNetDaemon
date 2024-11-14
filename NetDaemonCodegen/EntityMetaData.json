@@ -394,16 +394,6 @@
       "domain": "sensor",
       "entities": [
         {
-          "id": "sensor.0x5c0272fffe80807c_action",
-          "friendlyName": "0x5c0272fffe80807c Action",
-          "cSharpName": "_0x5c0272fffe80807cAction"
-        },
-        {
-          "id": "sensor.0x5c0272fffe80807c_click",
-          "friendlyName": "0x5c0272fffe80807c Click",
-          "cSharpName": "_0x5c0272fffe80807cClick"
-        },
-        {
           "id": "sensor.blind_office_motor_state",
           "friendlyName": "blind_office Motor state",
           "cSharpName": "BlindOfficeMotorState"
@@ -432,6 +422,11 @@
           "id": "sensor.greencell_location_permission",
           "friendlyName": "greenCell Location permission",
           "cSharpName": "GreencellLocationPermission"
+        },
+        {
+          "id": "sensor.greencell_watch_battery_state",
+          "friendlyName": "greenCell Watch Battery State",
+          "cSharpName": "GreencellWatchBatteryState"
         },
         {
           "id": "sensor.growatt_datalogger_serial",
@@ -524,6 +519,11 @@
           "cSharpName": "IphoneNataliaSsid"
         },
         {
+          "id": "sensor.iphone_natalia_watch_battery_state",
+          "friendlyName": "iPhone (Natalia) Watch Battery State",
+          "cSharpName": "IphoneNataliaWatchBatteryState"
+        },
+        {
           "id": "sensor.michals_iphone_activity",
           "friendlyName": "Micha\u0142\u2019s iPhone Activity",
           "cSharpName": "MichalsIphoneActivity"
@@ -569,53 +569,28 @@
           "cSharpName": "MichalsIphoneSsid"
         },
         {
-          "id": "sensor.prusamk4",
-          "friendlyName": null,
-          "cSharpName": "Prusamk4"
-        },
-        {
           "id": "sensor.prusamk4_2",
-          "friendlyName": null,
+          "friendlyName": "PrusaMK4",
           "cSharpName": "Prusamk42"
         },
         {
-          "id": "sensor.prusamk4_filename",
-          "friendlyName": "Filename",
-          "cSharpName": "Prusamk4Filename"
-        },
-        {
           "id": "sensor.prusamk4_filename_2",
-          "friendlyName": "Filename",
+          "friendlyName": "PrusaMK4 Filename",
           "cSharpName": "Prusamk4Filename2"
         },
         {
-          "id": "sensor.prusamk4_material",
-          "friendlyName": "Material",
-          "cSharpName": "Prusamk4Material"
-        },
-        {
           "id": "sensor.prusamk4_material_2",
-          "friendlyName": "Material",
+          "friendlyName": "PrusaMK4 Material",
           "cSharpName": "Prusamk4Material2"
         },
         {
-          "id": "sensor.prusamk4_print_finish",
-          "friendlyName": "Print finish",
-          "cSharpName": "Prusamk4PrintFinish"
-        },
-        {
           "id": "sensor.prusamk4_print_finish_2",
-          "friendlyName": "Print finish",
+          "friendlyName": "PrusaMK4 Print finish",
           "cSharpName": "Prusamk4PrintFinish2"
         },
         {
-          "id": "sensor.prusamk4_print_start",
-          "friendlyName": "Print start",
-          "cSharpName": "Prusamk4PrintStart"
-        },
-        {
           "id": "sensor.prusamk4_print_start_2",
-          "friendlyName": "Print start",
+          "friendlyName": "PrusaMK4 Print start",
           "cSharpName": "Prusamk4PrintStart2"
         },
         {
@@ -647,6 +622,16 @@
           "id": "sensor.sun_next_setting",
           "friendlyName": "Sun Next setting",
           "cSharpName": "SunNextSetting"
+        },
+        {
+          "id": "sensor.switch_ikea_master_bedroom_action",
+          "friendlyName": "switch_ikea_master_bedroom Action",
+          "cSharpName": "SwitchIkeaMasterBedroomAction"
+        },
+        {
+          "id": "sensor.switch_ikea_master_bedroom_click",
+          "friendlyName": "switch_ikea_master_bedroom Click",
+          "cSharpName": "SwitchIkeaMasterBedroomClick"
         }
       ],
       "attributes": [
@@ -917,11 +902,6 @@
       "isNumeric": true,
       "entities": [
         {
-          "id": "sensor.0x5c0272fffe80807c_battery",
-          "friendlyName": "0x5c0272fffe80807c Battery",
-          "cSharpName": "_0x5c0272fffe80807cBattery"
-        },
-        {
           "id": "sensor.blind_office_battery",
           "friendlyName": "blind_office Battery",
           "cSharpName": "BlindOfficeBattery"
@@ -1107,24 +1087,19 @@
           "cSharpName": "MichalsIphoneStorage"
         },
         {
-          "id": "sensor.prusamk4_print_speed",
-          "friendlyName": "Print speed",
-          "cSharpName": "Prusamk4PrintSpeed"
-        },
-        {
           "id": "sensor.prusamk4_print_speed_2",
-          "friendlyName": "Print speed",
+          "friendlyName": "PrusaMK4 Print speed",
           "cSharpName": "Prusamk4PrintSpeed2"
         },
         {
-          "id": "sensor.prusamk4_progress",
-          "friendlyName": "Progress",
-          "cSharpName": "Prusamk4Progress"
+          "id": "sensor.prusamk4_progress_2",
+          "friendlyName": "PrusaMK4 Progress",
+          "cSharpName": "Prusamk4Progress2"
         },
         {
-          "id": "sensor.prusamk4_progress_2",
-          "friendlyName": "Progress",
-          "cSharpName": "Prusamk4Progress2"
+          "id": "sensor.switch_ikea_master_bedroom_battery",
+          "friendlyName": "switch_ikea_master_bedroom Battery",
+          "cSharpName": "SwitchIkeaMasterBedroomBattery"
         },
         {
           "id": "sensor.temp_attic_battery",
@@ -1145,6 +1120,46 @@
           "id": "sensor.temp_attic_temperature",
           "friendlyName": "temp_attic Temperature",
           "cSharpName": "TempAtticTemperature"
+        },
+        {
+          "id": "sensor.temp_bruno_battery",
+          "friendlyName": "temp_bruno Battery",
+          "cSharpName": "TempBrunoBattery"
+        },
+        {
+          "id": "sensor.temp_bruno_humidity",
+          "friendlyName": "temp_bruno Humidity",
+          "cSharpName": "TempBrunoHumidity"
+        },
+        {
+          "id": "sensor.temp_bruno_pressure",
+          "friendlyName": "temp_bruno Atmospheric pressure",
+          "cSharpName": "TempBrunoPressure"
+        },
+        {
+          "id": "sensor.temp_bruno_temperature",
+          "friendlyName": "temp_bruno Temperature",
+          "cSharpName": "TempBrunoTemperature"
+        },
+        {
+          "id": "sensor.temp_downstairs_bathroom_battery",
+          "friendlyName": "temp_downstairs_bathroom Battery",
+          "cSharpName": "TempDownstairsBathroomBattery"
+        },
+        {
+          "id": "sensor.temp_downstairs_bathroom_humidity",
+          "friendlyName": "temp_downstairs_bathroom Humidity",
+          "cSharpName": "TempDownstairsBathroomHumidity"
+        },
+        {
+          "id": "sensor.temp_downstairs_bathroom_pressure",
+          "friendlyName": "temp_downstairs_bathroom Atmospheric pressure",
+          "cSharpName": "TempDownstairsBathroomPressure"
+        },
+        {
+          "id": "sensor.temp_downstairs_bathroom_temperature",
+          "friendlyName": "temp_downstairs_bathroom Temperature",
+          "cSharpName": "TempDownstairsBathroomTemperature"
         },
         {
           "id": "sensor.temp_garage_battery",
@@ -1187,24 +1202,104 @@
           "cSharpName": "TempGarageTemperature"
         },
         {
-          "id": "sensor.temp_master_bedroom_battery",
-          "friendlyName": "temp_master_bedroom Battery",
-          "cSharpName": "TempMasterBedroomBattery"
+          "id": "sensor.temp_kitchen_battery",
+          "friendlyName": "temp_kitchen Battery",
+          "cSharpName": "TempKitchenBattery"
         },
         {
-          "id": "sensor.temp_master_bedroom_humidity",
-          "friendlyName": "temp_master_bedroom Humidity",
-          "cSharpName": "TempMasterBedroomHumidity"
+          "id": "sensor.temp_kitchen_humidity",
+          "friendlyName": "temp_kitchen Humidity",
+          "cSharpName": "TempKitchenHumidity"
         },
         {
-          "id": "sensor.temp_master_bedroom_pressure",
-          "friendlyName": "temp_master_bedroom Atmospheric pressure",
-          "cSharpName": "TempMasterBedroomPressure"
+          "id": "sensor.temp_kitchen_pressure",
+          "friendlyName": "temp_kitchen Atmospheric pressure",
+          "cSharpName": "TempKitchenPressure"
         },
         {
-          "id": "sensor.temp_master_bedroom_temperature",
-          "friendlyName": "temp_master_bedroom Temperature",
-          "cSharpName": "TempMasterBedroomTemperature"
+          "id": "sensor.temp_kitchen_temperature",
+          "friendlyName": "temp_kitchen Temperature",
+          "cSharpName": "TempKitchenTemperature"
+        },
+        {
+          "id": "sensor.temp_lila_battery",
+          "friendlyName": "temp_lila Battery",
+          "cSharpName": "TempLilaBattery"
+        },
+        {
+          "id": "sensor.temp_lila_humidity",
+          "friendlyName": "temp_lila Humidity",
+          "cSharpName": "TempLilaHumidity"
+        },
+        {
+          "id": "sensor.temp_lila_pressure",
+          "friendlyName": "temp_lila Atmospheric pressure",
+          "cSharpName": "TempLilaPressure"
+        },
+        {
+          "id": "sensor.temp_lila_temperature",
+          "friendlyName": "temp_lila Temperature",
+          "cSharpName": "TempLilaTemperature"
+        },
+        {
+          "id": "sensor.temp_living_room_corner_window_battery",
+          "friendlyName": "temp_living_room_corner_window Battery",
+          "cSharpName": "TempLivingRoomCornerWindowBattery"
+        },
+        {
+          "id": "sensor.temp_living_room_corner_window_humidity",
+          "friendlyName": "temp_living_room_corner_window Humidity",
+          "cSharpName": "TempLivingRoomCornerWindowHumidity"
+        },
+        {
+          "id": "sensor.temp_living_room_corner_window_pressure",
+          "friendlyName": "temp_living_room_corner_window Atmospheric pressure",
+          "cSharpName": "TempLivingRoomCornerWindowPressure"
+        },
+        {
+          "id": "sensor.temp_living_room_corner_window_temperature",
+          "friendlyName": "temp_living_room_corner_window Temperature",
+          "cSharpName": "TempLivingRoomCornerWindowTemperature"
+        },
+        {
+          "id": "sensor.temp_living_room_front_window_battery",
+          "friendlyName": "temp_living_room_front_window Battery",
+          "cSharpName": "TempLivingRoomFrontWindowBattery"
+        },
+        {
+          "id": "sensor.temp_living_room_front_window_humidity",
+          "friendlyName": "temp_living_room_front_window Humidity",
+          "cSharpName": "TempLivingRoomFrontWindowHumidity"
+        },
+        {
+          "id": "sensor.temp_living_room_front_window_pressure",
+          "friendlyName": "temp_living_room_front_window Atmospheric pressure",
+          "cSharpName": "TempLivingRoomFrontWindowPressure"
+        },
+        {
+          "id": "sensor.temp_living_room_front_window_temperature",
+          "friendlyName": "temp_living_room_front_window Temperature",
+          "cSharpName": "TempLivingRoomFrontWindowTemperature"
+        },
+        {
+          "id": "sensor.temp_master_bed_battery",
+          "friendlyName": "temp_master_bed Battery",
+          "cSharpName": "TempMasterBedBattery"
+        },
+        {
+          "id": "sensor.temp_master_bed_humidity",
+          "friendlyName": "temp_master_bed Humidity",
+          "cSharpName": "TempMasterBedHumidity"
+        },
+        {
+          "id": "sensor.temp_master_bed_pressure",
+          "friendlyName": "temp_master_bed Atmospheric pressure",
+          "cSharpName": "TempMasterBedPressure"
+        },
+        {
+          "id": "sensor.temp_master_bed_temperature",
+          "friendlyName": "temp_master_bed Temperature",
+          "cSharpName": "TempMasterBedTemperature"
         },
         {
           "id": "sensor.temp_office_battery",
@@ -1265,6 +1360,26 @@
           "id": "sensor.temp_upstairs_bathroom_temperature",
           "friendlyName": "temp_upstairs_bathroom Temperature",
           "cSharpName": "TempUpstairsBathroomTemperature"
+        },
+        {
+          "id": "sensor.temp_upstairs_corridor_battery",
+          "friendlyName": "temp_upstairs_corridor Battery",
+          "cSharpName": "TempUpstairsCorridorBattery"
+        },
+        {
+          "id": "sensor.temp_upstairs_corridor_humidity",
+          "friendlyName": "temp_upstairs_corridor Humidity",
+          "cSharpName": "TempUpstairsCorridorHumidity"
+        },
+        {
+          "id": "sensor.temp_upstairs_corridor_pressure",
+          "friendlyName": "temp_upstairs_corridor Atmospheric pressure",
+          "cSharpName": "TempUpstairsCorridorPressure"
+        },
+        {
+          "id": "sensor.temp_upstairs_corridor_temperature",
+          "friendlyName": "temp_upstairs_corridor Temperature",
+          "cSharpName": "TempUpstairsCorridorTemperature"
         },
         {
           "id": "sensor.temp_utility_room_battery",
@@ -1506,6 +1621,11 @@
       "domain": "switch",
       "entities": [
         {
+          "id": "switch.dryer_childlock",
+          "friendlyName": "Dryer ChildLock",
+          "cSharpName": "DryerChildlock"
+        },
+        {
           "id": "switch.dryer_power",
           "friendlyName": "Dryer Power",
           "cSharpName": "DryerPower"
@@ -1618,11 +1738,6 @@
       "domain": "update",
       "entities": [
         {
-          "id": "update.0x5c0272fffe80807c",
-          "friendlyName": "0x5c0272fffe80807c",
-          "cSharpName": "_0x5c0272fffe80807c"
-        },
-        {
           "id": "update.blind_office",
           "friendlyName": "blind_office",
           "cSharpName": "BlindOffice"
@@ -1651,6 +1766,11 @@
           "id": "update.plug_upstairs_bathroom_fan",
           "friendlyName": "plug_upstairs_bathroom_fan",
           "cSharpName": "PlugUpstairsBathroomFan"
+        },
+        {
+          "id": "update.switch_ikea_master_bedroom",
+          "friendlyName": "switch_ikea_master_bedroom",
+          "cSharpName": "SwitchIkeaMasterBedroom"
         }
       ],
       "attributes": [
@@ -1950,7 +2070,7 @@
         },
         {
           "id": "device_tracker.michals_iphone",
-          "friendlyName": "greenCell",
+          "friendlyName": "titanCell",
           "cSharpName": "MichalsIphone"
         }
       ],
@@ -2110,33 +2230,18 @@
           "cSharpName": "OpenWicket"
         },
         {
-          "id": "button.prusamk4_cancel_job",
-          "friendlyName": "Cancel job",
-          "cSharpName": "Prusamk4CancelJob"
-        },
-        {
           "id": "button.prusamk4_cancel_job_2",
-          "friendlyName": "Cancel job",
+          "friendlyName": "PrusaMK4 Cancel job",
           "cSharpName": "Prusamk4CancelJob2"
         },
         {
-          "id": "button.prusamk4_pause_job",
-          "friendlyName": "Pause job",
-          "cSharpName": "Prusamk4PauseJob"
-        },
-        {
           "id": "button.prusamk4_pause_job_2",
-          "friendlyName": "Pause job",
+          "friendlyName": "PrusaMK4 Pause job",
           "cSharpName": "Prusamk4PauseJob2"
         },
         {
-          "id": "button.prusamk4_resume_job",
-          "friendlyName": "Resume job",
-          "cSharpName": "Prusamk4ResumeJob"
-        },
-        {
           "id": "button.prusamk4_resume_job_2",
-          "friendlyName": "Resume job",
+          "friendlyName": "PrusaMK4 Resume job",
           "cSharpName": "Prusamk4ResumeJob2"
         }
       ],
@@ -2177,13 +2282,8 @@
           "cSharpName": "_192168144"
         },
         {
-          "id": "camera.prusamk4_preview",
-          "friendlyName": "Preview",
-          "cSharpName": "Prusamk4Preview"
-        },
-        {
           "id": "camera.prusamk4_preview_2",
-          "friendlyName": "Preview",
+          "friendlyName": "PrusaMK4 Preview",
           "cSharpName": "Prusamk4Preview2"
         }
       ],
